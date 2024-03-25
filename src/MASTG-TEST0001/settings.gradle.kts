@@ -1,6 +1,12 @@
 pluginManagement {
     repositories {
-        google()
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
         mavenCentral()
         gradlePluginPortal()
     }
@@ -13,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MASTG-TEST-0001"
+rootProject.name = "MASTG-TEST0001"
 include(":app")
+ 

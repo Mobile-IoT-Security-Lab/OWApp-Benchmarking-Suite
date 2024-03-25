@@ -1,5 +1,3 @@
 <resources>
-    <string name="app_name">MASTG-TEST-0001</string>
-    <string name="SECRET_KEY">"secret_key"</string>
-
+    <string name="app_name">MASTG-TEST0001</string>
 </resources>
