@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
@@ -51,6 +52,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String credit= text1.getText().toString();
                 String pin= text2.getText().toString();
+                if (credit.equals("")|| pin.equals("")){
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast.makeText(MainActivity.this, "Fill the form", duration).show();
+
+                }
                 MainActivity.this.sendNotification(credit,pin);
             }
         });
