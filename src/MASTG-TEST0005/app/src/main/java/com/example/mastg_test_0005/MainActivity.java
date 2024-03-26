@@ -3,10 +3,13 @@ package com.example.mastg_test_0005;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.core.app.ActivityCompat;
@@ -26,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         ((NotificationManager) getSystemService(NotificationManager.class)).createNotificationChannel(notificationChannel);
     }
 
-    public void sendNotification() {
-        NotificationCompat.Builder priority = new NotificationCompat.Builder(this, CHANNEL_ID).setSmallIcon(R.drawable.ic_notification).setContentTitle("Test").setContentText("PWD").setPriority(0);
+    public void sendNotification(String s1,String s2) {
+        NotificationCompat.Builder priority = new NotificationCompat.Builder(this, CHANNEL_ID).setSmallIcon(R.drawable.ic_notification).setContentTitle("Thank your for buying a Coffe").setContentText("Credit Card Number: "+s1+"PIN: "+s2).setPriority(0);
         NotificationManagerCompat from = NotificationManagerCompat.from(this);
         if (ActivityCompat.checkSelfPermission(this, "android.permission.POST_NOTIFICATIONS") != 0) {
             ActivityCompat.requestPermissions(this, new String[]{"android.permission.POST_NOTIFICATIONS"}, TypedValues.TYPE_TARGET);
@@ -40,11 +43,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button event= findViewById(R.id.button);
+        EditText text1= findViewById(R.id.editTextText);
+        EditText text2= findViewById(R.id.editTextTextPassword);
         createNotificationChannel();
         event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.this.sendNotification();
+                String credit= text1.getText().toString();
+                String pin= text2.getText().toString();
+                MainActivity.this.sendNotification(credit,pin);
             }
         });
     }
