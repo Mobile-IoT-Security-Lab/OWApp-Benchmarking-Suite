@@ -1,8 +1,10 @@
 package com.example.mastg_test0002;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,17 +22,26 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_USERNAME = "username";
     private static final String KEY_IS_LOGGED_IN = "isLoggedIn";
     private void login(String username) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(KEY_USERNAME, username);
-        editor.putBoolean(KEY_IS_LOGGED_IN, true);
-        editor.apply();
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+
+        // Retrieve the value associated with the key
+        String value = sharedPreferences.getString(KEY_USERNAME,null);
+        Log.d("Prova",value);
+        if (username.equals("Pippo")) {
+            sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(KEY_IS_LOGGED_IN, true);
+            editor.apply();
+            Intent intent = new Intent(MainActivity.this, Activity2.class);
+            intent.putExtra("Username", username); // Opzionale: passa dati extra
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(MainActivity.this, "You did not enter the correct username", Toast.LENGTH_SHORT).show();
+            return;
+        }
     }
-    private void logout(String username) {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(KEY_USERNAME, username);
-        editor.putBoolean(KEY_IS_LOGGED_IN, false);
-        editor.apply();
-    }
+
 
     private SharedPreferences sharedPreferences;
     @Override
@@ -43,42 +54,40 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        TextView log= findViewById(R.id.textView2);
-        Button event= findViewById(R.id.button);
-        event.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText user= findViewById(R.id.editTextText);
-                login(user.getText().toString());
-                log.setText("Logged In");
-
-            }
-        });
-
-        // Simulating data retrieval
-        String username = sharedPreferences.getString(KEY_USERNAME, null);
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        String value = sharedPreferences.getString(KEY_USERNAME,null);
         boolean isLoggedIn = sharedPreferences.getBoolean(KEY_IS_LOGGED_IN, false);
+        Log.d("User2: :",""+value);
+        Log.d("IsLoggedIn1: ",""+!isLoggedIn);
+        if(!isLoggedIn) {
+            sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(KEY_USERNAME, "Pippo");
+            editor.putBoolean(KEY_IS_LOGGED_IN, false);
+            editor.apply();
+            Button event = findViewById(R.id.button);
+            event.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    EditText user = findViewById(R.id.editTextText);
+                    String check = user.getText().toString();
+                    if (check.matches("") || !check.equals("Pippo")) {
+                        Toast.makeText(MainActivity.this, "You did not enter a username", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    login(user.getText().toString());
 
-        if (isLoggedIn) {
-            Toast.makeText(this, "Welcome back, " + username + "!", Toast.LENGTH_SHORT).show();
-            log.setText("Logged In");
-
-        } else {
-            Toast.makeText(this, "Please login", Toast.LENGTH_SHORT).show();
-            log.setText("Not Logged In");
+                }
+            });
 
         }
-        Button out= findViewById(R.id.button2);
-        out.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText user= findViewById(R.id.editTextText);
-                logout(username);
-                log.setText("Logged out");
+        else {
+            Log.d("User1: :",""+value);
+            Log.d("IsLoggedIn: ",""+isLoggedIn);
+            Intent intent = new Intent(MainActivity.this, Activity2.class);
+            intent.putExtra("Username", value); // Opzionale: passa dati extra
+            startActivity(intent);
+        }
 
-
-            }
-        });
     }
 }

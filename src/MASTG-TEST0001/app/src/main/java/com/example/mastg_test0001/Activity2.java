@@ -29,7 +29,9 @@ public class Activity2 extends AppCompatActivity {
         });
         Toolbar toolbar=findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); Intent intent = getIntent();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Intent intent = getIntent();
         String User;
 // Controlla se ci sono dati extra associati a questo intent
         if (intent != null) {
