@@ -1,5 +1,8 @@
 package com.example.mastg_test_0014;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
@@ -7,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import java.math.BigInteger;
@@ -18,27 +22,6 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String DES_ALGORITHM = "DES";
-
-    public static String encrypt(String plainText, String secretKey) throws Exception {
-        DESKeySpec keySpec = new DESKeySpec(secretKey.getBytes());
-        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(DES_ALGORITHM);
-        SecretKey key = keyFactory.generateSecret(keySpec);
-        Cipher cipher = Cipher.getInstance(DES_ALGORITHM);
-        cipher.init(1, key);
-        byte[] encryptedBytes = cipher.doFinal(plainText.getBytes());
-        return Base64.encodeToString(encryptedBytes, 0);
-    }
-
-    public static String decrypt(String encryptedText, String secretKey) throws Exception {
-        DESKeySpec keySpec = new DESKeySpec(secretKey.getBytes());
-        SecretKeyFactory keyFactory = SecretKeyFactory.getInstance(DES_ALGORITHM);
-        SecretKey key = keyFactory.generateSecret(keySpec);
-        Cipher cipher = Cipher.getInstance(DES_ALGORITHM);
-        cipher.init(2, key);
-        byte[] decryptedBytes = cipher.doFinal(Base64.decode(encryptedText, 0));
-        return new String(decryptedBytes);
-    }
 
     public static String md5(String input) {
         try {
@@ -61,38 +44,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button event1= findViewById(R.id.button);
+        EditText u= findViewById(R.id.editTextText);
+        EditText p= findViewById(R.id.editTextText2);
+        String User;
+        String Pwd;
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+
+        // Check if preferences are empty
+        if (sharedPreferences.getAll().isEmpty()) {
+            // If preferences are empty, insert username and password
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("username", "Admin");
+            editor.putString("password", "1234");
+            editor.apply();
+        }
         event1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText editext1= findViewById(R.id.editTextText);
-                String message1=editext1.getText().toString();
-                EditText editText2= findViewById(R.id.editTextText2);
-                String secretkey=editText2.getText().toString();
-                String enc= null;
-                try {
-                    enc = encrypt(message1,secretkey);
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
+                if (u.getText().toString().equals("")||p.getText().toString().equals("")){
+                    Toast.makeText(MainActivity.this, "Fill the form", Toast.LENGTH_SHORT).show();
                 }
-                TextView res1= findViewById(R.id.res1);
-                res1.setText(enc);
-                try {
-                    Log.d("Decrypt: ",decrypt(enc,secretkey).toString());
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
+                else {
+                    String user=sharedPreferences.getString("username", "");
+                    String password=sharedPreferences.getString("password", "");
+                    if (user.equals(u.getText().toString()) && password.equals(p.getText().toString())) {
+                        Intent intent = new Intent(MainActivity.this, Profile.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(MainActivity.this, "Wrong Credential", Toast.LENGTH_SHORT).show();
+                    }
                 }
-
-            }
-        });
-        Button event2=findViewById(R.id.button2);
-        event2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText editText3=(findViewById(R.id.editTextText3));
-                TextView res2= findViewById(R.id.res2);
-                String message2=editText3.getText().toString();
-                String enc2=md5(message2);
-                res2.setText(enc2);
 
             }
         });
