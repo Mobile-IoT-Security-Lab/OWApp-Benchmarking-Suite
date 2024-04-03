@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MASTG-TEST0001</string>
+    <string name="pwd_super_secret">Talos2024</string>
+
 </resources>

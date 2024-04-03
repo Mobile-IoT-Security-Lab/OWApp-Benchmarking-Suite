@@ -39,5 +39,6 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
         Intent intent = new Intent(MainActivity.this, Activity2.class);
         intent.putExtra("Username", user.getText().toString()); // Opzionale: passa dati extra
-        startActivity(intent);    }
+        startActivity(intent);
+    }
 }
