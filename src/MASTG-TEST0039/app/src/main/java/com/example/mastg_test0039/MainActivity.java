@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0;i<10;i++){
             saveCredentialsToFile(generateUsername(),generatePassword());
         }
+
         EditText text1 = findViewById(R.id.editTextText);
         EditText text2 = findViewById(R.id.editTextTextPassword);
         Button login = findViewById(R.id.button);
