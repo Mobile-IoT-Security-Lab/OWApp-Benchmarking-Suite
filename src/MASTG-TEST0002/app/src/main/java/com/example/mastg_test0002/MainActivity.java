@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Retrieve the value associated with the key
         String value = sharedPreferences.getString(KEY_USERNAME,null);
-        Log.d("Prova",value);
         if (username.equals("Pippo")) {
             sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
