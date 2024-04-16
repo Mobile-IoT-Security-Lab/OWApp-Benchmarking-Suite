@@ -5,3 +5,5 @@
         The default and safest behavior on Android is to let the default web browser open any link that the user might click inside the WebView.
         However,this default logic can be modified by configuring a WebViewClient which allows navigation requests to be handled by the app itself. (admin,1234)</string>
 </resources>
+
+
