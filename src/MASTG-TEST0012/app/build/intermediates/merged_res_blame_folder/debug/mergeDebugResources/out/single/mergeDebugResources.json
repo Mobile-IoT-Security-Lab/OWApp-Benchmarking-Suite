@@ -1,0 +1,122 @@
+[
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-xxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-ldpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-hdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-hdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-xhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/xml_backup_rules.xml.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-xxxhdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-xhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-anydpi-v21/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/layout_activity_main.xml.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-xxxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-ldpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-ldpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-mdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "com.example.mastg_test_0012.app-debug-31:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.example.mastg_test_0012.app-main-33:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-debug-31:/drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "/Users/talos/.gradle/daemon/8.4/com.example.mastg_test_0012.app-pngs-27:/drawable-hdpi/ic_launcher_background.png"
+    }
+]

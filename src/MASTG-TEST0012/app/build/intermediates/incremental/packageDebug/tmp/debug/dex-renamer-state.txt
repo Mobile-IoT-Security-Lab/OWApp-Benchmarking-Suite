@@ -1,0 +1,4 @@
+#Mon Apr 22 11:10:04 CEST 2024
+base.0=/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,130 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.mastg_test_0012"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="18"
+9        android:targetSdkVersion="34" />
+10
+11    <permission
+11-->[androidx.core:core:1.9.0] /Users/talos/.gradle/caches/transforms-3/1c981cacaf211a05fae97b7272486038/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+12        android:name="com.example.mastg_test_0012.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.9.0] /Users/talos/.gradle/caches/transforms-3/1c981cacaf211a05fae97b7272486038/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.9.0] /Users/talos/.gradle/caches/transforms-3/1c981cacaf211a05fae97b7272486038/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.example.mastg_test_0012.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.9.0] /Users/talos/.gradle/caches/transforms-3/1c981cacaf211a05fae97b7272486038/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.9.0] /Users/talos/.gradle/caches/transforms-3/1c981cacaf211a05fae97b7272486038/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:5:5-24:19
+18        android:allowBackup="true"
+18-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:6:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.9.0] /Users/talos/.gradle/caches/transforms-3/1c981cacaf211a05fae97b7272486038/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+20        android:dataExtractionRules="@xml/data_extraction_rules"
+20-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:7:9-65
+21        android:debuggable="true"
+22        android:extractNativeLibs="true"
+23        android:fullBackupContent="@xml/backup_rules"
+23-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:8:9-54
+24        android:icon="@mipmap/ic_launcher"
+24-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:9:9-43
+25        android:label="@string/app_name"
+25-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:10:9-41
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:11:9-54
+27        android:supportsRtl="true"
+27-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:12:9-35
+28        android:testOnly="true"
+29        android:theme="@style/Theme.MASTGTEST0012" >
+29-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:13:9-51
+30        <activity
+30-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:15:9-23:20
+31            android:name="com.example.mastg_test_0012.MainActivity"
+31-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:16:13-41
+32            android:exported="true" >
+32-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:17:13-36
+33            <intent-filter>
+33-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:18:13-22:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:19:17-69
+34-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:19:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:21:17-77
+36-->/Users/talos/Desktop/OWASP-MSTG-Benchmark/src/MASTG-TEST0012/app/src/main/AndroidManifest.xml:21:27-74
+37            </intent-filter>
+38        </activity>
+39
+40        <provider
+40-->[androidx.emoji2:emoji2:1.2.0] /Users/talos/.gradle/caches/transforms-3/b434d91b7a35e8b4d5f601b6c183fa42/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+41            android:name="androidx.startup.InitializationProvider"
+41-->[androidx.emoji2:emoji2:1.2.0] /Users/talos/.gradle/caches/transforms-3/b434d91b7a35e8b4d5f601b6c183fa42/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+42            android:authorities="com.example.mastg_test_0012.androidx-startup"
+42-->[androidx.emoji2:emoji2:1.2.0] /Users/talos/.gradle/caches/transforms-3/b434d91b7a35e8b4d5f601b6c183fa42/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+43            android:exported="false" >
+43-->[androidx.emoji2:emoji2:1.2.0] /Users/talos/.gradle/caches/transforms-3/b434d91b7a35e8b4d5f601b6c183fa42/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+44            <meta-data
+44-->[androidx.emoji2:emoji2:1.2.0] /Users/talos/.gradle/caches/transforms-3/b434d91b7a35e8b4d5f601b6c183fa42/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+45                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+45-->[androidx.emoji2:emoji2:1.2.0] /Users/talos/.gradle/caches/transforms-3/b434d91b7a35e8b4d5f601b6c183fa42/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+46                android:value="androidx.startup" />
+46-->[androidx.emoji2:emoji2:1.2.0] /Users/talos/.gradle/caches/transforms-3/b434d91b7a35e8b4d5f601b6c183fa42/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+47            <meta-data
+47-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/talos/.gradle/caches/transforms-3/83cc24653f5354aacca69a7d06bc67e4/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+48                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+48-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/talos/.gradle/caches/transforms-3/83cc24653f5354aacca69a7d06bc67e4/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+49                android:value="androidx.startup" />
+49-->[androidx.lifecycle:lifecycle-process:2.6.1] /Users/talos/.gradle/caches/transforms-3/83cc24653f5354aacca69a7d06bc67e4/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+50            <meta-data
+50-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+51                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+51-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+52                android:value="androidx.startup" />
+52-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+53        </provider>
+54
+55        <receiver
+55-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+56            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+56-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+57            android:directBootAware="false"
+57-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+58            android:enabled="true"
+58-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+59            android:exported="true"
+59-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+60            android:permission="android.permission.DUMP" >
+60-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+61            <intent-filter>
+61-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+62                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+62-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+62-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+63            </intent-filter>
+64            <intent-filter>
+64-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+65                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+66            </intent-filter>
+67            <intent-filter>
+67-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+68                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+69            </intent-filter>
+70            <intent-filter>
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+71                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/talos/.gradle/caches/transforms-3/d3c1646fc36935bb7693598fad3032e7/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+72            </intent-filter>
+73        </receiver>
+74    </application>
+75
+76</manifest>

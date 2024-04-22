@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">MASTG-TEST-0012</string>
+    <string name="overview">
+        Apps that process or query sensitive information should run in a trusted and secure environment. To create this environment, the app can check the device for the following:\n
+
+- PIN- or password-protected device locking\n
+- Recent Android OS version\n
+- USB Debugging activation\n
+- Device encryption\n
+- Device rooting (see also "Testing Root Detection")\n
+    </string>
+    <style name="Base.Theme.MASTGTEST0012" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.MASTGTEST0012" parent="Base.Theme.MASTGTEST0012"/>
+</resources>
