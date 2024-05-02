@@ -1,4 +1,4 @@
-com.example.mastg_test_0012
+com.example.mastg_test0012
 anim abc_fade_in
 anim abc_fade_out
 anim abc_grow_fade_in_from_bottom
@@ -3240,6 +3240,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextTime
 id edit_query
 id elastic
 id embed
@@ -3516,6 +3517,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
 id textView2
 id textView3
 id textView4
@@ -3529,6 +3531,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timerVal
 id title
 id titleDividerNoCustom
 id title_template

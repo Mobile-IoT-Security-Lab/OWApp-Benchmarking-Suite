@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.mastg_test_0012.app-mergeDebugResources-29:/values-km/values-km.xml",
+            "outputFile": "com.example.mastg_test0012.app-mergeDebugResources-29:/values-km/values-km.xml",
             "map": [
                 {
-                    "source": "/Users/talos/.gradle/caches/transforms-3/59e2eca23194645b17aa8fe30ed14f57/transformed/appcompat-1.6.1/res/values-km/values-km.xml",
+                    "source": "/Users/lucaferrari/.gradle/caches/transforms-3/b88084b88231bd19a287067b2b52e8ec/transformed/core-1.9.0/res/values-km/values-km.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "102",
+                        "startColumns": "4",
+                        "startOffsets": "8590",
+                        "endColumns": "100",
+                        "endOffsets": "8686"
+                    }
+                },
+                {
+                    "source": "/Users/lucaferrari/.gradle/caches/transforms-3/eff6ade032d6fb6849813639e26f4c11/transformed/appcompat-1.6.1/res/values-km/values-km.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/talos/.gradle/caches/transforms-3/b22e8f24271d4914e73a465b71473313/transformed/material-1.11.0/res/values-km/values-km.xml",
+                    "source": "/Users/lucaferrari/.gradle/caches/transforms-3/d992937e7b52743c834b79a00e6082a4/transformed/material-1.11.0/res/values-km/values-km.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -37,23 +54,6 @@
                         "endLines": "5,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100",
                         "endColumns": "12,77,75,79,78,78,99,111,79,64,93,69,61,86,62,64,58,64,60,56,118,57,60,56,70,129,85,77,137,74,70,149,96,77,54,55,65,79,89,85,84,78,76,69,74,111,87,72,99,98,73,75,106,53,89,72,90,95,61,63,62,70,98,97,91,95,57,59,82",
                         "endOffsets": "314,3080,3156,3236,3315,3394,3494,3606,3686,3751,3845,3915,3977,4064,4127,4192,4251,4316,4377,4434,4553,4611,4672,4729,4800,4930,5016,5094,5232,5307,5378,5528,5625,5703,5758,5814,5880,5960,6050,6136,6221,6300,6377,6447,6522,6634,6722,6795,6895,6994,7068,7144,7251,7305,7395,7468,7559,7655,7717,7781,7844,7915,8014,8112,8204,8300,8358,8418,8501"
-                    }
-                },
-                {
-                    "source": "/Users/talos/.gradle/caches/transforms-3/1c981cacaf211a05fae97b7272486038/transformed/core-1.9.0/res/values-km/values-km.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "102",
-                        "startColumns": "4",
-                        "startOffsets": "8590",
-                        "endColumns": "100",
-                        "endOffsets": "8686"
                     }
                 }
             ]

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.mastg_test_0012.app-mergeDebugResources-29:/values-or/values-or.xml",
+            "outputFile": "com.example.mastg_test0012.app-mergeDebugResources-29:/values-or/values-or.xml",
             "map": [
                 {
-                    "source": "/Users/talos/.gradle/caches/transforms-3/b22e8f24271d4914e73a465b71473313/transformed/material-1.11.0/res/values-or/values-or.xml",
+                    "source": "/Users/lucaferrari/.gradle/caches/transforms-3/d992937e7b52743c834b79a00e6082a4/transformed/material-1.11.0/res/values-or/values-or.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/talos/.gradle/caches/transforms-3/1c981cacaf211a05fae97b7272486038/transformed/core-1.9.0/res/values-or/values-or.xml",
+                    "source": "/Users/lucaferrari/.gradle/caches/transforms-3/b88084b88231bd19a287067b2b52e8ec/transformed/core-1.9.0/res/values-or/values-or.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "/Users/talos/.gradle/caches/transforms-3/59e2eca23194645b17aa8fe30ed14f57/transformed/appcompat-1.6.1/res/values-or/values-or.xml",
+                    "source": "/Users/lucaferrari/.gradle/caches/transforms-3/eff6ade032d6fb6849813639e26f4c11/transformed/appcompat-1.6.1/res/values-or/values-or.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

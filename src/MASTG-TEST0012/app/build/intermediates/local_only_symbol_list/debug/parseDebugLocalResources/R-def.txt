@@ -4,10 +4,14 @@ color black
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+id editTextTime
 id main
+id start
+id textView
 id textView2
 id textView3
 id textView4
+id timerVal
 id toolbar
 layout activity_main
 mipmap ic_launcher
