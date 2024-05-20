@@ -68,6 +68,14 @@ public class Activity extends AppCompatActivity {
         s.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!u.getText().toString().isEmpty()||!e.getText().toString().isEmpty()) {
+                    userList.add(new User(u.getText().toString(), e.getText().toString()));
+                    Toast.makeText(Activity.this, "User appended to the List", Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+                    Toast.makeText(Activity.this, "Fill the Form!", Toast.LENGTH_SHORT).show();
+                }
                 saveUserList(Activity.this,userList);
                 Toast.makeText(Activity.this, "List Correctly Saved", Toast.LENGTH_SHORT).show();
             }
