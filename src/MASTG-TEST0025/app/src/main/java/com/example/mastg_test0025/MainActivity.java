@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         catch(Exception e) {
-            Log.d("Diva-sqli", "Error occurred while creating database for SQLI: " + e.getMessage());
+            Log.d("sqli", "Error occurred while creating database for SQLI: " + e.getMessage());
         }
     }
     public void search(View view) {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             } catch (Exception e) {
-                Log.d("Diva-sqli", "Error occurred while searching in database: " + e.getMessage());
+                Log.d("sqli", "Error occurred while searching in database: " + e.getMessage());
             }
         }
         else {
