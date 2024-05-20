@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     String val = text.getText().toString();
                     webView.loadUrl(val);
-                    Log.d("cioa", "ciao"+val);
                 }
             }
         });
