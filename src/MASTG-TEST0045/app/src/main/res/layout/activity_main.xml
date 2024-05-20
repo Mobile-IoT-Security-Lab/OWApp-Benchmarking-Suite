@@ -48,7 +48,7 @@
         android:id="@+id/textView4"
         android:layout_width="310dp"
         android:layout_height="84dp"
-        android:text="Testing Root Detection is a crucial step in order to avoid malicious attack.In order to have a secure app you should avoid that rooted devices can use it."
+        android:text="@string/overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.405"

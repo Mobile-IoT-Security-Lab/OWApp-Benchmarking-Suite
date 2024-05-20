@@ -17,13 +17,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView text=findViewById(R.id.textView5);
         TextView Secret= findViewById(R.id.scrt);
-        if (isDeviceRooted()){
-            text.setText("To Show the secret the device must not be rooted!");
-        }
-        else {
+
             text.setText("Device not Rooted :)");
             Secret.setText("Talos sec");
-        }
     }
     public static boolean isDeviceRooted() {
         // List of common root-related files and directories
