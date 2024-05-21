@@ -47,7 +47,7 @@
         android:id="@+id/textView4"
         android:layout_width="259dp"
         android:layout_height="109dp"
-        android:text="This test case focuses on identifying potentially sensitive data stored by an application and verifying if it is securely stored."
+        android:text="@string/overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
