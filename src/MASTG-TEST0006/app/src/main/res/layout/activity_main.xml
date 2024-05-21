@@ -46,7 +46,7 @@
         android:id="@+id/textView4"
         android:layout_width="304dp"
         android:layout_height="189dp"
-        android:text=" This test case is focused on ensuring that sensitive information input fields in an Android application are properly configured to prevent keyboard caching. It involves checking the layout definition of activities to verify that TextViews with input fields have the appropriate XML attributes set to disable keyboard suggestions, specifically using android:inputType=&quot;textNoSuggestions&quot;.  "
+        android:text="@string/overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
