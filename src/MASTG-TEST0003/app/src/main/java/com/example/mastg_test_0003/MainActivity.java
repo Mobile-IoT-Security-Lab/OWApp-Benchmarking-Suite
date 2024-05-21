@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         String privateKey = "my_secret_private_key";
+        Log.d("PWD", "Password: "+pwd);
         Log.v("SECRET", "Private key: " + privateKey);
         // Simulating the logging of sensitive data (e.g., private key)
         Log.d("SECRET", "Private key: " + privateKey);
