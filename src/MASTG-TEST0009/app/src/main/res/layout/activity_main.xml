@@ -48,7 +48,7 @@
         android:id="@+id/textView4"
         android:layout_width="259dp"
         android:layout_height="109dp"
-        android:text="This test case focuses on showing data leakage vulnerability through the backup vulnerability"
+        android:text="@string/overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
