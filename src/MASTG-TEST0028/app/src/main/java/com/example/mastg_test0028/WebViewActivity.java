@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,7 +35,9 @@ public class WebViewActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        WebView myWebView = (WebView) findViewById(R.id.webview);
+        WebView myWebView =findViewById(R.id.webview);
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.setWebChromeClient(new WebChromeClient());
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setLoadWithOverviewMode(true);
@@ -42,16 +46,17 @@ public class WebViewActivity extends AppCompatActivity {
         if (data != null) {
             // Find the index of "url="
             int index = String.valueOf(data).indexOf("=")+1;
-            Log.d("Index", "onCreate: "+index);
             // Extract the substring starting from index after "url="
             if (index != -1) {
                 String result = String.valueOf(data).substring(index);
-                Log.d("ANdrea", "onCreate: "+data);
                 myWebView.loadUrl(String.valueOf(result));
         }
-        else{
-            myWebView.loadUrl(String.valueOf("https://example.com"));
-        }
+            else{
+                myWebView.loadUrl("https://www.example.com");
+            }
     }
+        else{
+            myWebView.loadUrl("https://www.example.com");
+        }
 }
 }

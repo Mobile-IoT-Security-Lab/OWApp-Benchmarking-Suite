@@ -1,5 +1,6 @@
 package com.example.mastg_test0028;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        CreateFile();
         EditText u= findViewById(R.id.editTextText);
         EditText p= findViewById(R.id.editTextText2);
         Button l= findViewById(R.id.button);
@@ -100,5 +103,19 @@ public class MainActivity extends AppCompatActivity {
         }
         return false; // Credentials not found or error occurred
     }
+    public void CreateFile(){
+        String fileName = "credentials.txt"; // Name of the file to create
+        String fileContents = "Username: admin Password: 1234";
 
+        try {
+            Context context = this; // Replace getContext() with your app's context retrieval
+
+            FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
+            fos.write(fileContents.getBytes());
+            fos.close();
+            System.out.println("File created: " + fileName);
+        } catch (IOException e) {
+            System.out.println("Error occurred while creating the file: " + e.getMessage());
+        }
+    }
 }

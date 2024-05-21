@@ -91,7 +91,7 @@
         android:id="@+id/textView4"
         android:layout_width="351dp"
         android:layout_height="212dp"
-        android:text="This test case focuses on identifying potentially sensitive data crypted with insecure Any existing deep links (including App Links) can potentially increase the app attack surface. This includes many risks ↗ such as link hijacking, sensitive functionality exposure, etc.  All deep links must be enumerated and verified for correct website association. The actions they perform must be well tested, especially all input data, which should be deemed untrustworthy and thus should always be validated. (Admin,1234)"
+        android:text="@string/overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
