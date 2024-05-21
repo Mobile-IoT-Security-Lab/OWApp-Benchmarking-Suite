@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         if (checkAvailability()) {
-            Toast.makeText(getApplicationContext(), "OK",
+            Toast.makeText(getApplicationContext(), "Sensor ready to use",
                             Toast.LENGTH_SHORT)
                     .show();
-        }
+
         executor = ContextCompat.getMainExecutor(this);
         biometricPrompt = new BiometricPrompt(MainActivity.this,
                 executor, new BiometricPrompt.AuthenticationCallback() {
@@ -60,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
                 super.onAuthenticationSucceeded(result);
                 Toast.makeText(getApplicationContext(),
                         "Authentication succeeded!", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(i);
             }
 
             @Override
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             biometricPrompt.authenticate(promptInfo);
         });
     }
-
+    }
     private boolean checkAvailability() {
         BiometricManager biometricManager = BiometricManager.from(this);
         switch (biometricManager.canAuthenticate(BIOMETRIC_STRONG | DEVICE_CREDENTIAL)) {
