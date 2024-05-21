@@ -46,7 +46,7 @@
         android:id="@+id/textView4"
         android:layout_width="263dp"
         android:layout_height="61dp"
-        android:text="This test case focuses on showing an insecure mechanism of Login session through the Java.Util.Random Library"
+        android:text="@string/overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
