@@ -80,25 +80,27 @@ public class MainActivity extends AppCompatActivity {
         );
         if (cursor != null) {
             try {
-                while (cursor.moveToNext()) {
-                    // Retrieve data from the cursor
-                    int id = cursor.getInt(cursor.getColumnIndex("id"));
-                    String name_db = cursor.getString(cursor.getColumnIndex("name"));
-                    String pwd_db = cursor.getString(cursor.getColumnIndex("pwd"));
+                if (cursor.moveToFirst()) {
+                    do {
+                        // Retrieve data from the cursor
+                        int id = cursor.getInt(cursor.getColumnIndex("id"));
+                        String name_db = cursor.getString(cursor.getColumnIndex("name"));
+                        String pwd_db = cursor.getString(cursor.getColumnIndex("pwd"));
 
-                    // Process the retrieved data as needed
-                    Log.d("User", "ID: " + id + ", Name: " + name_db + ", Password: " + pwd_db);
-                    Toast.makeText(MainActivity.this, "Logged IN", Toast.LENGTH_LONG).show();
-
+                        // Process the retrieved data as needed
+                        Log.d("User", "ID: " + id + ", Name: " + name_db + ", Password: " + pwd_db);
+                        Toast.makeText(MainActivity.this, "Correct!", Toast.LENGTH_LONG).show();
+                    } while (cursor.moveToNext());
+                } else {
+                    // User does not exist, display a toast
+                    Toast.makeText(MainActivity.this, "User does not exist or incorrect credentials", Toast.LENGTH_LONG).show();
                 }
-
-            }  catch(Exception e){
-                Toast.makeText(MainActivity.this, "Wrong Credentials", Toast.LENGTH_LONG).show();
-
+            } catch(Exception e){
+                Toast.makeText(MainActivity.this, "Error occurred", Toast.LENGTH_LONG).show();
+            } finally {
+                cursor.close(); // Close the cursor when done
             }
-            cursor.close(); // Close the cursor when done
 
-        }
-        Toast.makeText(MainActivity.this, "Wrong Credentials", Toast.LENGTH_LONG).show();
+    }
     }
 }
