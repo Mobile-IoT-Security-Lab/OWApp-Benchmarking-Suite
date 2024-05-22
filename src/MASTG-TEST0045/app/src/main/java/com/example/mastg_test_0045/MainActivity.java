@@ -15,11 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView text=findViewById(R.id.textView5);
         TextView Secret= findViewById(R.id.scrt);
-
-            text.setText("Device not Rooted :)");
-            Secret.setText("Talos sec");
+        Secret.setText("Talos sec");
     }
     public static boolean isDeviceRooted() {
         // List of common root-related files and directories
