@@ -68,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
                 if (parts.length == 4 && parts[0].equals("Username:") && parts[2].equals("Password:")) {
                     String storedUsername = parts[1];
                     String storedPassword = parts[3];
-                    Log.d("Username"," "+storedUsername);
-                    Log.d("Password"," "+storedPassword);
                     // Remove any trailing spaces
                     storedUsername = storedUsername.trim();
                     storedPassword = storedPassword.trim();
@@ -103,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
             // Open the file in append mode
             fos = openFileOutput("credentials.txt", MODE_APPEND);
             String data = "Username: " + username + " Password: " + password + "\n"; // Add newline for separation
+            Log.d("Credentials", ""+data);
             fos.write(data.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
