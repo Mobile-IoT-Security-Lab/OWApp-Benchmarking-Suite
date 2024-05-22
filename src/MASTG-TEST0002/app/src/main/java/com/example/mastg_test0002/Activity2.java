@@ -55,7 +55,6 @@ public class Activity2 extends AppCompatActivity {
         out.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Pippo",view.getText().toString().substring(7));
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(KEY_USERNAME, view.getText().toString().substring(7));
                 editor.putBoolean(KEY_IS_LOGGED_IN, false);

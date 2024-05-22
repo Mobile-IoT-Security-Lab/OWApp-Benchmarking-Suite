@@ -71,7 +71,7 @@
         android:id="@+id/textView4"
         android:layout_width="357dp"
         android:layout_height="111dp"
-        android:text="For any publicly accessible data storage, any process can override the data. This means that input validation needs to be applied the moment the data is read back again."
+        android:text="@string/overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

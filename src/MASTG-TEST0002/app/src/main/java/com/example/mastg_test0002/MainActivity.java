@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Retrieve the value associated with the key
         String value = sharedPreferences.getString(KEY_USERNAME,null);
-        if (username.equals("Pippo")) {
+        if (username.equals("admin")) {
             sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean(KEY_IS_LOGGED_IN, true);
@@ -56,12 +56,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         String value = sharedPreferences.getString(KEY_USERNAME,null);
         boolean isLoggedIn = sharedPreferences.getBoolean(KEY_IS_LOGGED_IN, false);
-        Log.d("User2: :",""+value);
-        Log.d("IsLoggedIn1: ",""+!isLoggedIn);
         if(!isLoggedIn) {
             sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(KEY_USERNAME, "Pippo");
+            editor.putString(KEY_USERNAME, "admin");
             editor.putBoolean(KEY_IS_LOGGED_IN, false);
             editor.apply();
             Button event = findViewById(R.id.button);
@@ -70,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     EditText user = findViewById(R.id.editTextText);
                     String check = user.getText().toString();
-                    if (check.matches("") || !check.equals("Pippo")) {
+                    if (check.matches("") || !check.equals("admin")) {
                         Toast.makeText(MainActivity.this, "You did not enter a username", Toast.LENGTH_SHORT).show();
                         return;
                     }
@@ -81,8 +79,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else {
-            Log.d("User1: :",""+value);
-            Log.d("IsLoggedIn: ",""+isLoggedIn);
             Intent intent = new Intent(MainActivity.this, Activity2.class);
             intent.putExtra("Username", value); // Opzionale: passa dati extra
             startActivity(intent);
