@@ -27,6 +27,6 @@ public class WebViewActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         WebView v= findViewById(R.id.view);
-        v.loadUrl("https://talos-sec.com/");
+        v.loadUrl("https://www.talos-sec.com/");
     }
 }
