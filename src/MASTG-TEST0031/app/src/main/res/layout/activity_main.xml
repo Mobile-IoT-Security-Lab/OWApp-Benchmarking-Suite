@@ -48,7 +48,7 @@
         android:id="@+id/textView4"
         android:layout_width="346dp"
         android:layout_height="124dp"
-        android:text="To test for JavaScript execution in WebViews check the app for WebView usage and evaluate whether or not each WebView should allow JavaScript execution. If JavaScript execution is required for the app to function normally, then you need to ensure that the app follows the all best practices.  "
+        android:text="@string/overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
