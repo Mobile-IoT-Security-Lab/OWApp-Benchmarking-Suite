@@ -48,7 +48,7 @@
         android:id="@+id/textView5"
         android:layout_width="340dp"
         android:layout_height="34dp"
-        android:text="In order to have a secure App is important to obfuscate the code inside it!"
+        android:text="@string/overview"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
