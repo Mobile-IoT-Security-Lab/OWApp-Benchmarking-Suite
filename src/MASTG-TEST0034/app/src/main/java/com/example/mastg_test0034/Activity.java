@@ -49,22 +49,8 @@ public class Activity extends AppCompatActivity {
         EditText e=findViewById(R.id.mail);
         Button s= findViewById(R.id.button2);
         Button r= findViewById(R.id.button3);
-        Button a= findViewById(R.id.button4);
         userList = new ArrayList<>();
         TextView t= findViewById(R.id.textView);
-        a.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!u.getText().toString().isEmpty()||!e.getText().toString().isEmpty()) {
-                    userList.add(new User(u.getText().toString(), e.getText().toString()));
-                    Toast.makeText(Activity.this, "User appended to the List", Toast.LENGTH_SHORT).show();
-
-                }
-                else {
-                    Toast.makeText(Activity.this, "Fill the Form!", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
         s.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
