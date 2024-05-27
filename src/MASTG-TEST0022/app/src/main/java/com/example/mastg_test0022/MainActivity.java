@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         Button n=findViewById(R.id.button2);
-        Button y = findViewById(R.id.button);
         n.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,30 +61,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }).execute(apiUrl);
-            }
-        });
-        y.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://example.com/";
-
-                MyHttpClient.makeHttpGetRequest(url, new MyHttpClient.OnRequestCompleteListener() {
-                    @Override
-                    public void onSuccess(String response) {
-                        // Handle successful response here
-                        Log.d("HTTP GET Response", response);
-                        Toast.makeText(MainActivity.this, "Success Request without SSL pinning", Toast.LENGTH_SHORT).show();
-                        // Now you can use 'response' in your application logic
-                    }
-
-                    @Override
-                    public void onError(String error) {
-                        // Handle error here
-                        Log.e("HTTP GET Error", error);
-                        Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
-
-                    }
-                });
             }
         });
 
