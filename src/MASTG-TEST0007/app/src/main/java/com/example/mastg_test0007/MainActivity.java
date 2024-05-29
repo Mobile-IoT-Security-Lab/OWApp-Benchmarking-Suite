@@ -68,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
     public void checkUser(View view, String user, String pwd) {
         // Define the selection criteria
         String selection = "name = '"+user+ "' AND pwd ='"+pwd+"'";
-        //String[] selectionArgs = new String[]{user,pwd};
 
 // Perform the query using ContentResolver
         Cursor cursor = getContentResolver().query(
