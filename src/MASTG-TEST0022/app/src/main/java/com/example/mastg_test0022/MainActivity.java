@@ -20,12 +20,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import okhttp3.CertificatePinner;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
 public class MainActivity extends AppCompatActivity {
+    String apiUrlPinning = "https://www.example.com/";
+    String apiUrl="https://publicobject.com/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +34,36 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Button n=findViewById(R.id.button2);
+        Button n=findViewById(R.id.NoPinning);
+        Button y = findViewById(R.id.Pinning);
+        y.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new MakeGetRequest(new MakeGetRequest.OnRequestListener() {
+                    @Override
+                    public void onSuccess(String response) {
+                        // Handle successful response here
+                        Log.d("HTTP GET Response", response);
+                        Toast.makeText(MainActivity.this, "Success Request without SSL pinning", Toast.LENGTH_SHORT).show();
+                        // Now you can use 'response' in your application logic
+                    }
+
+                    @Override
+                    public void onError(String error) {
+                        // Handle error here
+                        Log.e("HTTP GET Error", error);
+                        Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
+
+                    }
+                }).execute(apiUrlPinning);
+            }
+        });
+
+
+
         n.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String apiUrl = "https://www.example.com/";
 
                 // Execute AsyncTask to make GET request
                 new MakeGetRequest(new MakeGetRequest.OnRequestListener() {
