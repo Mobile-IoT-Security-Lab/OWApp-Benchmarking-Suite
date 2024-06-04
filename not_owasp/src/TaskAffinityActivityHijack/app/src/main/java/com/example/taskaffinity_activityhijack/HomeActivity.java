@@ -29,11 +29,10 @@ public class HomeActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
         iv = (TextView) findViewById(R.id.imageView);
         takePic = (Button) findViewById(R.id.takePic);
         takePic.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +53,7 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onActivityResult(int requestCode, int responseCode, Intent data) {
         super.onActivityResult(requestCode, responseCode, data);

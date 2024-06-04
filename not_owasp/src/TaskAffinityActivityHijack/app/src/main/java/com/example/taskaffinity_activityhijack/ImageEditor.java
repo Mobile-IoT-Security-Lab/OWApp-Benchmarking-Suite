@@ -25,10 +25,7 @@ public class ImageEditor extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar4);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         Intent intent = getIntent();
         String img = intent.getStringExtra("image");
         TextView tv = (TextView) findViewById(R.id.editImg);
