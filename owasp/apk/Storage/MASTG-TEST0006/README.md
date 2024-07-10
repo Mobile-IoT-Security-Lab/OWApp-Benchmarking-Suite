@@ -14,7 +14,6 @@ Alternatively, the developer can use the following constants:
 
 Check the application code to verify that none of the input types are being overwritten. For example, by doing findViewById(R.id.KeyBoardCache).setInputType(InputType.TYPE_CLASS_TEXT) the input type of the input field KeyBoardCache is set to text reenabling the keyboard cache.
 
-```
 | XML android:inputType      | Code InputType                      | API level |
 |------------------------------|---------------------------------------|-----------|
 | [textPassword](https://developer.android.com/reference/android/text/InputType.html#TYPE_TEXT_VARIATION_PASSWORD)      | TYPE_TEXT_VARIATION_PASSWORD      | 3         |
@@ -22,5 +21,4 @@ Check the application code to verify that none of the input types are being over
 | [numberPassword](https://developer.android.com/reference/android/text/InputType.html#TYPE_NUMBER_VARIATION_PASSWORD)    | TYPE_NUMBER_VARIATION_PASSWORD    | 11        |
 | [textWebPassword](https://developer.android.com/reference/android/text/InputType.html#TYPE_TEXT_VARIATION_WEB_PASSWORD)   | TYPE_TEXT_VARIATION_WEB_PASSWORD   | 11        |
 
-```
 Finally, check the minimum required SDK version in the Android Manifest (android:minSdkVersion) since it must support the used constants (for example, Android SDK version 11 is required for textWebPassword). Otherwise, the compiled app would not honor the used input type constants allowing keyboard caching.
