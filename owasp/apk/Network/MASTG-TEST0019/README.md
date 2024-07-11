@@ -1,7 +1,9 @@
-# MASTG-TEST-0019: Testing Data Encryption on the Network
-## Overview
-## Static Analysis
-## Testing Network Requests over Secure Protocols
+# MASTG-TEST-0019: Testing Data Encryption on the Network
+## Overview
+## Static Analysis
+
+## Testing Network Requests over Secure Protocols
+
 First, you should identify all network requests in the source code and ensure that no plain HTTP URLs are used. Make sure that sensitive information is sent over secure channels by using [`HttpsURLConnection ↗`](https://developer.android.com/reference/javax/net/ssl/HttpsURLConnection.html) or [`SSLSocket ↗`](https://developer.android.com/reference/javax/net/ssl/SSLSocket.html) (for socket-level communication using TLS).
 
 ## Testing Network API Usage
