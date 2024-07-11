@@ -57,7 +57,7 @@ Example in Kotlin:
 ```
 Log.v("Private key tag", StringBuilder("Private key [byte format]: ").append(key).toString())
 ```
-ProGuard guarantees removal of the Log.v method call. Whether the rest of the code (new StringBuilder ...) will be removed depends on the complexity of the code and the ProGuard version ↗.
+ProGuard guarantees removal of the Log.v method call. Whether the rest of the code (new StringBuilder ...) will be removed depends on the complexity of the code and the ProGuard version .
 
 This is a security risk because the (unused) string leaks plain text data into memory, which can be accessed via a debugger or memory dumping.
 

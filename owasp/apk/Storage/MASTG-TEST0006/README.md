@@ -8,7 +8,7 @@ In the layout definition of an activity, you can define TextViews that have XML 
         android:inputType="textNoSuggestions" />
 
 ```
-The code for all input fields that take sensitive information should include this XML attribute to disable the keyboard suggestions ↗.
+The code for all input fields that take sensitive information should include this XML attribute to disable the keyboard suggestions .
 
 Alternatively, the developer can use the following constants:
 
