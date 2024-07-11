@@ -1,8 +1,8 @@
 # MASTG-TEST-0021: Testing Endpoint Identify Verification
 
-## Overview
+## Overview
 
-## Static Analysis
+## Static Analysis
 
 Using TLS to transport sensitive information over the network is essential for security. However, encrypting communication between a mobile application and its backend API is not trivial. Developers often decide on simpler but less secure solutions (e.g., those that accept any certificate) to facilitate the development process, and sometimes these weak solutions make it into the production version , potentially exposing users to man-in-the-middle attacks .
 
@@ -106,10 +106,10 @@ myWebView.setWebViewClient(new WebViewClient(){
 });
 ```
 
-## Apache Cordova Certificate Verification¶
+## Apache Cordova Certificate Verification¶
 Implementation of the Apache Cordova framework's internal WebView usage will ignore TLS errors  in the method `onReceivedSslError` if the flag `android:debuggable` is enabled in the application manifest. Therefore, make sure that the app is not debuggable. See the test case "Testing If the App is Debuggable".
 
-## Hostname Verification
+## Hostname Verification
 Another security flaw in client-side TLS implementations is the lack of hostname verification. Development environments usually use internal addresses instead of valid domain names, so developers often disable hostname verification (or force an application to allow any hostname) and simply forget to change it when their application goes to production. The following code disables hostname verification:
 
 ```
