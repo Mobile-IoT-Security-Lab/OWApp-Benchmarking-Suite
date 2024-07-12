@@ -1,10 +1,10 @@
 # MASTG-TEST-0035: Testing for Overlay Attacks
-## Overview
+## Overview
 To test for overlay attacks you need to check the app for usage of certain APIs and attributed typically used to protect against overlay attacks as well as check the Android version that app is targeting.
 
 To mitigate these attacks please carefully read the general guidelines about Android View security in the [Android Developer Documentation ↗](https://developer.android.com/reference/android/view/View#security). For instance, the so-called touch filtering is a common defense against tapjacking, which contributes to safeguarding users against these vulnerabilities, usually in combination with other techniques and considerations as we introduce in this section.
 
-## Static Analysis
+## Static Analysis
 To start your static analysis you can check the app for the following methods and attributes (non-exhaustive list):
 
 - Override `onFilterTouchEventForSecurity`  for more fine-grained control and to implement a custom security policy for views.
