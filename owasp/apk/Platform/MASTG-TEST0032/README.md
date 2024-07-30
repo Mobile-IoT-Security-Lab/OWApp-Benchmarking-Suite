@@ -1,4 +1,4 @@
-# MASTG-TEST-0032: Testing WebView Protocol Handlers
+# [MASTG-TEST-0032: Testing WebView Protocol Handlers](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0032)
 ## Overview
 To test for WebView protocol handlers check the app for WebView usage and evaluate whether or not the WebView should have resource access. If resource access is necessary you need to verify that it's implemented following best practices.
 

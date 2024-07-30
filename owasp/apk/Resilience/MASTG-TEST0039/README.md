@@ -1,5 +1,6 @@
-# MASTG-TEST-0039: Testing whether the App is Debuggable
+# [MASTG-TEST-0039: Testing whether the App is Debuggable](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0039)
 ## Overview
+MASVS-RESILIENCE-4 / MSTG-CODE-2 / May 08, 2023
 # Static Analysis
 Check `AndroidManifest.xml` to determine whether the `android:debuggable` attribute has been set and to find the attribute's value:
 

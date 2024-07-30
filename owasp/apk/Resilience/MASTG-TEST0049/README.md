@@ -1,4 +1,8 @@
-# MASTG-TEST-0049: Testing Emulator Detection
+# [MASTG-TEST-0049: Testing Emulator Detection](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0049)
+## Overview
+
+MASVS-RESILIENCE-1 / MSTG-RESILIENCE-5 / May 11, 2024
+
 ## Bypassing Emulator Detection
 1. Patch the emulator detection functionality. Disable the unwanted behavior by simply overwriting the associated bytecode or native code with NOP instructions.
 2. Use Frida or Xposed APIs to hook file system APIs on the Java and native layers. Return innocent-looking values (preferably taken from a real device) instead of the telltale emulator values. For example, you can override the TelephonyManager.getDeviceID method to return an IMEI value.

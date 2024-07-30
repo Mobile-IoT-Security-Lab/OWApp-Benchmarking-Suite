@@ -1,5 +1,6 @@
-# MASTG-TEST-0044: Make Sure That Free Security Features Are Activated
+# [MASTG-TEST-0044: Make Sure That Free Security Features Are Activated](https://mas.owasp.org/MASTG/tests/android/MASVS-CODE/MASTG-TEST-0044)
 ## Overview
+MASVS-CODE-4 / MSTG-CODE-9 / May 08, 2023
 ## Static Analysis
 Test the app native libraries to determine if they have the PIE and stack smashing protections enabled.
 

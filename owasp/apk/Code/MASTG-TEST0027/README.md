@@ -1,6 +1,8 @@
-# MASTG-TEST-0027: Testing for URL Loading in WebViews
+# [MASTG-TEST-0027: Testing for URL Loading in WebViews](https://mas.owasp.org/MASTG/tests/android/MASVS-CODE/MASTG-TEST-0027)
 ## Overview
 In order to test for URL loading in WebViews you need to carefully analyze handling page navigation, especially when users might be able to navigate away from a trusted environment. The default and safest behavior on Android is to let the default web browser open any link that the user might click inside the WebView. However, this default logic can be modified by configuring a WebViewClient which allows navigation requests to be handled by the app itself.
+
+MASVS-CODE-4 / MSTG-PLATFORM-2 / May 08, 2023
 ## Static Analysis
 To test if the app is overriding the default page navigation logic by configuring a `WebViewClient` you should search for and inspect the following interception callback functions:
 

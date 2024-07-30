@@ -1,4 +1,4 @@
-# MASTG-TEST-0012: Testing the Device-Access-Security Policy
+# [MASTG-TEST-0012: Testing the Device-Access-Security Policy](https://mas.owasp.org/MASTG/tests/android/MASVS-STORAGE/MASTG-TEST-0012)
 
 ## Overview
 
@@ -9,7 +9,7 @@ Apps that process or query sensitive information should run in a trusted and sec
 - USB Debugging activation
 - Device encryption
 - Device rooting (see also "Testing Root Detection")
-
+MASVS-STORAGE-1 / MSTG-STORAGE-11 / May 08, 2023
 ## Static Analysis
 
 To test the device-access-security policy that the app enforces, a written copy of the policy must be provided. The policy should define available checks and their enforcement. For example, one check could require that the app run only on Android 6.0 (API level 23) or a more recent version, closing the app or displaying a warning if the Android version is less than 6.0.

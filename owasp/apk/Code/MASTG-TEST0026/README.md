@@ -1,6 +1,7 @@
-# MASTG-TEST-0026: Testing Implicit Intents
+# [MASTG-TEST-0026: Testing Implicit Intents](https://mas.owasp.org/MASTG/tests/android/MASVS-CODE/MASTG-TEST-0026/)
 ## Overview
 When testing for implicit intents you need to check if they are vulnerable to injection attacks or potentially leaking sensitive data.
+MASVS-CODE-4 / MSTG-PLATFORM-2 / May 08, 2023
 ## Static Analysis
 Inspect the Android Manifest and look for any <intent> signatures defined inside blocks ↗ (which specify the set of other apps an app intends to interact with), check if it contains any system actions (e.g. `android.intent.action.GET_CONTENT`, `android.intent.action.PICK`, `android.media.action.IMAGE_CAPTURE`, etc.) and browse the source code for their occurrence.
 

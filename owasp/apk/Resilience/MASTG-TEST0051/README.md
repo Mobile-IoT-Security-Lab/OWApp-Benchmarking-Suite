@@ -1,5 +1,6 @@
-# MASTG-TEST-0051: Testing Obfuscation
+# [MASTG-TEST-0051: Testing Obfuscation](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0051)
 ## Overview
+MASVS-RESILIENCE-3 / MSTG-RESILIENCE-9 / May 13, 2024
 ## Static Analysis
 Decompile the APK and review it to determine whether the codebase has been obfuscated.
 

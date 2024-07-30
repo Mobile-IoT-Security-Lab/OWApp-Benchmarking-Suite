@@ -1,5 +1,6 @@
-# MASTG-TEST-0013: Testing Symmetric Cryptography
+# [MASTG-TEST-0013: Testing Symmetric Cryptography](https://mas.owasp.org/MASTG/tests/android/MASVS-CRYPTO/MASTG-TEST-0013)
 ## Overview
+MASVS-CRYPTO-1 / MSTG-CRYPTO-1 / May 13, 2024
 ## Static  Analysis
 Identify all the instances of symmetric key encryption in code and look for any mechanism which loads or provides a symmetric key. You can look for:
 

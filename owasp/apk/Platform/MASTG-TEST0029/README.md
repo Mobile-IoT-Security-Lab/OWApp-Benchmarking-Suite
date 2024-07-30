@@ -1,8 +1,10 @@
-# MASTG-TEST-0029: Testing for Sensitive Functionality Exposure Through IPC
+# [MASTG-TEST-0029: Testing for Sensitive Functionality Exposure Through IPC](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0029)
 
 ## Overview
 
 To test for [sensitive functionality exposure through IPC](https://owasp.org/www-project-mobile-security-testing-guide/mas/0x07a-Testing-for-Sensitive-Functionality-Exposure-Through-IPC.html) mechanisms you should first enumerate all the IPC mechanisms the app uses and then try to identify whether sensitive data is leaked when the mechanisms are used.
+
+MASVS-PLATFORM-1 / MSTG-PLATFORM-4 / May 08, 2023
 
 ## Static Analysis
 

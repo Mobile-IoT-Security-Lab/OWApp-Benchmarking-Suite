@@ -1,5 +1,7 @@
-# MASTG-TEST-0042: Checking for Weaknesses in Third Party Libraries
+# [MASTG-TEST-0042: Checking for Weaknesses in Third Party Libraries](https://mas.owasp.org/MASTG/tests/android/MASVS-CODE/MASTG-TEST-0042)
 ## Overview
+
+MASVS-CODE-3 / MSTG-CODE-5 / September 29, 2023
 ## Static Analysis
 Detecting vulnerabilities in third party dependencies can be done by means of the OWASP Dependency checker. This is best done by using a gradle plugin, such as `dependency-check-gradle`. In order to use the plugin, the following steps need to be applied: Install the plugin from the Maven central repository by adding the following script to your build.gradle:
 

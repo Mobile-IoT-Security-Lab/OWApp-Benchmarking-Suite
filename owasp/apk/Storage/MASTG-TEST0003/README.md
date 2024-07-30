@@ -1,4 +1,4 @@
-# MASTG-TEST-0003: Testing Logs for Sensitive Data
+# [MASTG-TEST-0003: Testing Logs for Sensitive Data](https://mas.owasp.org/MASTG/tests/android/MASVS-STORAGE/MASTG-TEST-0003)
 
 ## Overview
 
@@ -10,6 +10,7 @@ This test case focuses on identifying any sensitive application data within both
 
 As a general recommendation to avoid potential sensitive application data leakage, logging statements should be removed from production releases unless deemed necessary to the application or explicitly identified as safe, e.g. as a result of a security audit.
 
+MASVS-STORAGE-2 / MSTG-STORAGE-3 / May 08, 2023
 ## Static Analysis
 
 Applications will often use the Log Class and Logger Class to create logs. To discover this, you should audit the application's source code for any such logging classes. These can often be found by searching for the following keywords:
