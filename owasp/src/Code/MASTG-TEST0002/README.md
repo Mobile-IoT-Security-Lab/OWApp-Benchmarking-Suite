@@ -1,8 +1,11 @@
-# MASTG-TEST-0002: Testing Local Storage for Input Validation
+# [MASTG-TEST-0002: Testing Local Storage for Input Validation](https://mas.owasp.org/MASTG/tests/android/MASVS-CODE/MASTG-TEST-0002s)
 ## Overview
 For any publicly accessible data storage, any process can override the data. This means that input validation needs to be applied the moment the data is read back again.
 
 Note: The same is true for private accessible data on a rooted device
+
+MASVS-CODE-4 / MSTG-PLATFORM-2 / May 08, 2023
+
 
 ## Static analysis
 ## Using Shared Preferences

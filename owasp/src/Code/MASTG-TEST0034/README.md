@@ -1,4 +1,4 @@
-# MASTG-TEST-0034: Testing Object Persistence
+# [MASTG-TEST-0034: Testing Object Persistence](https://mas.owasp.org/MASTG/tests/android/MASVS-CODE/MASTG-TEST-0034)
 ## Overview
 To test for object persistence being used for storing sensitive information on the device, first identify all instances of object serialization and check if they carry any sensitive data. If yes, check if is properly protected against eavesdropping or unauthorized modification.
 
@@ -15,6 +15,7 @@ For high-risk applications that focus on availability, we recommend that you use
 - the attacker might be able to manipulate the reflection-based steps to execute business logic.
 See the chapter "Android Anti-Reversing Defenses" for more details.
 
+MASVS-CODE-4 / MSTG-PLATFORM-8 / July 13, 2024
 ## Static Analysis
 ## Object Serialization
 Search the source code for the following keywords:

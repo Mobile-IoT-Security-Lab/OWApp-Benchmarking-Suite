@@ -1,4 +1,4 @@
-# MASTG-TEST-0011: Testing Memory for Sensitive Data
+# [MASTG-TEST-0011: Testing Memory for Sensitive Data](https://mas.owasp.org/MASTG/tests/android/MASVS-STORAGE/MASTG-TEST-0011)
 
 ## Overview
 
@@ -10,6 +10,7 @@ To investigate an application's memory, you must first create a memory dump. You
 
 Therefore, you are better off starting with static analysis.
 
+MASVS-STORAGE-2 / MSTG-STORAGE-10 / May 11, 2024
 ## Static Analysis
 
 When performing static analysis to identify sensitive data that is exposed in memory, you should:

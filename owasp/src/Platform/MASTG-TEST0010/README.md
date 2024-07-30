@@ -1,6 +1,7 @@
-# MASTG-TEST-0010: Finding Sensitive Information in Auto-Generated Screenshots
+# [MASTG-TEST-0010: Finding Sensitive Information in Auto-Generated Screenshots](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0010)
 
 ## Overview
+MASVS-PLATFORM-3 / MSTG-STORAGE-9 / May 08, 2023
 ## Static Analysis
 A screenshot of the current activity is taken when an Android app goes into background and displayed for aesthetic purposes when the app returns to the foreground. However, this may leak sensitive information.
 

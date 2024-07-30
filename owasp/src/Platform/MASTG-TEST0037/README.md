@@ -1,9 +1,9 @@
-# MASTG-TEST-0037: Testing WebViews Cleanup
+# [MASTG-TEST-0037: Testing WebViews Cleanup](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0037)
 
 ## Overview
 
 To test for [WebViews cleanup](https://developer.android.com/guide/webapps/managing-webview) you should inspect all APIs related to WebView data deletion and try to fully track the data deletion process.
-
+MASVS-PLATFORM-2 / MSTG-PLATFORM-10 / May 08, 2023
 ## Static Analysis
 
 Start by identifying the usage of the following WebView APIs and carefully validate the mentioned best practices.

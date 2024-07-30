@@ -1,7 +1,7 @@
-# MASTG-TEST-0022: Testing Custom Certificate Stores and Certificate Pinning
+# [MASTG-TEST-0022: Testing Custom Certificate Stores and Certificate Pinning](https://mas.owasp.org/MASTG/tests/android/MASVS-NETWORK/MASTG-TEST-0022)
 
 ## Overview
-
+MASVS-NETWORK-2 / MSTG-NETWORK-4 / April 27, 2024
 ## Static Analysis
 
 ## Network Security Configuration

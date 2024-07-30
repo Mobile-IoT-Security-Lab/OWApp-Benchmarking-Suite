@@ -1,4 +1,4 @@
-# MASTG-TEST-0028: Testing Deep Links
+# [MASTG-TEST-0028: Testing Deep Links](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0028)
 ## Overview
 Any existing deep links (including App Links) can potentially increase the app attack surface. This includes many risks ↗ such as link hijacking, sensitive functionality exposure, etc.
 
@@ -8,6 +8,8 @@ Any existing deep links (including App Links) can potentially increase the app a
 All deep links must be enumerated and verified for correct website association. The actions they perform must be well tested, especially all input data, which should be deemed untrustworthy and thus should always be validated.
 
 None of the input from these sources can be trusted; it must be validated and/or sanitized. Validation ensures processing of data that the app is expecting only. If validation is not enforced, any input can be sent to the app, which may allow an attacker or malicious app to exploit app functionality.
+
+MASVS-PLATFORM-1 / MSTG-PLATFORM-3 / May 13, 2024
 ## Static Analysis
 ## Check for ANdroid OS Version
 The Android version in which the app runs also influences the risk of using deep links. Inspect the Android Manifest to check if minSdkVersion is 31 or higher.

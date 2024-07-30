@@ -1,7 +1,7 @@
-# MASTG-TEST-0030: Testing for Vulnerable Implementation of PendingIntent
+# [MASTG-TEST-0030: Testing for Vulnerable Implementation of PendingIntent](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0030)
 ## Overview
 When testing Pending Intents you must ensure that they are immutable and that the app explicitly specifies the exact package, action, and component that will receive the base intent.
-
+MASVS-PLATFORM-1 / MSTG-PLATFORM-4 / May 08, 2023
 ## Static Analysis
 To identify vulnerable implementations, static analysis can be performed by looking for API calls used for obtaining a PendingIntent. Such APIs are listed below:
 ```

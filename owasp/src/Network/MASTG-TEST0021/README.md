@@ -1,7 +1,7 @@
-# MASTG-TEST-0021: Testing Endpoint Identify Verification
+# [MASTG-TEST-0021: Testing Endpoint Identify Verification](https://mas.owasp.org/MASTG/tests/android/MASVS-NETWORK/MASTG-TEST-0021)
 
 ## Overview
-
+MASVS-NETWORK-1 / MSTG-NETWORK-3 / September 29, 2023
 ## Static Analysis
 
 Using TLS to transport sensitive information over the network is essential for security. However, encrypting communication between a mobile application and its backend API is not trivial. Developers often decide on simpler but less secure solutions (e.g., those that accept any certificate) to facilitate the development process, and sometimes these weak solutions make it into the production version , potentially exposing users to man-in-the-middle attacks .

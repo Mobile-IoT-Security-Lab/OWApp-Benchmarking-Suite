@@ -1,5 +1,6 @@
-# MASTG-TEST-0008: Checking for Sensitive Data Disclosure Through the User Interface
+# [MASTG-TEST-0008: Checking for Sensitive Data Disclosure Through the User Interface](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0008)
 ## Overview
+MASVS-PLATFORM-3 / MSTG-STORAGE-7 / May 08, 2023
 ## Static Analysis
 Carefully review all UI components that either show such information or take it as input. Search for any traces of sensitive information and evaluate if it should be masked or completely removed.
 

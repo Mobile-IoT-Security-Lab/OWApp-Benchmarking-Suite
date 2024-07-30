@@ -1,4 +1,6 @@
-# MASTG-TEST-0045: Testing Root Detection
+# [MASTG-TEST-0045: Testing Root Detection](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0045)
+## Overview 
+MASVS-RESILIENCE-1 / MSTG-RESILIENCE-1 / May 08, 2023
 ## Bypassing Root Detection
 Run execution traces with jdb, DDMS ↗, `strace`, and/or kernel modules to find out what the app is doing. You'll usually see all kinds of suspect interactions with the operating system, such as opening su for reading and obtaining a list of processes. These interactions are surefire signs of root detection. Identify and deactivate the root detection mechanisms, one at a time. If you're performing a black box resilience assessment, disabling the root detection mechanisms is your first step.
 

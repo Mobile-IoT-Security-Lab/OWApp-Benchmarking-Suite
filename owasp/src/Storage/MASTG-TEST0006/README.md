@@ -1,5 +1,6 @@
-# MASTG-TEST-0006: Determining Whether the Keyboard Cache Is Disabled for Text Input Fields
+# [MASTG-TEST-0006: Determining Whether the Keyboard Cache Is Disabled for Text Input Fields](https://mas.owasp.org/MASTG/tests/android/MASVS-STORAGE/MASTG-TEST-0006)
 ## Overview
+MASVS-STORAGE-2 / MSTG-STORAGE-5 / May 08, 2023
 ## Static Analysis
 In the layout definition of an activity, you can define TextViews that have XML attributes. If the XML attribute android:inputType is given the value textNoSuggestions, the keyboard cache will not be shown when the input field is selected. The user will have to type everything manually.
 ```

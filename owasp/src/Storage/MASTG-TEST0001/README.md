@@ -1,4 +1,4 @@
-# MASTG-TEST-0001: Testing Local Storage for Sensitive Data
+# [MASTG-TEST-0001: Testing Local Storage for Sensitive Data](https://mas.owasp.org/MASTG/tests/android/MASVS-STORAGE/MASTG-TEST-0001)
 
 ## Overview
 
@@ -11,6 +11,7 @@ This test case focuses on identifying potentially sensitive data stored by an ap
 
 **NOTE:** For MAM/GMS I compliance, it is sufficient to store data encrypted in the application’s internal storage directory (sandbox). For L2 compliance, additional encryption is required using cryptographic keys securely managed in the Android Keystore. This includes using envelope encryption (AES-256) or equivalent methods, or using the Android Security Library’s [EncryptedFile API](https://developer.android.com/reference/androidx/security/crypto/EncryptedFile).
 
+MASVS-STORAGE-1 / MSTG-STORAGE-1 / MSTG-STORAGE-2 / March 01, 2024
 ## Static Analysis
 
 First of all, try to determine the kind of storage used by the Android app and find where the app processes sensitive data insecurely.

@@ -1,4 +1,6 @@
-# MASTG-TEST-0048: Testing Reverse Engineering Tools Detection
+# [MASTG-TEST-0048: Testing Reverse Engineering Tools Detection](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0048)
+## Overview 
+MASVS-RESILIENCE-4 / MSTG-RESILIENCE-4 / May 11, 2024
 ## Effectiveness Assessment
 Launch the app with various reverse engineering tools and frameworks installed in your test device. Include at least the following: Frida, Xposed, Substrate for Android, RootCloak, Android SSL Trust Killer.
 

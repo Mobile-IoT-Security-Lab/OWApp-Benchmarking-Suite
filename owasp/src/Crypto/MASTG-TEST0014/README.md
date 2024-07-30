@@ -1,7 +1,7 @@
-# MASTG-TEST-0014: Testing the Configuration of Cryptographic Standard Algorithms
+# [MASTG-TEST-0014: Testing the Configuration of Cryptographic Standard Algorithms](https://mas.owasp.org/MASTG/tests/android/MASVS-CRYPTO/MASTG-TEST-0014)
 
 ## Overview
-
+MASVS-CRYPTO-1 / MSTG-CRYPTO-2 / MSTG-CRYPTO-3 / MSTG-CRYPTO-4 / May 13, 2024
 ## Static Analysis
 Identify all the instances of the cryptographic primitives in code. Identify all custom cryptography implementations. You can look for:
 

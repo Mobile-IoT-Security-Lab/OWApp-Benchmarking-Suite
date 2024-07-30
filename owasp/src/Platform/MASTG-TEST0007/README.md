@@ -1,7 +1,7 @@
-# MASTG-TEST-0007: Determining Whether Sensitive Stored Data Has Been Exposed via IPC Mechanisms
+# [MASTG-TEST-0007: Determining Whether Sensitive Stored Data Has Been Exposed via IPC Mechanisms](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0007)
 
 ## Overview
-
+MASVS-PLATFORM-1 / MSTG-STORAGE-6 / May 08, 2023
 ### Static Analysis
 
 The first step is to look at `AndroidManifest.xml` to detect content providers exposed by the app. You can identify content providers by the `<provider>` element. Complete the following steps:

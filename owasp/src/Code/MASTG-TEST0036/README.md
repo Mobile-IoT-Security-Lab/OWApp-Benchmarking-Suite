@@ -1,5 +1,6 @@
-# MASTG-TEST-0036: Testing Enforced Updating
+# [MASTG-TEST-0036: Testing Enforced Updating](https://mas.owasp.org/MASTG/tests/android/MASVS-CODE/MASTG-TEST-0036)
 ## Overview
+MASVS-CODE-2 / MSTG-ARCH-9 / May 08, 2023
 ## Static Analysis
 The code sample below shows the example of an app-update:
 ```

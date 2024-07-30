@@ -1,5 +1,6 @@
-# MASTG-TEST-0041: Testing for Debugging Code and Verbose Error Logging
+# [MASTG-TEST-0041: Testing for Debugging Code and Verbose Error Logging](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0041)
 ## Overview
+MASVS-RESILIENCE-3 / MSTG-CODE-4 / May 08, 2023
 ## Static Analysis
 To determine whether `StrictMode` is enabled, you can look for the `StrictMode.setThreadPolicy` or `StrictMode.setVmPolicy` methods. Most likely, they will be in the onCreate method.
 

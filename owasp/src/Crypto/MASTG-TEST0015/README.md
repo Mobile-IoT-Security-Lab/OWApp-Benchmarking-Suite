@@ -1,7 +1,7 @@
-# MASTG-TEST-0015: Testing the Purposes of Keys
+# [MASTG-TEST-0015: Testing the Purposes of Keys](https://mas.owasp.org/MASTG/tests/android/MASVS-CRYPTO/MASTG-TEST-0015)
 
 ## Overview
-
+MASVS-CRYPTO-2 / MSTG-CRYPTO-5 / May 13, 2024
 ## Static Analysis
 
 Identify all instances where cryptography is used. You can look for:

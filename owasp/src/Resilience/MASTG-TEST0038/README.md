@@ -1,5 +1,6 @@
-# MASTG-TEST-0038: Making Sure that the App is Properly Signed
+# [MASTG-TEST-0038: Making Sure that the App is Properly Signed](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0038)
 ## Overview
+MASVS-RESILIENCE-2 / MSTG-CODE-1 / May 08, 2023
 ## Static Analysis
 Make sure that the release build has been signed via both the v1 and v2 schemes for Android 7.0 (API level 24) and above and via all the three schemes for Android 9 (API level 28) and above, and that the code-signing certificate in the APK belongs to the developer.
 
