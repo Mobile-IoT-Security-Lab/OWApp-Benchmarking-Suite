@@ -75,7 +75,7 @@ public class Note extends AppCompatActivity {
     private void logout() {
         Intent intent = new Intent(Note.this, MainActivity.class);
         startActivity(intent);
-        
+
     }
 
     public static String getTextFromFile(Context context) {
