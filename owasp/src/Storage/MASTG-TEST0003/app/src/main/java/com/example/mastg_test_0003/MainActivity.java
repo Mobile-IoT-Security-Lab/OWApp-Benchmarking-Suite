@@ -34,5 +34,6 @@ public class MainActivity extends AppCompatActivity {
         Log.v("SECRET", "Private key: " + privateKey);
         // Simulating the logging of sensitive data (e.g., private key)
         Log.d("SECRET", "Private key: " + privateKey);
+        System.out.println("Super Secret");
     }
 }
