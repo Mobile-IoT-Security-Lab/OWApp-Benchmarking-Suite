@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean checkCredentials(String enteredUsername, String enteredPassword) {
-        File file = new File("/data/data/com.example.mastg_test0012a/files/credentials.txt");
+        File file = new File("/data/data/com.example.mastg_test0012/files/credentials.txt");
         FileInputStream fis = null;
         InputStreamReader isr = null;
         BufferedReader br = null;

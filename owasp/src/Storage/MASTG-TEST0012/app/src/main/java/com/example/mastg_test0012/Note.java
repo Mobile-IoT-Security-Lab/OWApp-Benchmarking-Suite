@@ -23,9 +23,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Note extends AppCompatActivity {
-    private String encryptionKey;
-    private static final String ALGORITHM = "AES";
-    private static final String TRANSFORMATION = "AES/ECB/PKCS5Padding";
+
     private static final String PREF_NAME = "MyPrefs";
     private static final String TEXT_KEY = "savedText";
 
@@ -46,6 +44,7 @@ public class Note extends AppCompatActivity {
         Button saveNota= findViewById(R.id.save);
         String txt=getTextFromFile(this);
         TextView savedResults= findViewById(R.id.textView7);
+        getTextFromFile(Note.this);
         savedResults.append(txt+"\n");
 
         saveNota.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +55,8 @@ public class Note extends AppCompatActivity {
                 }
                 else{
                     try {
-                        encryptAndSave(nota.getText().toString());
+                        saveTextToFile(Note.this,nota.getText().toString()+"\n");
+                        getTextFromFile(Note.this);
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
@@ -71,47 +71,32 @@ public class Note extends AppCompatActivity {
             }
         });
     }
-    private String generateEncryptionKey() {
-        return "Talos";
-    }
+
     private void logout() {
-        // Vulnerability 7: Not clearing sensitive data on sign out
-        // Simulating sign out
-        this.encryptionKey = null; // Not properly clearing sensitive data from memory
         Intent intent = new Intent(Note.this, MainActivity.class);
         startActivity(intent);
     }
-    public static String encryptNote(String text, String key) {
-        // Create a mapping between the alphabet and the key
-        String alphabet = "abcdefghijklmnopqrstuvwxyz";
-        StringBuilder encryptedText = new StringBuilder();
 
-        for (char c : text.toCharArray()) {
-            int index = alphabet.indexOf(Character.toLowerCase(c));
-            if (index != -1) {
-                char encryptedChar = key.charAt(index % key.length());
-                encryptedChar = Character.isUpperCase(c) ? Character.toUpperCase(encryptedChar) : encryptedChar;
-                encryptedText.append(encryptedChar);
-            } else {
-                encryptedText.append(c);  // Keep non-alphabetic characters unchanged
+    public static String getTextFromFile(Context context) {
+        StringBuilder stringBuilder = new StringBuilder();
+        FileInputStream fileInputStream;
+        try {
+            fileInputStream = context.openFileInput("note.txt");
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
+            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                stringBuilder.append(line).append(",\n");
             }
+            fileInputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return stringBuilder.toString();
+    }
 
-        return encryptedText.toString();
-    }
-    private void encryptAndSave(String note) throws Exception {
-        // Vulnerability 4: Not overwriting sensitive data
-        this.encryptionKey = generateEncryptionKey();
-        String res=encryptNote(note,this.encryptionKey);
-        TextView x= findViewById(R.id.textView7);
-        x.append(res+"\n");
-        Log.d( "encryptAndSave: ",""+res);
-        saveTextToFile(this,res+"\n");
-        // Perform encryption using this.encryptionKey
-    }
     public static void saveTextToFile(Context context, String text) {
         FileOutputStream outputStream;
-
         try {
             outputStream = context.openFileOutput("note.txt", Context.MODE_APPEND);
             outputStream.write(text.getBytes());
@@ -120,26 +105,6 @@ public class Note extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-    public static String getTextFromFile(Context context) {
-        StringBuilder stringBuilder = new StringBuilder();
-        FileInputStream fileInputStream;
 
-        try {
-            fileInputStream = context.openFileInput("note.txt");
-            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream);
-            BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                stringBuilder.append(line).append(",\n");
-            }
-
-            fileInputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return stringBuilder.toString();
-    }
 
 }
