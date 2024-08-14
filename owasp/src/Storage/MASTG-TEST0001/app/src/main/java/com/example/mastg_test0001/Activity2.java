@@ -4,12 +4,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -30,7 +33,7 @@ public class Activity2 extends AppCompatActivity {
         Toolbar toolbar=findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        SecureDatabaseHelper db= new SecureDatabaseHelper(this);
         Intent intent = getIntent();
         String User;
 // Controlla se ci sono dati extra associati a questo intent
@@ -40,12 +43,25 @@ public class Activity2 extends AppCompatActivity {
             // Controlla se ci sono dati extra e recuperali utilizzando la chiave specificata
             if (extras != null) {
                 String user = extras.getString("Username");
-                SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_WORLD_READABLE);
                 String Sp = sharedPreferences.getString(user, "");
                 TextView view= findViewById(R.id.textView);
                 view.setText("Username: "+user+" Password: "+Sp);
             }
         }
+
+        EditText secret = findViewById(R.id.secret);
+        Button sndDB= findViewById(R.id.sendToDB);
+        sndDB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean res=db.insertData(secret.getText().toString());
+                if (res)
+                    Toast.makeText(Activity2.this, "Secret Inserted Correctly", Toast.LENGTH_LONG).show();
+                else Toast.makeText(Activity2.this, "Error", Toast.LENGTH_LONG).show();
+
+            }
+        });
 
     }
 }

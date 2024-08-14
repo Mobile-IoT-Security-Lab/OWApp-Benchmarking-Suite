@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.android.application)
 }
 
 android {
@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.mastg_test0001"
-        minSdk = 26
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -19,7 +19,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -29,7 +32,8 @@ android {
 }
 
 dependencies {
-
+    implementation ("net.zetetic:android-database-sqlcipher:4.5.3")
+    implementation ("androidx.sqlite:sqlite:2.1.0")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
