@@ -15,9 +15,9 @@
         <activity
             android:name=".Profile"
             android:exported="false"
-            android:parentActivityName=".Login"/>
+            android:parentActivityName=".MainActivity"/>
         <activity
-            android:name=".Login"
+            android:name=".Registration"
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
         <activity

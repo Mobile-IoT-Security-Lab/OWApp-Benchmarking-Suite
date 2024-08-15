@@ -1,8 +1,10 @@
 package com.example.mastg_test0015;
 
+import static com.example.mastg_test0015.CryptoUtil.encrypt;
+import static com.example.mastg_test0015.CryptoUtil.getStaticKey;
+
+import android.content.Context;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,55 +18,105 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Profile extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_profile);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        Toolbar toolbar = findViewById(R.id.toolbar3);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        EditText e= findViewById(R.id.enc);
-        EditText d= findViewById(R.id.dec);
-        TextView resE=findViewById(R.id.encRes);
-        TextView resD=findViewById(R.id.decRes);
-        Button encB=findViewById(R.id.encButton);
-        Button decB= findViewById(R.id.decButton);
-        Crypt obj= new Crypt();
-        encB.setOnClickListener(new View.OnClickListener() {
+        protected void onCreate (Bundle savedInstanceState){
+            super.onCreate(savedInstanceState);
+            EdgeToEdge.enable(this);
+            setContentView(R.layout.activity_profile);
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            });
+        Toolbar toolbar = findViewById(R.id.bar);
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            EditText pwd= findViewById(R.id.textPwd);
+            Button save= findViewById(R.id.enc);
+            TextView showContent= findViewById(R.id.content);
+            showContent.setText(readFileContent("pwd.txt"));
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (e.getText().toString().isEmpty()){
-                    Toast.makeText(Profile.this, "Fill the Input", Toast.LENGTH_SHORT).show();
+
+                String enc_pwd= null;
+                try {
+                    enc_pwd = encrypt(pwd.getText().toString()+"\n",getStaticKey());
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
-                else {
-                    Log.d("TAG", "onClick: "+obj.encryptData(e.getText().toString()));
-                    resE.setText(obj.encryptData(e.getText().toString()));
-                }
-            }
-        });
-        decB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (e.getText().toString().isEmpty()){
-                    Toast.makeText(Profile.this, "Fill the Input", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    resD.setText(obj.decryptData(d.getText().toString().getBytes()));
-                }
+                saveStringToFile(enc_pwd+"\n");
+                showContent.append(enc_pwd+"\n");
             }
         });
     }
 
 
+    private void saveStringToFile(String text) {
+        String fileName="pwd.txt";
+        try {
+            File file = new File(fileName);
+            if (!file.exists()) {
+                if (file.createNewFile()) {
+                    Toast.makeText(this, "File created successfully", Toast.LENGTH_SHORT).show();                } else {
+                    Toast.makeText(this, "Impossible to create the file", Toast.LENGTH_SHORT).show();                }
+            } else {
+                Toast.makeText(this, "File already existing", Toast.LENGTH_SHORT).show();            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        FileOutputStream fos = null;
+        try {
+            fos = openFileOutput(fileName, Context.MODE_APPEND);
+            fos.write(text.getBytes());
+            Toast.makeText(this, "Pwd saved successfully", Toast.LENGTH_SHORT).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Error saving Pwd", Toast.LENGTH_SHORT).show();
+        } finally {
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    private String readFileContent(String fileName) {
+        FileInputStream fis = null;
+        StringBuilder content = new StringBuilder();
+        try {
+            fis = openFileInput(fileName);
+            BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+            String line;
+            while ((line = br.readLine()) != null) {
+                content.append(line).append("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return content.toString();
+    }
 }
+
+
