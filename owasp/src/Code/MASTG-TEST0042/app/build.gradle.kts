@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.mastg_test0042"
-    compileSdk = 34
+    compileSdk = 24
 
     defaultConfig {
         applicationId = "com.example.mastg_test0042"
@@ -29,7 +29,8 @@ android {
 }
 
 dependencies {
-
+    implementation ("org.apache.logging.log4j:log4j-core:2.14.1") // Vulnerable version
+    implementation ("org.apache.logging.log4j:log4j-api:2.14.1") // Vulnerable version
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

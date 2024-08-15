@@ -1,6 +1,8 @@
 package com.example.mastg_test0027;
 
 import android.os.Bundle;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -10,6 +12,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.io.ByteArrayInputStream;
 
 public class WebViewActivity extends AppCompatActivity {
 
@@ -25,9 +29,12 @@ public class WebViewActivity extends AppCompatActivity {
         });
         Toolbar toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
-        WebView webView = findViewById(R.id.webView);
+        WebView webView = findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewActivity.CustomWebViewClient());
-        webView.loadUrl("https://example.com");
+        webView.loadUrl("https://wwww.example.com");
+        WebView webView2 = findViewById(R.id.webview2);
+        webView2.setWebViewClient(new WebViewActivity.CustomWebViewClient());
+        webView2.loadUrl("https://www.malicious.com.com");
     }
     private class CustomWebViewClient extends WebViewClient {
         @Override
@@ -36,5 +43,23 @@ public class WebViewActivity extends AppCompatActivity {
             view.loadUrl(url);
             return true; // Vulnerable! Doesn't properly validate the URL
         }
+        @Override
+        public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+            String url = request.getUrl().toString();
+
+            // Vulnerable: Intercepts the request without proper validation
+            if (url.contains("malicious")) {
+                String mimeType = "text/html";
+                String encoding = "UTF-8";
+                String responseContent = "<html><body><h1>Blocked Content</h1></body></html>";
+
+                // Returning a crafted response without any validation or logging
+                return new WebResourceResponse(mimeType, encoding, new ByteArrayInputStream(responseContent.getBytes()));
+            }
+
+            // If not intercepted, let the WebView handle the request as usual
+            return super.shouldInterceptRequest(view, request);
+        }
     }
+
 }
