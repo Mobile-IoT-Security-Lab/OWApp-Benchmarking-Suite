@@ -2,6 +2,7 @@ package com.example.mastg_test0013;
 
 import android.os.Bundle;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,13 +16,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import org.w3c.dom.Text;
+
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
 public class Decrypt extends AppCompatActivity {
-    private static byte[] keyBytes ;
+    private static byte[] keyBytesAES ;
+
+    private static byte[] keyBytesDES ;
     static{
-        Decrypt.keyBytes= new byte[] {7, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 9, 20, 21, 15, 1};
+       Decrypt.keyBytesDES="12345678".getBytes();
+
+        Decrypt.keyBytesAES= new byte[] {7, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 9, 20, 21, 15, 1};
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +44,9 @@ public class Decrypt extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         EditText dc= findViewById(R.id.editTextText2);
+        EditText textDes= findViewById(R.id.textdes);
         TextView resDec= findViewById(R.id.decResult);
+        TextView resDes= findViewById(R.id.desRes);
         Button decB= findViewById(R.id.button3);
         decB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,18 +55,50 @@ public class Decrypt extends AppCompatActivity {
                     Toast.makeText(Decrypt.this, "Fill the form", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    resDec.setText(decryptData(dc.getText().toString().getBytes()));
+                    resDec.setText(decryptDataAES(dc.getText().toString().getBytes()));
+                }
+            }
+        });
+        Button decDes=findViewById(R.id.DES);
+        decDes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (textDes.getText().toString().equals("")){
+                    Toast.makeText(Decrypt.this, "Fill the form", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Log.d("PIPPOOOOO", "onClick: ");
+                    resDes.setText(decryptDataDES(textDes.getText().toString().getBytes()));
                 }
             }
         });
     }
-    private String decryptData(byte[] encryptedData) {
+    private String decryptDataAES(byte[] encryptedData) {
         try {
-            SecretKeySpec secretKeySpec = new SecretKeySpec(Decrypt.keyBytes, "AES"); // Hardcoded key
+            SecretKeySpec secretKeySpec = new SecretKeySpec(Decrypt.keyBytesAES, "AES"); // Hardcoded key
             Cipher cipher = Cipher.getInstance("AES");
             cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
             return new String(cipher.doFinal(Base64.decode(encryptedData,0)));
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private String decryptDataDES(byte[] encryptedData) {
+        try {
+            // Create a DES key from the byte array
+            SecretKeySpec secretKeySpec = new SecretKeySpec(keyBytesDES, "DES");
+
+            // Create a Cipher instance for DES decryption
+            Cipher cipher = Cipher.getInstance("DES");
+
+            // Initialize the cipher in decryption mode with the key
+            cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
+
+            // Decrypt the data and convert it back to a string
+            return new String(cipher.doFinal(Base64.decode(encryptedData, Base64.DEFAULT)));
         } catch (Exception e) {
             e.printStackTrace();
         }

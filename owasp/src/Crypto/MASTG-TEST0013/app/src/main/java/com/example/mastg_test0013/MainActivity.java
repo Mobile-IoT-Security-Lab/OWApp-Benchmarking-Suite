@@ -20,10 +20,11 @@ import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
 public class MainActivity extends AppCompatActivity {
-    private static byte[] keyBytes ;
+    private static byte[] keyBytesAES ;
+    private static byte[] keyBytesDES ;
     static{
-        MainActivity.keyBytes= new byte[] {7, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 9, 20, 21, 15, 1};
-
+        MainActivity.keyBytesAES= new byte[] {7, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 9, 20, 21, 15, 1};
+        MainActivity.keyBytesDES="12345678".getBytes();
     }
 
 
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Fill the form", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    res.setText(encryptData(encrypt.getText().toString()));
+                    res.setText("AES: "+ encryptDataAES(encrypt.getText().toString())+" ; DES:  "+encryptDataDES(encrypt.getText().toString()));
+                    Log.d("LOG", "AES: "+ encryptDataAES(encrypt.getText().toString())+" ; DES:  "+encryptDataDES(encrypt.getText().toString()));
                 }
             }
         });
@@ -60,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private CharSequence encryptData(String data) {
+    private CharSequence encryptDataAES(String data) {
         try {
-            SecretKeySpec secretKeySpec = new SecretKeySpec(MainActivity.keyBytes, "AES"); // Hardcoded key
+            SecretKeySpec secretKeySpec = new SecretKeySpec(MainActivity.keyBytesAES, "AES"); // Hardcoded key
             Cipher cipher = Cipher.getInstance("AES");
             cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
             return new String(Base64.encode(cipher.doFinal(data.getBytes()),0));
@@ -71,6 +73,23 @@ public class MainActivity extends AppCompatActivity {
         }
         return null;
     }
+    private CharSequence encryptDataDES(String data) {
+        try {
+            // Create a DES key from the byte array
+            SecretKeySpec secretKeySpec = new SecretKeySpec(keyBytesDES, "DES");
 
+            // Create a Cipher instance for DES encryption
+            Cipher cipher = Cipher.getInstance("DES");
+
+            // Initialize the cipher in encryption mode with the key
+            cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
+
+            // Encrypt the data and encode it as a Base64 string
+            return new String(Base64.encode(cipher.doFinal(data.getBytes()), Base64.DEFAULT));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }
