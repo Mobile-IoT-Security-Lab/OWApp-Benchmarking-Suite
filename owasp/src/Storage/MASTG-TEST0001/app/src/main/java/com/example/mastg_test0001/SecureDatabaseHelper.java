@@ -13,7 +13,7 @@ public class SecureDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "secure_database.db";
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_KEY = "3"; // Hard-coded key (not recommended)
+    private static final String DATABASE_KEY = "secret"; // Hard-coded key (not recommended)
 
     public SecureDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
