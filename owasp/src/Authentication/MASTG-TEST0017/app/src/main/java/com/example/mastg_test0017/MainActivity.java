@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.security.keystore.KeyGenParameterSpec;
+import android.security.keystore.KeyProperties;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -18,51 +20,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String PREF_NAME = "MyPrefs";
-    private static final String KEY_USERNAME = "username";
-    private static final String KEY_IS_LOGGED_IN = "isLoggedIn";
-    private static final int duration= Toast.LENGTH_SHORT;
 
-
-
-    private void login(String username) {
-        String user = sharedPreferences.getString(KEY_USERNAME, null);
-        if (user.equals(username)) {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean(KEY_IS_LOGGED_IN, true);
-            editor.apply();
-            Intent intent = new Intent(MainActivity.this, Profile.class);
-            intent.putExtra("user", username);
-            startActivity(intent);
-        }
-        else {
-            Toast.makeText(MainActivity.this, "Wrong Username", duration).show();
-
-        }
-    }
-
-    private boolean sharedPreferenceCheck(){
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        String user = sharedPreferences.getString(KEY_USERNAME, null);
-        Log.d("Username: ",""+user);
-        if (user==null){
-            editor.putString(KEY_USERNAME, "admin");
-            editor.putBoolean(KEY_IS_LOGGED_IN, false);
-            editor.apply();
-            return false;
-        }
-        return true;
-    }
-
-
-    private SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,31 +46,88 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
-        sharedPreferenceCheck();
-        TextView log= findViewById(R.id.textView2);
-        Button event= findViewById(R.id.button);
-        event.setOnClickListener(new View.OnClickListener() {
+
+        CreateFile();
+        EditText u = findViewById(R.id.editTextText);
+        EditText p = findViewById(R.id.editTextTextPassword);
+        Button log = findViewById(R.id.button);
+        log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText user= findViewById(R.id.editTextText);
-                if (user.getText().toString().equals("")){
-                    Toast.makeText(MainActivity.this, "Fill the Form", duration).show();
-                    return;
+                if (u.getText().toString().equals("") || p.getText().toString().equals("")) {
+                    Toast.makeText(MainActivity.this, "Fill the form", Toast.LENGTH_SHORT).show();
+                } else {
+                    boolean result = checkCredentials(u.getText().toString(), p.getText().toString());
+                    if (result) { //attenzione da risolvere
+                        Intent intent = new Intent(MainActivity.this, Profile.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Wrong credentials", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                login(user.getText().toString());
-
             }
         });
-
-        boolean isLoggedIn = sharedPreferences.getBoolean(KEY_IS_LOGGED_IN, false);
-        if (isLoggedIn) {
-            Intent intent = new Intent(MainActivity.this, Profile.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, "Please login", Toast.LENGTH_SHORT).show();
-        }
-
     }
+    private boolean checkCredentials(String enteredUsername, String enteredPassword) {
+        File file = new File("/data/data/com.example.mastg_test0017/files/credentials.txt");
+        FileInputStream fis = null;
+        InputStreamReader isr = null;
+        BufferedReader br = null;
+        try {
+            fis = new FileInputStream(file);
+            isr = new InputStreamReader(fis);
+            br = new BufferedReader(isr);
+            String line;
+            while ((line = br.readLine()) != null) {
+                // Split the line into username and password parts
+                String[] parts = line.split(" ");
+                if (parts.length == 4 && parts[0].equals("Username:") && parts[2].equals("Password:")) {
+                    String storedUsername = parts[1];
+                    String storedPassword = parts[3];
+                    // Remove any trailing spaces
+                    storedUsername = storedUsername.trim();
+                    storedPassword = storedPassword.trim();
+
+                    if (enteredUsername.equals(storedUsername) && enteredPassword.equals(storedPassword)) {
+                        return true; // Credentials match
+                    }
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null) {
+                    br.close();
+                }
+                if (isr != null) {
+                    isr.close();
+                }
+                if (fis != null) {
+                    fis.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return false; // Credentials not found or error occurred
+    }
+    public void CreateFile(){
+        String fileName = "credentials.txt"; // Name of the file to create
+        String fileContents = "Username: admin Password: 1234";
+
+        try {
+            Context context = this; // Replace getContext() with your app's context retrieval
+
+            FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
+            fos.write(fileContents.getBytes());
+            fos.close();
+            System.out.println("File created: " + fileName);
+        } catch (IOException e) {
+            System.out.println("Error occurred while creating the file: " + e.getMessage());
+        }
+    }
+
+
 
 }

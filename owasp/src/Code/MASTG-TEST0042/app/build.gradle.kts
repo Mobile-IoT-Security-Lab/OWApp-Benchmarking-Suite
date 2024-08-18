@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.mastg_test0042"
-    compileSdk = 24
+    compileSdk = 26
 
     defaultConfig {
         applicationId = "com.example.mastg_test0042"
-        minSdk = 24
-        targetSdk = 34
+        minSdk = 26
+        targetSdk = 26
         versionCode = 1
         versionName = "1.0"
 

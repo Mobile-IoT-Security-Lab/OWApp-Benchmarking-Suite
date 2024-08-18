@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String input = userInput.getText().toString();
                 logger.info("User input: " + input);  // Unsafe logging of user input
+                logger.error("Error log: {}","");
             }
         });
 
