@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="false"
@@ -12,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MASTGTEST0045"
         tools:targetApi="31">
+        <activity android:name=".SecondActivity" android:exported="false"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

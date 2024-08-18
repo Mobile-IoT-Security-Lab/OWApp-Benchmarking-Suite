@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.mastg_test_0045"
-        minSdk = 29
+        minSdk = 26
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
