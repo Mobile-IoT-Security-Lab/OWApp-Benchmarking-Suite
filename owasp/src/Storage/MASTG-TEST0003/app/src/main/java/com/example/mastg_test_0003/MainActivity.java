@@ -62,8 +62,11 @@ public class MainActivity extends AppCompatActivity {
                 if (parts.length == 4 && parts[0].equals("Username:") && parts[2].equals("Password:")) {
                     String storedUsername = parts[1];
                     String storedPassword = parts[3];
-                    Log.d("checkCredentials:", " "+storedUsername);
-                    Log.d("checkCredentials:", " "+storedPassword);
+                    Log.d("checkCredentials:", " "+storedUsername); // Insecure Log
+                    Log.d("checkCredentials:", " "+storedPassword); // Insecure Log
+                    System.out.println("checkCredentials:" +storedUsername); // Insecure Log
+                    System.out.println("checkCredentials:" +storedPassword); // Insecure Log
+
                     // Remove any trailing spaces
                     storedUsername = storedUsername.trim();
                     storedPassword = storedPassword.trim();
