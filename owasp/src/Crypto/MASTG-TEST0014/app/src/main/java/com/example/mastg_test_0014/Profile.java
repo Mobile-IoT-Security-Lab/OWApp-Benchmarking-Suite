@@ -14,16 +14,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import org.bouncycastle.crypto.digests.MD5Digest;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.math.BigInteger;
 import java.security.MessageDigest;
-import java.security.Security;
+import java.security.NoSuchAlgorithmException;
+
 public class Profile extends AppCompatActivity {
 
     @Override
@@ -47,30 +47,41 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String enc_pwd=md5(pwd.getText().toString()+"\n");
+                String enc_pwd=getMd5(pwd.getText().toString()+"\n");
                 saveStringToFile(enc_pwd+"\n");
                 showContent.append(enc_pwd+"\n");
             }
         });
     }
 
-    public static String md5(String input) {
+    public static String getMd5(String input)
+    {
         try {
-            Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
-            MD5Digest digest = new MD5Digest();
-            byte[] bytes = input.getBytes();
-            digest.update(bytes,0,bytes.length);
-            StringBuilder sb = new StringBuilder();
-            for (byte b : bytes) {
-                sb.append(String.format("%02x", b));
+
+            // Static getInstance method is called with hashing MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+
+            // digest() method is called to calculate message digest
+            // of an input digest() return array of byte
+            byte[] messageDigest = md.digest(input.getBytes());
+
+            // Convert byte array into signum representation
+            BigInteger no = new BigInteger(1, messageDigest);
+
+            // Convert message digest into hex value
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
             }
-            return sb.toString();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            return hashtext;
         }
 
+        // For specifying wrong message digest algorithms
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
+
     private void saveStringToFile(String text) {
         String fileName="pwd.txt";
         try {

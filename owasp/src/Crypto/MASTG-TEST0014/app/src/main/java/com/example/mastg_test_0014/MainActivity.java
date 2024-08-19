@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         if (sharedPreferences.getAll().isEmpty()) {
             // If preferences are empty, insert username and password
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("username", "Admin");
+            editor.putString("username", "admin");
             editor.putString("password", "1234");
             editor.apply();
         }
