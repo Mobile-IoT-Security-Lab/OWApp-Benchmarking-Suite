@@ -1,19 +1,27 @@
 package com.example.mastg_test0026;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 public class Activity2 extends AppCompatActivity {
+    private static final int PICK_CODE = 1001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,19 +33,25 @@ public class Activity2 extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        Toolbar toolbar = findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar);
-        Button add= findViewById(R.id.AddCd);
-        EditText num= findViewById(R.id.cd);
-        EditText pin= findViewById(R.id.pin);
-        add.setOnClickListener(new View.OnClickListener() {
+        Button pick = findViewById(R.id.imagePicker);
+        pick.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent("com.victim.ADD_CARD_ACTION");
-                intent.putExtra("credit_card_number", num.getText().toString());
-                intent.putExtra("holder_name", pin.getText().toString());
-                startActivity(intent);
+            public void onClick(View view) {
+                Intent pickerIntent = new Intent(Intent.ACTION_PICK);
+                pickerIntent.setType("*/*");
+                startActivityForResult(pickerIntent, PICK_CODE);
             }
         });
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == 1001 && data != null) {
+            if (requestCode == PICK_CODE) {
+                FileUtils.copyToExternalStorage(this, data.getData());
+            }
+        }
     }
 }

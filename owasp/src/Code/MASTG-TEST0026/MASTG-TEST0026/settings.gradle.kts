@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "MASTG-TEST0026"
 include(":app")
- 

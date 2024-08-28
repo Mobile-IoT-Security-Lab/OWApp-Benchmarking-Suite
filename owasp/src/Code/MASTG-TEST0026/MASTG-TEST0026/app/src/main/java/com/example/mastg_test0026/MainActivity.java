@@ -1,8 +1,13 @@
 package com.example.mastg_test0026;
 
+import static com.google.android.material.internal.ContextUtils.getActivity;
+
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.service.credentials.Action;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +24,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -44,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Fill the form", Toast.LENGTH_SHORT).show();
                 } else {
                     boolean result = checkCredentials(u.getText().toString(), p.getText().toString());
-                    if (result) { 
+                    if (result) {
+                        createSharedPreferenceFile();
                         Intent intent = new Intent(MainActivity.this, Activity2.class);
                         startActivity(intent);
                     } else {
@@ -54,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     private boolean checkCredentials(String enteredUsername, String enteredPassword) {
         File file = new File("/data/data/com.example.mastg_test0026/files/credentials.txt");
         FileInputStream fis = null;
@@ -98,7 +107,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return false; // Credentials not found or error occurred
     }
-    public void CreateFile(){
+
+    public void CreateFile() {
         String fileName = "credentials.txt"; // Name of the file to create
         String fileContents = "Username: admin Password: 1234";
 
@@ -113,5 +123,21 @@ public class MainActivity extends AppCompatActivity {
             System.out.println("Error occurred while creating the file: " + e.getMessage());
         }
     }
+
+    public void createSharedPreferenceFile() {
+        // Initializing SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("session", MODE_PRIVATE);
+// Creating an Editor object to edit (write to the file)
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+// Storing data as key-value pairs
+        editor.putString("username", "admin");
+        editor.putInt("pwd", 1234);
+
+// Applying the changes (you can use apply() for asynchronous or commit() for synchronous saving)
+        editor.apply();
+
+    }
+
 
 }
