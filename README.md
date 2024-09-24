@@ -1,2 +1,1 @@
-# OWASP-MSTG-Benchmark
-OWASP-MSTG Benchmark
+# OWApp Benchmark Suite
