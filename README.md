@@ -81,29 +81,115 @@ The repository contains top-level folders apk and src. Inside each folder, there
 Inside each category, there is the OWASP MASTG test with a README file that describes each static vulnerability as outlined in the MASTG and how I implemented the test.
 ### Test Implementation
 
-For implementing the tests, I tried to follow the MASTG as closely as possible. For some tests, the MASTG provides snippets of vulnerable code. When these snippets are available, I use them to implement the app.
+Each app in the dataset was implemented based on the vulnerability descriptions provided in the corresponding OWASP MASVS requirement and its associated MASTG security control.
 
-An example of this methodology is MASTG-TEST0013: Testing Symmetric Cryptography, which provides snippets of vulnerable code to use for static encryption and decryption. For this test, I created an app that encrypts and decrypts text using Advanced Encryption Standard (AES). We can clearly detect the use of a static encryption key, which is directly encoded and initialized in the static byte array keyBytes.
+For some tests, I directly used code snippets included in the description of the OWASP requirement or control. For instance, in the app `MASTG-TEST0013: Testing Symmetric Cryptography`, I included the code that encrypts and decrypts text using the Advanced Encryption Standard (AES) with a hard-coded encryption key.
 
-When the code snippets are not available, I search the MASTG for links to external guides or refer to the Android Developers guide. An example of an app implemented with the help of a guide provided by the MASTG is MASTG-TEST-0043: Memory Corruption Bugs. In this test, the MASTG provides two useful links to external guides that helped me implement the test. For this test, I created a Timer app following this guide: 9 Ways to Avoid Memory Leaks in Android. The timer is never canceled, causing a memory leak. To fix this, add:
-```bash
-/*
- * Fix 1: Cancel Timer when 
- * the activity is about to be destroyed
- */
-@Override
-protected void onDestroy() {
-    super.onDestroy();
-    cancelTimer();
+```java
+public class Decrypt extends AppCompatActivity {
+    private static byte[] keyBytesAES;
+    private static byte[] keyBytesDES;
+
+    static {
+        Decrypt.keyBytesDES = "12345678".getBytes();
+        Decrypt.keyBytesAES = new byte[] {7, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 9, 20, 21, 15, 1};
+    }
+
+    private CharSequence encryptDataAES(String data) {
+        // encryption logic
+    }
+
+    private CharSequence encryptDataDES(String data) {
+        // encryption logic
+    }
 }
 
 ```
+When the code snippets are not available, I search in the MASTG for any links to external guides or search the Android Developers guide. An example of an app implemented with the help of a guide provided by the MASTG is MASTG-TEST-0043: Memory Corruption Bugs. In this test, the MASTG provides two useful links to external guides that helped me implement the test. For this test, I created a Timer app following the guide "9 ways to avoid memory leaks in Android". The timer is never canceled, causing a memory leak.
+```
+public class MainActivity extends AppCompatActivity {
+    private CountDownTimer countDownTimer;
 
-If external guides are also unavailable, I thoroughly study the test and develop an app using code snippets found on Stack Overflow or GitHub, and ideas for apps developed by Large Language Models.
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        // initialization logic
+        Button start = findViewById(R.id.button);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startTimer();
+            }
+        });
+    }
 
-An example of an app implemented with this strategy is MASTG-TEST-0025: Testing for Injection Flaws. For this test, inspired by the GitHub repository of Payatu Security Consulting, I created an application with a login feature that checks credentials against an SQL database stored in internal storage. The application does not sanitize user input, making it susceptible to SQL injection attacks.
+    // Mistake 1: Cancel Timer is never called
+    public void cancelTimer() {
+        if (countDownTimer != null) countDownTimer.cancel();
+    }
 
-For instance, using the input ' or 1=1 -- - as the username allows an attacker to bypass authentication.
+    private void startTimer() {
+        // timer logic
+    }
+}
+```
 
+If the official documentation and references do not provide sufficient details, I extended the analysis to platforms like Stack Overflow and GitHub, and I generated code samples using the ChatGPT AI chatbot. The information collected was then used to implement the vulnerable apps.
 
+An example of an app developed using this approach is MASTG-TEST-0025: Testing for Injection Flaws. Inspired by the GitHub repository of Payatu Security Consulting, I created an application with a login feature that checks user credentials against an SQL database stored in internal storage. The app does not sanitize user input, making it vulnerable to SQL injection attacks.
 
+```
+public void search(View view) {
+    EditText srchtxt = (EditText) findViewById(R.id.search);
+    EditText pwd = findViewById(R.id.editTextTextPassword);
+
+    if (!srchtxt.getText().toString().matches("") || !pwd.getText().toString().matches("")) {
+        Cursor cr = null;
+        try {
+            cr = mDB.rawQuery("SELECT * FROM sqliuser WHERE user = '" + srchtxt.getText().toString() + "' AND password= '" + pwd.getText().toString() + "'", null);
+            StringBuilder strb = new StringBuilder("");
+            
+            if ((cr != null) && (cr.getCount() > 0)) {
+                cr.moveToFirst();
+                do {
+                    strb.append("User: (" + cr.getString(0) + ") pass: (" + cr.getString(1) + ") Credit card: (" + cr.getString(2) + ")\n");
+                } while (cr.moveToNext());
+                
+                Intent myIntent = new Intent(MainActivity.this, Activity2.class);
+                startActivity(myIntent);
+            } else {
+                strb.append("User: (" + srchtxt.getText().toString() + ") not found");
+            }
+            Toast.makeText(MainActivity.this, strb.toString(), Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Log.d("sqli", "Error occurred while searching in database: " + e.getMessage());
+        }
+    } else {
+        Toast.makeText(MainActivity.this, "Fill the form!", Toast.LENGTH_SHORT).show();
+    }
+}
+```
+
+With this code, entering ' or 1=1 -- - as the username allows an attacker to bypass authentication through an SQL injection attack.
+
+All the apps are developed using Android Studio Jellyfish 2023.3.1 Patch 2, and all the apps have an API version of 26, which is the minimum constraint for developing apps with specific vulnerabilities.
+
+### Support Scripts
+This suite is built upon a structured workflow that includes three primary scripts, each serving a distinct role in the overall process: the Download Script, the Tools Script, and the Running Script.
+
+Download Script: The Download Script is the initial component of the benchmarking process. Its primary function is to facilitate the automated download of mobile security applications from the OWApp dataset. This script installs Curl and uses it to download from GitHub the latest version of the dataset. The downloaded apps are saved in the local environment, ready for further processing by the Tools Script and the Running Script.
+
+Tools Script: The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools are installed and properly configured. It starts by updating the system and then installs required components like GCC, Python3-pip, Python3.12-venv, OpenJDK-11, Go, Jadx, and Dex2Jar. After that, it proceeds with installing and setting up Docker and the selected SAST tools.
+
+Running Script: The Running Script conducts security analysis on the downloaded applications using the SAST tools and generates report files. It requires a working directory where the APK files are stored. For each app in the directory, the SAST tools are launched for analysis, and detailed reports are generated in JSON format.
+
+### Workflow
+The initial step involves using the Download Script to download the entire dataset of apps on the local machine (Steps 1 and 2a in Figure). The Tools Script supports the download (Step 3) and the automatic deployment and configuration of a set of Android SAST tools (Step 4). The script facilitates the deployment of several state-of-the-art SAST tools, including MobSF, Sebastian, TrueeSeeing, and APKHunt. Finally, the Running Script initiates the security analysis of the configured SAST tools against the apps in the OWApp dataset (Step 6). This script also collects and stores the analysis results in a report folder for further review (Step 7).
+
+### Illustrative Example
+I used the OWApp Benchmarking Suite to perform security analyses on an Android app with a sample SAST tool, i.e., SEBASTiAn. I tested MASTG-TEST0001 to perform this test. After the security analysis execution, a report file is created in a dedicated folder named after the tool that performed the analysis. The following listing shows all the commands to use the Benchmarking Suite properly.
+```
+chmod +x ./* ; ./DownloadScript ; ./ToolScript
+# On a new terminal, reach the Desktop folder and run the following command:
+source venv/bin/activate
+./RunningScript $HOME/Desktop/OWApp-Benchmarking-Suite/OWApp/src/Storage/MASTG-TEST0001
+```
