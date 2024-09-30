@@ -72,6 +72,7 @@ Almost all Android apps use one or more of the following capabilities:
 Some apps use a web server or another app to exploit the related test. Each app has a common layout and tries to simulate a real-world app. Figure \ref{fig
 } shows some graphical layout patterns used for the app implementations.
 ![Application Layout](./BenchmarkSuite/app_layout.png)
+*Figure 2: Application Layout*
 
 All the apps are developed through Android Studio Jellyfish 2023.3.1 Patch 2, and all the apps have an API version of 26, which is the minimum constraint for developing apps with specific vulnerabilities.
 
