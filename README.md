@@ -1,8 +1,7 @@
 
 ![Logo](./BenchmarkSuite/OWAppLogo.png)
 # OWApp Benchmark Suite
-![Benchmarking Suite](./BenchmarkSuite/owapp.drawio.png)
-*Figure 1: Benchmarking Suite*
+
 
 The Benchmarking Suite for Mobile Security Applications (OWApp) is a comprehensive framework designed to automate and enhance the benchmarking process for mobile applications, particularly within the context of security analysis. Figure 1 gives an overview of this framework, which is structured into three parts. This suite is built upon a structured workflow that includes three primary scripts, each serving a distinct role in the overall process: the **Download Script**, the **Tools Script**, and the **Running Script**.  
 All the tools are tested on an experimental setup of Ubuntu 24.04.1.
@@ -20,6 +19,9 @@ The Tools Script creates a secure environment where all the tools are installed 
 The Running Script is designed to conduct security analysis and generate report files on the downloaded applications using Static Application Security Testing (SAST) tools.  
 Once the applications are downloaded, this script executes the chosen SAST tools on the locally chosen stored apps. These tools perform a thorough analysis, scanning the applications for potential security vulnerabilities and generating detailed reports in JSON format.  
 The Running Script requires a working directory where the application in APK format is stored. For each app in the working directory, the SAST tools are launched.
+
+![Benchmarking Suite](./BenchmarkSuite/owapp.drawio.png)
+*Figure 1: Benchmarking Suite*
 
 ## Benchmarking Suite Work Flow
 In this section, I will explain the steps to use the Benchmarking Suite in a correct and complete way. Starting from downloading the suite, the first step is to give the execution permission to all the scripts.
