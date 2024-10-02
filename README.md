@@ -1,3 +1,5 @@
+
+![Logo](./BenchmarkSuite/OWAppLogo.png)
 # OWApp Benchmark Suite
 ![Benchmarking Suite](./BenchmarkSuite/owapp.drawio.png)
 *Figure 1: Benchmarking Suite*
