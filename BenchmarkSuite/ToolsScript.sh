@@ -14,7 +14,7 @@ sudo apt upgrade -y
 sudo apt install -y gcc
 sudo apt install -y python3-pip
 sudo apt install -y python3.12-venv
-sudo apt install -y openjdk-11-jdk
+sudo apt install -y openjdk-17-jdk
 
 
 

@@ -14,6 +14,6 @@ echo "Installation complete."
 curl --version
 git --version
 
-curl -L -O https://github.com/Mobile-IoT-Security-Lab/OWASP-MSTG-Benchmark/archive/main.zip
-unzip  main.zip
-rm -rf main.zip
+curl -L -O https://github.com/Mobile-IoT-Security-Lab/OWApp-Benchmarking-Suite/archive/refs/tags/v1.1.zip
+unzip  v1.1.zip
+rm -rf v1.1.zip
