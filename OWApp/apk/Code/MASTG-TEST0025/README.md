@@ -8,6 +8,14 @@ To test for injection flaws you need to first rely on other tests and check for 
 - [Testing for Sensitive Functionality Exposure Through IPC](#)
 - [Testing for Overlay Attacks](#)
 MASVS-CODE-4 / MSTG-PLATFORM-2 / April 27, 2024
+
+## Implementation
+Inspired by the following GitHub guide 25 repository, an application was created with a
+login feature that checks credentials against an SQL database stored in internal storage.
+The application does not sanitize user input, making it susceptible to SQL injection attacks.
+For instance, using the input ’ or 1=1 -- - as the username allows an attacker to bypass
+authentication.
+
 ## Static Analysis
 
 An example of a vulnerable IPC mechanism is shown below.
