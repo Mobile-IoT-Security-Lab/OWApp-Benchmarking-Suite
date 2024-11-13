@@ -4,7 +4,7 @@ MASVS-AUTH-2 / MSTG-AUTH-1 / MSTG-STORAGE-11 / May 08, 2023
 
 ## Implementation
 Created app with simple login (admin,1234) once logged in you go to the profile page where there is an insecure configuration that allows you to generate a key to crypt data, this is saved in the AndroidKeyStore
-` ` java
+```java
 private void generateSecretKey() {
 		KeyGenParameterSpec keyGenParameterSpec = new 
 		KeyGenParameterSpec.Builder(MySecretKey",
