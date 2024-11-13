@@ -3,6 +3,19 @@
 In order to test for URL loading in WebViews you need to carefully analyze handling page navigation, especially when users might be able to navigate away from a trusted environment. The default and safest behavior on Android is to let the default web browser open any link that the user might click inside the WebView. However, this default logic can be modified by configuring a WebViewClient which allows navigation requests to be handled by the app itself.
 
 MASVS-CODE-4 / MSTG-PLATFORM-2 / May 08, 2023
+## Implementation
+Created an app that, through login, allows viewing a vulnerable WebView.
+Added the following configuration in the manifest:
+```java
+   <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing" android:value="false" />
+   
+```
+    The app allows users to click on links within the WebView, which should open in the default web browser. However, the app developer decides to ignore the default behavior and handle page navigation within the app itself, without adequately validating the URLs.
+
+In this example, the shouldOverrideUrlLoading method of the custom WebViewClient always returns true, meaning it handles all URL loading within the WebView itself without proper validation. This behavior could potentially allow the loading of harmful URLs within the app, leading to security vulnerabilities such as phishing attacks or loading malicious content.
+
+shouldInterceptRequest: This method is overridden to intercept and modify network requests made by webView2. It contains a vulnerability because it checks the URL for a string (in this case, "malicious") without proper validation. If the string is found, it returns a crafted response that could lead to issues such as content injection, bypassing security checks, or other unintended behaviors. The response is created and returned without logging or validation, which is a bad practice.
+
 ## Static Analysis
 To test if the app is overriding the default page navigation logic by configuring a `WebViewClient` you should search for and inspect the following interception callback functions:
 
