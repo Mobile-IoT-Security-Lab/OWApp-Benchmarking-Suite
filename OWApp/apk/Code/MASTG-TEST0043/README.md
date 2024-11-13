@@ -3,6 +3,23 @@
 ## Overview
 MASVS-CODE-4 / MSTG-CODE-8 / May 08, 2023
 
+## Implementation
+
+A Timer application was created following the guide: https://medium.com/android-news/9-ways-to-avoid-memory-leaks-in-android-b6d81648e35e. The current implementation has a memory leak because the timer is never cancelled. 
+
+To fix this memory leak, the following code should be added to cancel the timer when the activity is destroyed:
+
+```java  
+@Override
+protected void onDestroy() {
+    super.onDestroy();
+    cancelTimer();
+}
+```   
+
+
+
+
 ## Static Analysis
 
 There are various items to look for:
