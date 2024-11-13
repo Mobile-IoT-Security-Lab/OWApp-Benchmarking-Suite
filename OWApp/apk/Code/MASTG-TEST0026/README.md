@@ -2,6 +2,27 @@
 ## Overview
 When testing for implicit intents you need to check if they are vulnerable to injection attacks or potentially leaking sensitive data.
 MASVS-CODE-4 / MSTG-PLATFORM-2 / May 08, 2023
+
+## Implementation
+
+An application was created that, after login, allows users to add a credit card. The `AddCardActivity` has the following intent configuration:
+
+```java 
+<activity
+    android:name=".AddCardActivity"
+    android:exported="false" >
+    <intent-filter>
+        <action android:name="com.victim.ADD_CARD_ACTION" />
+        <category android:name="android.intent.category.DEFAULT" />
+    </intent-filter>
+</activity>
+\end{lstlisting}
+```
+
+For the exploit, the guide cited in OWASP has followed https://blog.oversecured.com/Interception-of-Android-implicit-intents. 
+
+In summary, another app was created with the same intent name as the victim's app but with higher priority. Consequently, when the intent is launched, the app with higher priority will intercept it.
+
 ## Static Analysis
 Inspect the Android Manifest and look for any <intent> signatures defined inside blocks ↗ (which specify the set of other apps an app intends to interact with), check if it contains any system actions (e.g. `android.intent.action.GET_CONTENT`, `android.intent.action.PICK`, `android.media.action.IMAGE_CAPTURE`, etc.) and browse the source code for their occurrence.
 
