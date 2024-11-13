@@ -17,6 +17,7 @@ An application was created that, after login, allows users to add a credit card.
     </intent-filter>
 </activity>
 
+
 ```
 
 For the exploit, the guide cited in OWASP has followed https://blog.oversecured.com/Interception-of-Android-implicit-intents. 
