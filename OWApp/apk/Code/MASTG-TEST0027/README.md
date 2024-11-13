@@ -6,10 +6,12 @@ MASVS-CODE-4 / MSTG-PLATFORM-2 / May 08, 2023
 ## Implementation
 Created an app that, through login, allows viewing a vulnerable WebView.
 Added the following configuration in the manifest:
+
 ```java
    <meta-data android:name="android.webkit.WebView.EnableSafeBrowsing" android:value="false" />
 ```
-    The app allows users to click on links within the WebView, which should open in the default web browser. However, the app developer decides to ignore the default behavior and handle page navigation within the app itself, without adequately validating the URLs.
+
+The app allows users to click on links within the WebView, which should open in the default web browser. However, the app developer decides to ignore the default behavior and handle page navigation within the app itself, without adequately validating the URLs.
 
 In this example, the shouldOverrideUrlLoading method of the custom WebViewClient always returns true, meaning it handles all URL loading within the WebView itself without proper validation. This behavior could potentially allow the loading of harmful URLs within the app, leading to security vulnerabilities such as phishing attacks or loading malicious content.
 
