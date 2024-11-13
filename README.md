@@ -1,5 +1,5 @@
 
-![Logo](./BenchmarkSuite/OWAppLogo.png)
+![Logo](./BenchmarkSuite/images/OWAppLogo.png)
 # OWApp Benchmark Suite
 
 
@@ -20,7 +20,7 @@ The Running Script is designed to conduct security analysis and generate report 
 Once the applications are downloaded, this script executes the chosen SAST tools on the locally chosen stored apps. These tools perform a thorough analysis, scanning the applications for potential security vulnerabilities and generating detailed reports in JSON format.  
 The Running Script requires a working directory where the application in APK format is stored. For each app in the working directory, the SAST tools are launched.
 
-![Benchmarking Suite](./BenchmarkSuite/owapp.drawio.png)
+![Benchmarking Suite](./BenchmarkSuite/images/owapp.drawio.png)
 *Figure 1: Benchmarking Suite*
 
 ## Benchmarking Suite Work Flow
@@ -75,7 +75,7 @@ Almost all Android apps use one or more of the following capabilities:
 
 Some apps use a web server or another app to exploit the related test. Each app has a common layout and tries to simulate a real-world app. Figure \ref{fig
 } shows some graphical layout patterns used for the app implementations.
-![Application Layout](./BenchmarkSuite/app_layout.png)
+![Application Layout](./BenchmarkSuite/images/app_layout.png)
 *Figure 2: Application Layout*
 
 All the apps are developed through Android Studio Jellyfish 2023.3.1 Patch 2, and all the apps have an API version of 26, which is the minimum constraint for developing apps with specific vulnerabilities.
