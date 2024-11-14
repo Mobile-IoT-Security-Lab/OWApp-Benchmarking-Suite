@@ -11,6 +11,10 @@ To investigate an application's memory, you must first create a memory dump. You
 Therefore, you are better off starting with static analysis.
 
 MASVS-STORAGE-2 / MSTG-STORAGE-10 / May 11, 2024
+
+## Implementation
+A Note Manager app with a login (admin, 1234) has been created. Notes are saved in a text file note.txt and are encrypted using the key (Talos), triggering the vulnerability Sensitive Data Handling (The application stores the encryption key in memory as a String object). When logging out, the method does not properly clear the encryption key from memory `this.encryptionKey = null;`, triggering the vulnerability User Authentication (The application doesn't clear sensitive data from memory when the user signs out, leaving the encryption key and potentially decrypted notes accessible in memory until the application is closed).
+
 ## Static Analysis
 
 When performing static analysis to identify sensitive data that is exposed in memory, you should:
