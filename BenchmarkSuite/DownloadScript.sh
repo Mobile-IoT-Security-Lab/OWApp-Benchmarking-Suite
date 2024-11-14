@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Function to display usage
 usage() {
   echo "Usage: $0 [-A minSDK targetSDK]"
@@ -65,36 +67,41 @@ chmod +x ./cmdline-tools/bin/*
 yes | $HOME/Desktop/cmdline-tools/bin/sdkmanager --sdk_root=/usr/lib/android-sdk --licenses
 sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager  --sdk_root=/usr/lib/android-sdk "platforms;android-$minSDK"
 sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager --sdk_root=/usr/lib/android-sdk "platforms;android-$targetSDK"
+mkdir "$HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/apk-V$minSDK"
 cd $HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/src
 chmod -R 777 ./*
-# Starting directory (specify the full or relative path)
+# Starting directory (specify full or relative path)
 base_directory="$HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/src"
 # Check if the directory exists
 if [ -d "$base_directory" ]; then
-  # Reads all folders inside the starting directory
+  # Read all folders within the starting directory
   for dir in "$base_directory"/*; do
-    # Check if it is a directory
+    # Check if it's a directory
     echo $dir
     if [ -d "$dir" ]; then
       echo "Entering folder: $dir"
-      cd "$dir" || continue # Enter the folder or skip to the next if not accessible
+      cd "$dir" || continue # Enter the folder or skip to the next if inaccessible
       # Run a command inside the folder (e.g., list files)
       ls
       if [ -d "$dir" ]; then
         for dir2 in "$dir"/*; do
-          # Check if it is a directory
+          # Check if it's a directory
           echo $dir2
           if [ -d "$dir2" ]; then
-            echo "Entering folder!!!: $dir2"
-            cd "$dir2" || continue # Enter the folder or skip to the next if not accessible
+
+            cd "$dir2" || continue # Enter the folder or skip to the next if inaccessible
             file_path="$dir2/app/build.gradle.kts"
-            echo $file_path
+
             # Use sed to find and replace the minSdk value
             sed -i "s/\(minSdk\s*=\s*\)[0-9]\+/\1$minSDK/" "$file_path"
             sed -i "s/\(targetSdk\s*=\s*\)[0-9]\+/\1$targetSDK/" "$file_path"
             echo "minSdk updated to $minSDK in file $file_path"
             cd $dir2
-            sudo ./gradlew assembleDebug # compile app
+            sudo ./gradlew assembleDebug # Compile app
+            folder=$(basename $dir2)
+	    mkdir "$HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/apk-V$minSDK/$folder"
+	    sudo chmod -R 777 "$dir2/app/"
+            sudo cp -r $dir2/app/build/outputs/apk/debug/*  "$HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/apk-V$minSDK/$folder"
           fi
         done
       fi
@@ -103,4 +110,6 @@ if [ -d "$base_directory" ]; then
 else
   echo "The specified directory does not exist."
 fi
+
+    
 fi
