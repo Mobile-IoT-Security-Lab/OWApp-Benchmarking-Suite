@@ -20,6 +20,12 @@ The Running Script is designed to conduct security analysis and generate report 
 Once the applications are downloaded, this script executes the chosen SAST tools on the locally chosen stored apps. These tools perform a thorough analysis, scanning the applications for potential security vulnerabilities and generating detailed reports in JSON format.  
 The Running Script requires a working directory where the application in APK format is stored. For each app in the working directory, the SAST tools are launched.
 
+### Compile Script
+The Compile Script is designed to set up the Android SDK environment and compile Android applications, preparing them for subsequent security analysis. This script automates the setup of essential development tools, including the Android SDK and necessary platform packages, and enables smooth compilation of apps by resolving dependencies and configuring environment variables.
+
+Once the Android SDK is installed and configured, this script uses the `gradlew` command to compile each application in debug mode, creating APK files in a specified format. These compiled APKs can then be analyzed by other tools, such as SAST tools, to detect security vulnerabilities or perform other forms of testing.
+
+The Compile Script requires a working directory containing the app's source code and Gradle wrapper (`gradlew`). For each app in this directory, it installs the appropriate SDK platform versions and performs the build process, outputting compiled APK files to be used in further analysis.
 ![Benchmarking Suite](./images/owapp.drawio.png)
 *Figure 1: Benchmarking Suite*
 
