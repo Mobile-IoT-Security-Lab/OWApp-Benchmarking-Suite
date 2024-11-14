@@ -4,6 +4,22 @@
 
 To test for [WebViews cleanup](https://developer.android.com/guide/webapps/managing-webview) you should inspect all APIs related to WebView data deletion and try to fully track the data deletion process.
 MASVS-PLATFORM-2 / MSTG-PLATFORM-10 / May 08, 2023
+## Implementation
+
+An app has been created that displays the site : https://talos-sec.com/}. The app is vulnerable because it does not follow best practices in several areas:
+
+
+- Initialization: The app might not be initializing the WebView to avoid storing certain information by using `setDomStorageEnabled`, `setAppCacheEnabled`,\newline or \texttt{setDatabaseEnabled} from this guide : https://developer.android.com/reference/android/webkit WebSettings. The DOM Storage (for HTML5 local storage), Application Caches, and Database Storage APIs are disabled by default, but apps might set these settings explicitly to "true".
+    
+- Cache: The `clearCache` method in Android's WebView class can be used to clear the cache for all WebViews used by the app. It takes a boolean parameter (`includeDiskFiles`) that wipes all stored resources, including the RAM cache, if set to true. If set to false, it only clears the RAM cache. Check if the app uses the `clearCache` method and verify its input parameter. Additionally, check if the app overrides `onRenderProcessUnresponsive` as the `clearCache` method might also be called from there.
+    
+- WebStorage APIs: The `WebStorage.deleteAllData` method can clear all storage used by JavaScript storage APIs, including Web SQL Database and HTML5 Web Storage APIs.
+    Some apps need to enable DOM storage to display HTML5 sites that use local storage. This should be carefully investigated as it might contain sensitive data.
+
+- Cookies: Existing cookies can be deleted using the following guide: https://developer.android.com/reference/android/webkit/CookieManager.
+    
+- File APIs: Proper data deletion in certain directories might not be straightforward. Some apps use a pragmatic solution to manually delete selected directories known to hold user data. This can be done using the `java.io.File` API https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/delete-recursively.html.
+
 ## Static Analysis
 
 Start by identifying the usage of the following WebView APIs and carefully validate the mentioned best practices.
