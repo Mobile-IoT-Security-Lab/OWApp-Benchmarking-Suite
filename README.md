@@ -65,6 +65,11 @@ The results of the Running Script are four folders in the Desktop directory: APK
 
 In the next section, I am going to explain how I designed the apps and the structure of the database.
 
+vi) In addition thanks to the CompileScript the user can decide to compile the app with a selecte SDK version
+```bash
+./CompileScript <path to the src prokect> <minSDK> <targetSDK>
+```
+
 ## Dataset of Apps
 ### Design Choice
 Given our goals for the repository, we decided to follow the OWASP MASTG structure completely, so we divided our benchmark into 7 categories: Storage, Crypto, Authentication, Network, Platform, Code, and Resilience.
