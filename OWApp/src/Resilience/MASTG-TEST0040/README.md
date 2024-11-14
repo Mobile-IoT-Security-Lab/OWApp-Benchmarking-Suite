@@ -1,6 +1,21 @@
 # [MASTG-TEST-0040: Testing for Debugging Symbols](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0040)
 ## Overview
 MASVS-RESILIENCE-3 / MSTG-CODE-3 / May 08, 2023
+
+## Implementation
+The application performs the addition of two numbers using a native library.
+Symbols are usually stripped during the build process, so you need the compiled bytecode and libraries to make sure that unnecessary metadata has been discarded.
+In the build.gradle there is not the following configuration:
+```java
+    
+externalNativeBuild {
+    cmake {
+        cppFlags "-fvisibility=hidden"
+    }
+}
+```
+
+
 ## Static Analysis
 Symbols are usually stripped during the build process, so you need the compiled bytecode and libraries to make sure that unnecessary metadata has been discarded.
 
