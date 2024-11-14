@@ -1,6 +1,12 @@
 # [MASTG-TEST-0039: Testing whether the App is Debuggable](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0039)
 ## Overview
 MASVS-RESILIENCE-4 / MSTG-CODE-2 / May 08, 2023
+## Implementation
+
+An application has been created that, upon opening, saves 10 randomly generated usernames and passwords in a text file. To log in, users need to know one of the following username and password pairs. The APK is generated in debug mode.
+
+This approach poses a security risk as sensitive data, such as randomly generated credentials, is stored in plain text. Additionally, running the application in debug mode might expose further vulnerabilities or provide unauthorized access to sensitive information.
+
 # Static Analysis
 Check `AndroidManifest.xml` to determine whether the `android:debuggable` attribute has been set and to find the attribute's value:
 
