@@ -4,7 +4,16 @@
 
 To test for JavaScript execution in WebViews check the app for WebView usage and evaluate whether or not each WebView should allow JavaScript execution. If JavaScript execution is required for the app to function normally, then you need to ensure that the app follows the all best practices.
 MASVS-PLATFORM-2 / MSTG-PLATFORM-5 / May 08, 20
-
+## Implementation
+An app has been created that allows users to type a search query into an \texttt{EditText} field, and the results are then loaded into a WebView (`https://…`).
+The app has internet access enabled in the manifest with the following permission:
+  ```java
+    <uses-permission android:name="android.permission.INTERNET" />
+  ```
+JavaScript is enabled in the WebView with the following code:
+```java
+    view.getSettings().setJavaScriptEnabled(true);
+```
 ## Static Analysis
 
 To create and use a WebView, an app must create an instance of the `WebView` class.
