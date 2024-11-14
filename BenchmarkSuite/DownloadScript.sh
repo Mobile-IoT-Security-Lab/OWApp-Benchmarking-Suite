@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Function to display usage
 usage() {
   echo "Usage: $0 [-A minSDK targetSDK]"
@@ -69,42 +67,40 @@ sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager  --sdk_root=/usr/lib/android-sdk
 sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager --sdk_root=/usr/lib/android-sdk "platforms;android-$targetSDK"
 cd $HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/src
 chmod -R 777 ./*
-# Directory di partenza (specifica il percorso completo o relativo)
+# Starting directory (specify the full or relative path)
 base_directory="$HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/src"
-# Controlla se la directory esiste
+# Check if the directory exists
 if [ -d "$base_directory" ]; then
-  # Legge tutte le cartelle all'interno della directory di partenza
+  # Reads all folders inside the starting directory
   for dir in "$base_directory"/*; do
-    # Verifica se è una directory
+    # Check if it is a directory
     echo $dir
     if [ -d "$dir" ]; then
-      echo "Entrando nella cartella: $dir"
-      cd "$dir" || continue # Entra nella cartella o passa alla successiva se non è accessibile
-      # Esegui un comando all'interno della cartella (ad esempio, lista dei file)
+      echo "Entering folder: $dir"
+      cd "$dir" || continue # Enter the folder or skip to the next if not accessible
+      # Run a command inside the folder (e.g., list files)
       ls
       if [ -d "$dir" ]; then
         for dir2 in "$dir"/*; do
-          # Verifica se è una directory
+          # Check if it is a directory
           echo $dir2
           if [ -d "$dir2" ]; then
-            echo "Entrando nella cartella!!!: $dir2"
-            cd "$dir2" || continue # Entra nella cartella o passa alla successiva se non è accessibile
+            echo "Entering folder!!!: $dir2"
+            cd "$dir2" || continue # Enter the folder or skip to the next if not accessible
             file_path="$dir2/app/build.gradle.kts"
             echo $file_path
-            # Usa sed per trovare e sostituire il valore di minSdk
+            # Use sed to find and replace the minSdk value
             sed -i "s/\(minSdk\s*=\s*\)[0-9]\+/\1$minSDK/" "$file_path"
             sed -i "s/\(targetSdk\s*=\s*\)[0-9]\+/\1$targetSDK/" "$file_path"
-            echo "minSdk aggiornato a $minSDK nel file $file_path"
+            echo "minSdk updated to $minSDK in file $file_path"
             cd $dir2
-            sudo ./gradlew assembleDebug #compilazione app
+            sudo ./gradlew assembleDebug # compile app
           fi
         done
       fi
     fi
   done
 else
-  echo "La directory specificata non esiste."
+  echo "The specified directory does not exist."
 fi
-
-    
 fi
