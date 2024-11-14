@@ -2,6 +2,41 @@
 ## Overview
 To test for WebView protocol handlers check the app for WebView usage and evaluate whether or not the WebView should have resource access. If resource access is necessary you need to verify that it's implemented following best practices.
 
+## Implementation
+
+The created application displays a file saved in external storage within a WebView. It requires permissions for `INTERNET` and `READ_EXTERNAL_STORAGE`. Additionally, a network security configuration file is used as follows:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>
+```
+
+The application loads content from a file named `home.html` stored in external storage. The `home.html` file contains the following content:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <p>For the login on Poste
+    follow this 
+    <a href="https://securelogin.poste.it/jod-fcc/fcc-authentication.html">link</a>
+    </p>
+</body>
+</html>
+```
+
+This setup allows anyone to overwrite the `home.html` file.
+
+
 ## Static Analysis
 Check the source code for WebView usage. The following [WebView settings ↗](https://developer.android.com/reference/android/webkit/WebSettings) control resource access:
 
