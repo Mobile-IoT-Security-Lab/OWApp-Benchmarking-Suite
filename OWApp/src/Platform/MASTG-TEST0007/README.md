@@ -2,6 +2,14 @@
 
 ## Overview
 MASVS-PLATFORM-1 / MSTG-STORAGE-6 / May 08, 2023
+
+## Implementation
+
+An app has been created that allows the user registration and authentication.
+If authentication is successful, a \texttt{Toast} message with the string `"Logged In"` is displayed.
+Additionally, it allows adding users with a username and password to a database through a Content Provider, and it enables checking whether a given username and password exist in the database.
+The function that checks if the username and password are in the database is vulnerable to SQL injection with the payload ` ' OR 1=1) -- -`, resulting in being logged in and showing all registered users in the logcat : https://developer.android.com/studio/debug/logcat.
+
 ### Static Analysis
 
 The first step is to look at `AndroidManifest.xml` to detect content providers exposed by the app. You can identify content providers by the `<provider>` element. Complete the following steps:
