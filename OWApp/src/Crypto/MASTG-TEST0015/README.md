@@ -2,6 +2,15 @@
 
 ## Overview
 MASVS-CRYPTO-2 / MSTG-CRYPTO-5 / May 13, 2024
+
+## Implementation
+
+Created registration/login app that saves credentials to a text file inside the internal storage of the device(credentials.txt) in the format: 
+```java
+"Username:"  + username + " Password: " + password + "\n"
+```
+To make the test vulnerable I used the same key to encrypt notes and to encrypt user credentials.
+
 ## Static Analysis
 
 Identify all instances where cryptography is used. You can look for:
