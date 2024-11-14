@@ -1,6 +1,10 @@
 # [MASTG-TEST-0038: Making Sure that the App is Properly Signed](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0038)
 ## Overview
 MASVS-RESILIENCE-2 / MSTG-CODE-1 / May 08, 2023
+## Implementation
+
+A simple login application has been created, but it has not been signed correctly. Proper signing is crucial for ensuring the authenticity and integrity of the application. When an app is not signed correctly, it can introduce several security risks. Without proper signing, the app's identity cannot be verified, making it easier for malicious actors to tamper with the app or distribute compromised versions. Additionally, users may not be able to trust the app, as the lack of a valid signature undermines the assurance that the app has not been altered since its original release.
+
 ## Static Analysis
 Make sure that the release build has been signed via both the v1 and v2 schemes for Android 7.0 (API level 24) and above and via all the three schemes for Android 9 (API level 28) and above, and that the code-signing certificate in the APK belongs to the developer.
 
