@@ -4,6 +4,11 @@
 
 MASVS-RESILIENCE-4 / MSTG-RESILIENCE-2 / May 01, 2024
 
+## Implementation
+An application has been created that allows users to log in with the credentials (admin, 1234) and view a WebView after logging in. The application is vulnerable because it has \texttt{android:debuggable=true} set in its manifest. Although it checks whether a debugger is attached, it does not close the application if a debugger is detected.
+
+This vulnerability exposes the app to potential security risks, as the presence of a debugger can facilitate reverse engineering and debugging attacks. The application should be configured to disable debugging and ensure that sensitive information and functionalities are protected.
+
 ## Bypassing Debugger Detection
 
 There's no generic way to bypass anti-debugging; the best method depends on the particular mechanism(s) used to prevent or detect debugging and the other defenses in the overall protection scheme. For example, if there are no integrity checks or you've already deactivated them, patching the app might be the easiest method. In other cases, a hooking framework or kernel modules might be preferable. The following methods describe different approaches to bypass debugger detection:
