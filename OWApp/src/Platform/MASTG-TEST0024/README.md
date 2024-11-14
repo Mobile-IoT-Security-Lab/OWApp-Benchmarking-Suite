@@ -3,6 +3,21 @@
 When testing app permissions the goal is to try and reduce the amount of permissions used by your app to the absolute minimum. While going through each permission, remember that it is best practice first to try and [evaluate whether your app needs to use this permission ↗](https://developer.android.com/privacy-and-security/minimize-permission-requests) because many functionalities such as taking a photo can be done without, limiting the amount of access to sensitive data. If permissions are required you will then make sure that the request/response to access the permission is handled handled correctly.
 
 MASVS-PLATFORM-1 / MSTG-PLATFORM-1 / September 29, 2023
+## Implementation
+A camera application has been developed that captures photos and saves them to the device's internal storage. To facilitate its functionality, the app requests a variety of permissions from the user. These permissions include:
+
+
+	- INTERNET: Allows the app to access the internet. This permission is often used for functionalities such as uploading photos to a cloud service or fetching data from online resources.
+	- ACCEPT_HANDOVER: Enables the app to handle handover operations, which could be related to transferring calls or data between devices.
+	- ANSWER_PHONE_CALLS: Grants the app the ability to answer incoming phone calls. This permission might be used to integrate with phone call features or to manage call-related operations within the app.
+	- CALL_PHONE: Permits the app to make phone calls. This permission could be used for features that involve dialing numbers or integrating with communication services.
+	- WRITE_CALENDAR: Allows the app to write to the user's calendar. This permission could be used for scheduling events related to photo captures or other calendar-related functionalities.
+	- READ_CONTACTS: Enables the app to read the user's contacts. This permission might be used to access contact information for sharing photos or integrating with contact-related features.
+	- BLUETOOTH_ADMIN: Provides administrative access to Bluetooth settings. This permission might be used to manage Bluetooth connections, such as pairing with devices or transferring photos via Bluetooth.
+
+Each of these permissions serves a specific purpose and can be crucial for the app’s functionality. However, requesting a broad set of permissions, especially those not directly related to the core functionality of capturing and saving photos, could raise privacy and security concerns. It is important to ensure that permissions are requested only when necessary and that their usage is transparent to the user. Proper justification for each permission should be provided to avoid unnecessary exposure of user data and to maintain user trust.
+
+
 ## Static Analysis
 ## Android Permissions
 Check permissions to make sure that the app really needs them and remove unnecessary permissions. For example, the INTERNET permission in the AndroidManifest.xml file is necessary for an Activity to load a web page into a WebView. Because a user can revoke an application's right to use a dangerous permission, the developer should check whether the application has the appropriate permission each time an action is performed that would require that permission.
