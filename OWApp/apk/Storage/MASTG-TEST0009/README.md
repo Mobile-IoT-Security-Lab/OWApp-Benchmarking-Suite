@@ -2,6 +2,16 @@
 
 ## Overview
 MASVS-STORAGE-2 / MSTG-STORAGE-8 / May 08, 2023
+
+## Implementation
+A Login and Registration feature has been created that saves credentials in a text file within the device's internal storage (`credentials.txt`) in the format:
+
+```
+"Username: " + username + " Password: " + password + "\n"
+```
+
+In the manifest, the flag `android:allowBackup="true"` is left enabled.
+
 ## Static Analysis
 
 ### Local

@@ -4,7 +4,7 @@ MASVS-STORAGE-2 / MSTG-STORAGE-5 / May 08, 2023
 
 ## Implementation
 
-A Login feature has been created where any username and password are accepted without validation checks on the credentials. Suggestions for EditText\footnote{\url{https://developer.android.com/reference/android/widget/EditText}} are not disabled. The input text fields should have the following attributes:
+A Login feature has been created where any username and password are accepted without validation checks on the credentials. Suggestions for EditText https://developer.android.com/reference/android/widget/EditText are not disabled. The input text fields should have the following attributes:
 
 ```xml
 <EditText
