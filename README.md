@@ -187,6 +187,8 @@ Tools Script: The Tools Script plays a crucial role in preparing the benchmarkin
 
 Running Script: The Running Script conducts security analysis on the downloaded applications using the SAST tools and generates report files. It requires a working directory where the APK files are stored. For each app in the directory, the SAST tools are launched for analysis, and detailed reports are generated in JSON format.
 
+Compile Script:This script sets up the Android development environment, installs the necessary SDK platforms, and compiles the app with the SDK version choosen by the user
+
 ### Workflow
 The initial step involves using the Download Script to download the entire dataset of apps on the local machine (Steps 1 and 2a in Figure). The Tools Script supports the download (Step 3) and the automatic deployment and configuration of a set of Android SAST tools (Step 4). The script facilitates the deployment of several state-of-the-art SAST tools, including MobSF, Sebastian, TrueeSeeing, and APKHunt. Finally, the Running Script initiates the security analysis of the configured SAST tools against the apps in the OWApp dataset (Step 6). This script also collects and stores the analysis results in a report folder for further review (Step 7).
 
@@ -197,4 +199,7 @@ chmod +x ./* ; ./DownloadScript ; ./ToolScript
 # On a new terminal, reach the Desktop folder and run the following command:
 source venv/bin/activate
 ./RunningScript $HOME/Desktop/OWApp-Benchmarking-Suite/OWApp/src/Storage/MASTG-TEST0001
+
+#Compile application with a specific SDK version
+./CompileScript <path to the src prokect> <minSDK> <targetSDK>
 ```
