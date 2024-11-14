@@ -28,3 +28,8 @@ Develop bypass methods for the root detection mechanisms and answer the followin
 - What is your assessment of the difficulty of bypassing the mechanisms?
 
 If root detection is missing or too easily bypassed, make suggestions in line with the effectiveness criteria listed above. These suggestions may include more detection mechanisms and better integration of existing mechanisms with other defenses.
+
+## Implementation
+An application was created that does not check if the device is rooted. This vulnerability can be exploited by attackers to gain elevated permissions and bypass security mechanisms, potentially leading to unauthorized access and data leakage.
+
+Root detection is a crucial security measure to ensure the integrity and security of the application. Without it, attackers can manipulate the app's behavior, access restricted areas of the filesystem, and extract sensitive information.
