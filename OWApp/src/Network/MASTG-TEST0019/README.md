@@ -1,6 +1,17 @@
 # [MASTG-TEST-0019: Testing Data Encryption on the Network](https://mas.owasp.org/MASTG/tests/android/MASVS-NETWORK/MASTG-TEST-0019)
 ## Overview
 MASVS-NETWORK-1 / MSTG-NETWORK-1 / April 27, 2024
+
+## Implementation
+
+An app has been created that:
+
+   - Makes requests to URLs using HTTP rather than HTTPS and displays the content in a WebView.
+   - To make these requests, the manifest includes the attribute android:usesCleartextTraffic="true" within the application tag.
+   - item Skips hostname verification.
+   - item To be sure that the app is vulnerable, TLS error handling has also been disabled.
+   - item Uses a low API level to bypass network security configuration, with minSdk = 19 set.
+
 ## Static Analysis
 
 ## Testing Network Requests over Secure Protocols
