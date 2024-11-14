@@ -5,7 +5,7 @@
 MASVS-RESILIENCE-4 / MSTG-RESILIENCE-2 / May 01, 2024
 
 ## Implementation
-An application has been created that allows users to log in with the credentials (admin, 1234) and view a WebView after logging in. The application is vulnerable because it has \texttt{android:debuggable=true} set in its manifest. Although it checks whether a debugger is attached, it does not close the application if a debugger is detected.
+An application has been created that allows users to log in with the credentials (admin, 1234) and view a WebView after logging in. The application is vulnerable because it has `android:debuggable=true` set in its manifest. Although it checks whether a debugger is attached, it does not close the application if a debugger is detected.
 
 This vulnerability exposes the app to potential security risks, as the presence of a debugger can facilitate reverse engineering and debugging attacks. The application should be configured to disable debugging and ensure that sensitive information and functionalities are protected.
 

@@ -1,6 +1,10 @@
 # [MASTG-TEST-0048: Testing Reverse Engineering Tools Detection](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0048)
 ## Overview 
 MASVS-RESILIENCE-4 / MSTG-RESILIENCE-4 / May 11, 2024
+## Implementation
+
+An application has been created that allows users to log in with the credentials (admin, 1234) and view a WebView after logging in. The application is vulnerable because it does not include any checks or warnings to prevent or alert users about the vulnerability to reverse engineering tools or frameworks.The lack of protections against reverse engineering makes the app susceptible to analysis and modification by attackers. To enhance security, the application should implement measures to detect and defend against reverse engineering attempts, such as code obfuscation and integrity checks.
+
 ## Effectiveness Assessment
 Launch the app with various reverse engineering tools and frameworks installed in your test device. Include at least the following: Frida, Xposed, Substrate for Android, RootCloak, Android SSL Trust Killer.
 
