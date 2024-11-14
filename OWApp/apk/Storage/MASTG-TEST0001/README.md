@@ -1,5 +1,15 @@
 # [MASTG-TEST-0001: Testing Local Storage for Sensitive Data](https://mas.owasp.org/MASTG/tests/android/MASVS-STORAGE/MASTG-TEST-0001)
 
+## Implementation
+- button vengono recuperate le credenziali dalle shared preferences e dispayate.
+- nel `AndroidManifest.xml` aggiunto permesso per scrivere in external storage
+    
+    `<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>`
+    
+- Nella `MainActivity` aggiunto salvataggio di informazioni sensibili nelle SharedPreferences attraverso un form .
+- Inoltre quando si salvano i dati si viene indirizzqati ad unaltra activity in questa è possible salvare in un db dei segreti, il db risulta vulnerabile in quanto la chioave con cui viene cryptato è hardcodato nel codice in [SecureDatabaseHelper.java](http://SecureDatabaseHelper.java) `Secret`.
+- Aggiunto un valore in `string.xml`
+
 ## Overview
 
 This test case focuses on identifying potentially sensitive data stored by an application and verifying if it is securely stored. The following checks should be performed:
