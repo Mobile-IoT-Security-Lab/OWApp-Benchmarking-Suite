@@ -2,6 +2,34 @@
 
 ## Overview
 MASVS-NETWORK-1 / MSTG-NETWORK-3 / September 29, 2023
+
+## Implementation
+
+An app has been created that displays `https://www.example.com` in a WebView with `targetSdkVersion: '23'`. For security reasons, the `targetSdkVersion` in `apktool.yml` should be equal to or higher than `24`. However, even if `targetSdkVersion >= 24`, the developer can disable default protections by using a custom network security configuration that defines a custom trust anchor, forcing the app to trust user-provided CAs. The guide advises checking the network configuration and inspecting any `<trust-anchors>` that define `<certificates src="user">`, which should be avoided. However, by creating the file, the app remains vulnerable because it allows access to all sites due to the target SDK being 23. Additionally, there is no certificate analysis performed through TrustManager: https://developer.android.com/reference/javax/net/ssl/TrustManager, TLS issues are ignored:
+
+```java
+WebView myWebView = (WebView) findViewById(R.id.webview);
+myWebView.setWebViewClient(new WebViewClient(){
+    @Override
+    public void onReceivedSslError(WebView view,
+    SslErrorHandler handler, SslError error) {
+        // Ignore TLS certificate errors and instruct
+        the WebViewClient to load the website
+        handler.proceed();
+    }
+});
+```
+
+And hostname verification is disabled:
+
+```java
+final HostnameVerifier NO_VERIFY = new HostnameVerifier() {
+    public boolean verify(String hostname, SSLSession session) {
+        return true;
+    }
+};
+```
+
 ## Static Analysis
 
 Using TLS to transport sensitive information over the network is essential for security. However, encrypting communication between a mobile application and its backend API is not trivial. Developers often decide on simpler but less secure solutions (e.g., those that accept any certificate) to facilitate the development process, and sometimes these weak solutions make it into the production version , potentially exposing users to man-in-the-middle attacks .
