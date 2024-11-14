@@ -14,3 +14,22 @@ To start your static analysis you can check the app for the following methods an
 Some attributes might affect the app as a whole, while others can be applied to specific components. The latter would be the case when, for example, there is a business need to specifically allow overlays while wanting to protect sensitive input UI elements. The developers might also take additional precautions to confirm the user's actual intent which might be legitimate and tell it apart from a potential attack.
 
 As a final note, always remember to properly check the API level that app is targeting and the implications that this has. For instance, Android 8.0 (API level 26) introduced changes to apps requiring `SYSTEM_ALERT_WINDOW` ("draw on top"). From this API level on, apps using `TYPE_APPLICATION_OVERLAY` will be always shown above other windows  having other types such as `TYPE_SYSTEM_OVERLAY` or `TYPE_SYSTEM_ALERT`. You can use this information to ensure that no overlay attacks may occur at least for this app in this concrete Android version.
+
+## Implementation
+
+
+An application is created that allows users to log in and view a WebView. An exploit is designed to inflate a layout containing an EditText and a Button. 
+
+Permission Required: The manifest file includes the permission
+```java
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+```
+    Without this permission, it is impossible for a malicious application to inflate layouts.
+
+ The application does not implement the following security controls, making it vulnerable:
+Replace \texttt{onFilterTouchEventForSecurity} to enable precise control and implement a custom security policy for views.
+Set the layout attribute`android:filterTouchesWhenObscured` to true or call`setFilterTouchesWhenObscured`.
+Use `FLAG_WINDOW_IS_OBSCURED` (API level 9 and above) or 
+`FLAG_WINDOW_IS_PARTIALLY_OBSCURED` (API level 29 and above).
+
+
