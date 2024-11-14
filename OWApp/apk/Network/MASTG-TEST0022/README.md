@@ -3,6 +3,21 @@
 ## Overview
 MASVS-NETWORK-2 / MSTG-NETWORK-4 / April 27, 2024
 ## Static Analysis
+## Implementation
+
+An app has been created with two buttons:
+
+    `SSL Pinning`
+    - Sends a request to `www.example.com` by pinning the certificates created (details available at  this guide : https://gist.github.com/pollux-/696657b75b45f1755f9105580b125c0 and added to `network\_security\_config.xml` : https://developer.android.com/privacy-and-security/security-config.
+    - Returns a `Toast` message indicating either:
+    	-OK
+        - Error
+    
+`No SSL Pinning`
+	- Sends a request to `{www.example.com` without pinning the certificates.
+	- Returns a `Toast` : https://developer.android.com/guide/topics/ui/notifiers/toasts message indicating either:
+	- OK
+	- Error
 
 ## Network Security Configuration
 
