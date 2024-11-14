@@ -65,11 +65,12 @@ unzip commandlinetools-linux-11076708_latest.zip
 rm -rf commandlinetools-linux-11076708_latest.zip
 chmod +x ./cmdline-tools/bin/*
 yes | $HOME/Desktop/cmdline-tools/bin/sdkmanager --sdk_root=/usr/lib/android-sdk --licenses
-
-cd OWApp-Benchmarking-Suite-1.2/OWApp/src
+sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager  --sdk_root=/usr/lib/android-sdk "platforms;android-$minSDK"
+sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager --sdk_root=/usr/lib/android-sdk "platforms;android-$targetSDK"
+cd $HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/src
 chmod -R 777 ./*
 # Directory di partenza (specifica il percorso completo o relativo)
-base_directory="$HOME/Desktop/OWApp-Benchmarking-Suite/BenchmarkSuite/OWApp-Benchmarking-Suite-1.2/OWApp/src"
+base_directory="$HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/src"
 # Controlla se la directory esiste
 if [ -d "$base_directory" ]; then
   # Legge tutte le cartelle all'interno della directory di partenza
@@ -94,10 +95,8 @@ if [ -d "$base_directory" ]; then
             sed -i "s/\(minSdk\s*=\s*\)[0-9]\+/\1$minSDK/" "$file_path"
             sed -i "s/\(targetSdk\s*=\s*\)[0-9]\+/\1$targetSDK/" "$file_path"
             echo "minSdk aggiornato a $minSDK nel file $file_path"
-            sudo $HOME/Desktop/OWApp-Benchmarking-Suite/BenchmarkSuite/cmdline-tools/bin/sdkmanager  --sdk_root=/usr/lib/android-sdk "platforms;android-$new_min_sdk"
-            sudo $HOME/Desktop/OWApp-Benchmarking-Suite/BenchmarkSuite/cmdline-tools/bin/sdkmanager --sdk_root=/usr/lib/android-sdk "platforms;android-$new_target_sdk"
             cd $dir2
-            sudo ./gradlew assembleDebug
+            sudo ./gradlew assembleDebug #compilazione app
           fi
         done
       fi
