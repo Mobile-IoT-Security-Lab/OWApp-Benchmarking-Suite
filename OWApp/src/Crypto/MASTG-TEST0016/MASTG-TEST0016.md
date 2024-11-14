@@ -1,15 +1,18 @@
-Exploitation Scenario:
+# [MASTG-TEST-0016: Testing Random Number Generation](https://mas.owasp.org/MASTG/tests/android/MASVS-CRYPTO/MASTG-TEST-0016)
+## Overview
+MASVS-CRYPTO-1 / MSTG-CRYPTO-6 / June 02, 2024
 
-An attacker exploits the vulnerability in session token generation to perform a session hijacking attack:
+## Implementation
 
-The attacker intercepts the session token of a legitimate user while it's transmitted over the network or stored insecurely.
-The attacker uses their knowledge of the predictable session token generation algorithm (based on java.util.Random) to generate valid session tokens.
-The attacker crafts HTTP requests with the generated session tokens and sends them to the server, effectively impersonating the legitimate user.
-The server, unable to distinguish between legitimate and forged session tokens, accepts the requests and performs actions on behalf of the attacker, such as posting unauthorized content or accessing sensitive user data.
-Mitigation:
+A registration/login app has been created. Credentials are saved and checked in a text file within the internal storage (credentials.txt). Upon login, a session token is generated using the Java.Util.Random function. This token is associated with the username and saved in SharedPreferences.
 
-To mitigate this vulnerability, the app should use a cryptographically secure random number generator like SecureRandom for session token generation. Additionally, implementing other security measures such as HTTPS for secure communication, secure storage of sensitive data, and session management best practices can further enhance the app's security posture.
+## Static Analysis
+Identify all the instances of random number generators and look for either custom or well-known insecure classes. For instance, java.util.Random produces an identical sequence of numbers for each given seed value; consequently, the sequence of numbers is predictable. Instead a well-vetted algorithm should be chosen that is currently considered to be strong by experts in the field, and a well-tested implementations with adequate length seeds should be used.
 
-By addressing the vulnerability and implementing appropriate security measures, the app can better protect user sessions from exploitation by malicious actors.
+Identify all instances of SecureRandom that are not created using the default constructor. Specifying the seed value may reduce randomness. Use only the no-argument constructor of SecureRandom  that uses the system-specified seed value to generate a 128-byte-long random number.
 
+In general, if a PRNG is not advertised as being cryptographically secure (e.g. java.util.Random), then it is probably a statistical PRNG and should not be used in security-sensitive contexts. Pseudo-random number generators can produce predictable numbers  if the generator is known and the seed can be guessed. A 128-bit seed is a good starting point for producing a "random enough" number.
 
+Once an attacker knows what type of weak pseudo-random number generator (PRNG) is used, it can be trivial to write a proof-of-concept to generate the next random value based on previously observed ones, as it was done for Java Random . In case of very weak custom random generators it may be possible to observe the pattern statistically. Although the recommended approach would anyway be to decompile the APK and inspect the algorithm (see Static Analysis).
+
+If you want to test for randomness, you can try to capture a large set of numbers and check with the Burp's sequencer  to see how good the quality of the randomness is.
