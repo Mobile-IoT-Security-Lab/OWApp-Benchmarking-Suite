@@ -1,6 +1,14 @@
 # [MASTG-TEST-0051: Testing Obfuscation](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0051)
 ## Overview
 MASVS-RESILIENCE-3 / MSTG-RESILIENCE-9 / May 13, 2024
+## Implementation
+
+A coffee purchasing application has been created where the credit balance is initially set to zero. 
+To buy a coffee, users need to enter a promo code, which is hardcoded in the source code. 
+
+This setup reveals a vulnerability as the hardcoded promo code can potentially be extracted or discovered through reverse engineering, making it possible for unauthorized users to bypass the credit requirement and purchase coffee without proper authorization.
+
+
 ## Static Analysis
 Decompile the APK and review it to determine whether the codebase has been obfuscated.
 
