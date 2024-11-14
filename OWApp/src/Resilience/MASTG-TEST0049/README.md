@@ -2,6 +2,12 @@
 ## Overview
 
 MASVS-RESILIENCE-1 / MSTG-RESILIENCE-5 / May 11, 2024
+## Implementation
+An application was created that allows users to log in using the credentials (username:admin , password: 1234) and view a WebView after successful login. However, the application is vulnerable as it does not perform any checks to determine if it is running on an emulator.
+
+This lack of emulator detection can be exploited by attackers to analyze the app in a controlled environment, potentially bypassing security mechanisms and extracting sensitive information or discovering vulnerabilities.
+
+To address this issue, it is recommended to implement emulator detection mechanisms as outlined by OWASP.
 
 ## Bypassing Emulator Detection
 1. Patch the emulator detection functionality. Disable the unwanted behavior by simply overwriting the associated bytecode or native code with NOP instructions.
