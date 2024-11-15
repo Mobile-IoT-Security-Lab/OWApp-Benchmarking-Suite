@@ -1,4 +1,3 @@
-
 ![Logo](./images/OWAppLogo.png)
 # OWApp Benchmark Suite
 
@@ -10,9 +9,10 @@ All the tools are tested on an experimental setup of Ubuntu 24.04.1.
 The Download Script is the initial component of the benchmarking process. Its primary function is to facilitate the automated download of mobile security applications from the OWApp dataset.  
 This script starts by installing Curl[^1], a command line tool and library for transferring data with URLs, and using it to download the latest version of OWApp from GitHub[^2].  
 The downloaded applications are saved in the local environment, ready for further processing by the Tools Script and the Running Script.
+Moreover the DownloadScript offers the possibility of directly compile all the application with a SDK version defined by the user through the flag `-compileAll`
 
 ### Tools Script
-The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools are installed and properly configured on the user's workstation. This script serves as the bridge between the raw downloaded applications and the security analysis process.  
+The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools are installed and properly configured on the user's workstation **(MobSF,SEBASTiAN,Trueseeing,APKHunt)**. This script serves as the bridge between the raw downloaded applications and the security analysis process.  
 The Tools Script creates a secure environment where all the tools are installed and are ready to be used from the Running Script. It starts by updating the system and installing the necessary components required by the tools: GCC[^3], Python3-pip[^4], Python3.12-venv[^5], OpenJDK-11[^6], Go[^7], Jadx[^8], and Dex2Jar[^9]. Afterward, it proceeds with installing and configuring Pyenv, followed by creating a virtual environment folder. Next, it installs and sets up Docker[^10]. Once Docker is ready, the selected SAST tools are installed.
 
 ### Running Script
@@ -26,7 +26,10 @@ The Compile Script is designed to set up the Android SDK environment and compile
 Once the Android SDK is installed and configured, this script uses the `gradlew` command to compile each application in debug mode, creating APK files in a specified format. These compiled APKs can then be analyzed by other tools, such as SAST tools, to detect security vulnerabilities or perform other forms of testing.
 
 The Compile Script requires a working directory containing the app's source code and Gradle wrapper (`gradlew`). For each app in this directory, it installs the appropriate SDK platform versions and performs the build process, outputting compiled APK files to be used in further analysis.
+
+
 ![Benchmarking Suite](./images/owapp.drawio.png)
+
 *Figure 1: Benchmarking Suite*
 
 ## Benchmarking Suite Work Flow
@@ -40,6 +43,10 @@ chmod +x ./*
 2. After giving permission to execute all the scripts, run the Download Script:
 ```bash
 ./DownloadScript
+```
+or
+```bash
+./DownloadScript -compileAll <minSDK> <targetSDK>
 ```
 
 The result of this script is the OWApp dataset downloaded in the same directory as the Benchmark Suite.
@@ -73,7 +80,7 @@ In the next section, I am going to explain how I designed the apps and the struc
 
 vi) In addition thanks to the CompileScript the user can decide to compile the app with a selecte SDK version
 ```bash
-./CompileScript <path to the src prokect> <minSDK> <targetSDK>
+./CompileScript <path to the src project> <minSDK> <targetSDK>
 ```
 
 ## Dataset of Apps
@@ -122,7 +129,7 @@ public class Decrypt extends AppCompatActivity {
 
 ```
 When the code snippets are not available, I search in the MASTG for any links to external guides or search the Android Developers guide. An example of an app implemented with the help of a guide provided by the MASTG is MASTG-TEST-0043: Memory Corruption Bugs. In this test, the MASTG provides two useful links to external guides that helped me implement the test. For this test, I created a Timer app following the guide "9 ways to avoid memory leaks in Android". The timer is never canceled, causing a memory leak.
-```
+```java
 public class MainActivity extends AppCompatActivity {
     private CountDownTimer countDownTimer;
 
@@ -153,7 +160,7 @@ If the official documentation and references do not provide sufficient details, 
 
 An example of an app developed using this approach is MASTG-TEST-0025: Testing for Injection Flaws. Inspired by the GitHub repository of Payatu Security Consulting, I created an application with a login feature that checks user credentials against an SQL database stored in internal storage. The app does not sanitize user input, making it vulnerable to SQL injection attacks.
 
-```
+```java
 public void search(View view) {
     EditText srchtxt = (EditText) findViewById(R.id.search);
     EditText pwd = findViewById(R.id.editTextTextPassword);
@@ -194,23 +201,8 @@ This suite is built upon a structured workflow that includes three primary scrip
 
 **Download Script**: The Download Script is the initial component of the benchmarking process. Its primary function is to facilitate the automated download of mobile security applications from the OWApp dataset. This script installs Curl and uses it to download from GitHub the latest version of the dataset. The downloaded apps are saved in the local environment, ready for further processing by the Tools Script and the Running Script.
 
-**Tools Script**: The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools are installed and properly configured. It starts by updating the system and then installs required components like GCC, Python3-pip, Python3.12-venv, OpenJDK-11, Go, Jadx, and Dex2Jar. After that, it proceeds with installing and setting up Docker and the selected SAST tools.
+**Tools Script**: The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools **(MobSF,SEBASTiAN,Trueseeing,APKHunt)** are installed and properly configured. It starts by updating the system and then installs required components like GCC, Python3-pip, Python3.12-venv, OpenJDK-11, Go, Jadx, and Dex2Jar. After that, it proceeds with installing and setting up Docker and the selected SAST tools.
 
 **Running Script**: The Running Script conducts security analysis on the downloaded applications using the SAST tools and generates report files. It requires a working directory where the APK files are stored. For each app in the directory, the SAST tools are launched for analysis, and detailed reports are generated in JSON format.
 
 **Compile Script**:This script sets up the Android development environment, installs the necessary SDK platforms, and compiles the app with the SDK version choosen by the user
-
-### Workflow
-The initial step involves using the Download Script to download the entire dataset of apps on the local machine (Steps 1 and 2a in Figure). The Tools Script supports the download (Step 3) and the automatic deployment and configuration of a set of Android SAST tools (Step 4). The script facilitates the deployment of several state-of-the-art SAST tools, including MobSF, Sebastian, TrueeSeeing, and APKHunt. Finally, the Running Script initiates the security analysis of the configured SAST tools against the apps in the OWApp dataset (Step 6). This script also collects and stores the analysis results in a report folder for further review (Step 7).
-
-### Illustrative Example
-I used the OWApp Benchmarking Suite to perform security analyses on an Android app with a sample SAST tool, i.e., SEBASTiAn. I tested MASTG-TEST0001 to perform this test. After the security analysis execution, a report file is created in a dedicated folder named after the tool that performed the analysis. The following listing shows all the commands to use the Benchmarking Suite properly.
-```
-chmod +x ./* ; ./DownloadScript ; ./ToolScript
-# On a new terminal, reach the Desktop folder and run the following command:
-source venv/bin/activate
-./RunningScript $HOME/Desktop/OWApp-Benchmarking-Suite/OWApp/src/Storage/MASTG-TEST0001
-
-#Compile application with a specific SDK version
-./CompileScript <path to the src prokect> <minSDK> <targetSDK>
-```
