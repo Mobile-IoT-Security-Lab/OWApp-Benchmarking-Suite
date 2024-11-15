@@ -65,39 +65,40 @@ unzip commandlinetools-linux-11076708_latest.zip
 rm -rf commandlinetools-linux-11076708_latest.zip
 chmod +x ./cmdline-tools/bin/*
 yes | $HOME/Desktop/cmdline-tools/bin/sdkmanager --sdk_root=/usr/lib/android-sdk --licenses
-sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager  --sdk_root=/usr/lib/android-sdk "platforms;android-$minSDK"
-sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager --sdk_root=/usr/lib/android-sdk "platforms;android-$targetSDK"
+
 mkdir "$HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/apk-V$minSDK"
 cd $HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/src
 chmod -R 777 ./*
-# Starting directory (specify full or relative path)
+# Directory di partenza (specifica il percorso completo o relativo)
 base_directory="$HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/src"
-# Check if the directory exists
+# Controlla se la directory esiste
 if [ -d "$base_directory" ]; then
-  # Read all folders within the starting directory
+  # Legge tutte le cartelle all'interno della directory di partenza
   for dir in "$base_directory"/*; do
-    # Check if it's a directory
+    # Verifica se è una directory
     echo $dir
     if [ -d "$dir" ]; then
-      echo "Entering folder: $dir"
-      cd "$dir" || continue # Enter the folder or skip to the next if inaccessible
-      # Run a command inside the folder (e.g., list files)
+      echo "Entrando nella cartella: $dir"
+      cd "$dir" || continue # Entra nella cartella o passa alla successiva se non è accessibile
+      # Esegui un comando all'interno della cartella (ad esempio, lista dei file)
       ls
       if [ -d "$dir" ]; then
         for dir2 in "$dir"/*; do
-          # Check if it's a directory
+          # Verifica se è una directory
           echo $dir2
           if [ -d "$dir2" ]; then
-
-            cd "$dir2" || continue # Enter the folder or skip to the next if inaccessible
+		
+            cd "$dir2" || continue # Entra nella cartella o passa alla successiva se non è accessibile
             file_path="$dir2/app/build.gradle.kts"
 
-            # Use sed to find and replace the minSdk value
+            # Usa sed per trovare e sostituire il valore di minSdk
             sed -i "s/\(minSdk\s*=\s*\)[0-9]\+/\1$minSDK/" "$file_path"
             sed -i "s/\(targetSdk\s*=\s*\)[0-9]\+/\1$targetSDK/" "$file_path"
-            echo "minSdk updated to $minSDK in file $file_path"
+            sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager  --sdk_root=/usr/lib/android-sdk "platforms;android-$minSDK"
+	    sudo $HOME/Desktop/cmdline-tools/bin/sdkmanager --sdk_root=/usr/lib/android-sdk "platforms;android-$targetSDK"
+            echo "minSdk aggiornato a $minSDK nel file $file_path"
             cd $dir2
-            sudo ./gradlew assembleDebug # Compile app
+            sudo ./gradlew assembleDebug #compilazione app
             folder=$(basename $dir2)
 	    mkdir "$HOME/Desktop/OWApp-Benchmarking-Suite-1.2/OWApp/apk-V$minSDK/$folder"
 	    sudo chmod -R 777 "$dir2/app/"
@@ -108,7 +109,7 @@ if [ -d "$base_directory" ]; then
     fi
   done
 else
-  echo "The specified directory does not exist."
+  echo "La directory specificata non esiste."
 fi
 
     
