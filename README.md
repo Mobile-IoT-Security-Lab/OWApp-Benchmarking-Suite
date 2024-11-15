@@ -43,7 +43,7 @@ chmod +x ./*
 ./DownloadScript
 ```
 or
-```
+```bash
 ./DownloadScript -compileAll <minSDK> <targetSDK>
 ```
 
@@ -127,7 +127,7 @@ public class Decrypt extends AppCompatActivity {
 
 ```
 When the code snippets are not available, I search in the MASTG for any links to external guides or search the Android Developers guide. An example of an app implemented with the help of a guide provided by the MASTG is MASTG-TEST-0043: Memory Corruption Bugs. In this test, the MASTG provides two useful links to external guides that helped me implement the test. For this test, I created a Timer app following the guide "9 ways to avoid memory leaks in Android". The timer is never canceled, causing a memory leak.
-```
+```java
 public class MainActivity extends AppCompatActivity {
     private CountDownTimer countDownTimer;
 
@@ -158,7 +158,7 @@ If the official documentation and references do not provide sufficient details, 
 
 An example of an app developed using this approach is MASTG-TEST-0025: Testing for Injection Flaws. Inspired by the GitHub repository of Payatu Security Consulting, I created an application with a login feature that checks user credentials against an SQL database stored in internal storage. The app does not sanitize user input, making it vulnerable to SQL injection attacks.
 
-```
+```java
 public void search(View view) {
     EditText srchtxt = (EditText) findViewById(R.id.search);
     EditText pwd = findViewById(R.id.editTextTextPassword);
@@ -210,7 +210,7 @@ The initial step involves using the Download Script to download the entire datas
 
 ### Illustrative Example
 I used the OWApp Benchmarking Suite to perform security analyses on an Android app with a sample SAST tool, i.e., SEBASTiAn. I tested MASTG-TEST0001 to perform this test. After the security analysis execution, a report file is created in a dedicated folder named after the tool that performed the analysis. The following listing shows all the commands to use the Benchmarking Suite properly.
-```
+```bash
 chmod +x ./* ; ./DownloadScript ; ./ToolScript
 # On a new terminal, reach the Desktop folder and run the following command:
 source venv/bin/activate
