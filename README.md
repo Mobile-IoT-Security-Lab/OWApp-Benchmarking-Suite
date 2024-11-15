@@ -12,7 +12,7 @@ The downloaded applications are saved in the local environment, ready for furthe
 Moreover the DownloadScript offers the possibility of directly compile all the application with a SDK version defined by the user through the flag `-compileAll`
 
 ### Tools Script
-The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools are installed and properly configured on the user's workstation. This script serves as the bridge between the raw downloaded applications and the security analysis process.  
+The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools are installed and properly configured on the user's workstation **(MobSF,SEBASTiAN,Trueseeing,APKHunt)**. This script serves as the bridge between the raw downloaded applications and the security analysis process.  
 The Tools Script creates a secure environment where all the tools are installed and are ready to be used from the Running Script. It starts by updating the system and installing the necessary components required by the tools: GCC[^3], Python3-pip[^4], Python3.12-venv[^5], OpenJDK-11[^6], Go[^7], Jadx[^8], and Dex2Jar[^9]. Afterward, it proceeds with installing and configuring Pyenv, followed by creating a virtual environment folder. Next, it installs and sets up Docker[^10]. Once Docker is ready, the selected SAST tools are installed.
 
 ### Running Script
@@ -201,7 +201,7 @@ This suite is built upon a structured workflow that includes three primary scrip
 
 **Download Script**: The Download Script is the initial component of the benchmarking process. Its primary function is to facilitate the automated download of mobile security applications from the OWApp dataset. This script installs Curl and uses it to download from GitHub the latest version of the dataset. The downloaded apps are saved in the local environment, ready for further processing by the Tools Script and the Running Script.
 
-**Tools Script**: The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools**(MobSF,SEBASTiAN,Trueseeing,APKHunt)** are installed and properly configured. It starts by updating the system and then installs required components like GCC, Python3-pip, Python3.12-venv, OpenJDK-11, Go, Jadx, and Dex2Jar. After that, it proceeds with installing and setting up Docker and the selected SAST tools.
+**Tools Script**: The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools **(MobSF,SEBASTiAN,Trueseeing,APKHunt)** are installed and properly configured. It starts by updating the system and then installs required components like GCC, Python3-pip, Python3.12-venv, OpenJDK-11, Go, Jadx, and Dex2Jar. After that, it proceeds with installing and setting up Docker and the selected SAST tools.
 
 **Running Script**: The Running Script conducts security analysis on the downloaded applications using the SAST tools and generates report files. It requires a working directory where the APK files are stored. For each app in the directory, the SAST tools are launched for analysis, and detailed reports are generated in JSON format.
 
