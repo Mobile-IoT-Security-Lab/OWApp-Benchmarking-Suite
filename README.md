@@ -29,6 +29,7 @@ The Compile Script requires a working directory containing the app's source code
 
 
 ![Benchmarking Suite](./images/owapp.drawio.png)
+
 *Figure 1: Benchmarking Suite*
 
 ## Benchmarking Suite Work Flow
