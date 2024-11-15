@@ -1,5 +1,5 @@
 
-![Logo](./images/OWAppLogo.png)
+![Logo](./images/OWAppLogo.png =100x20)
 # OWApp Benchmark Suite
 
 
