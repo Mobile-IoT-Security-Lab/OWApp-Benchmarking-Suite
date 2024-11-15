@@ -201,23 +201,8 @@ This suite is built upon a structured workflow that includes three primary scrip
 
 **Download Script**: The Download Script is the initial component of the benchmarking process. Its primary function is to facilitate the automated download of mobile security applications from the OWApp dataset. This script installs Curl and uses it to download from GitHub the latest version of the dataset. The downloaded apps are saved in the local environment, ready for further processing by the Tools Script and the Running Script.
 
-**Tools Script**: The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools are installed and properly configured. It starts by updating the system and then installs required components like GCC, Python3-pip, Python3.12-venv, OpenJDK-11, Go, Jadx, and Dex2Jar. After that, it proceeds with installing and setting up Docker and the selected SAST tools.
+**Tools Script**: The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools**(MobSF,SEBASTiAN,Trueseeing,APKHunt)** are installed and properly configured. It starts by updating the system and then installs required components like GCC, Python3-pip, Python3.12-venv, OpenJDK-11, Go, Jadx, and Dex2Jar. After that, it proceeds with installing and setting up Docker and the selected SAST tools.
 
 **Running Script**: The Running Script conducts security analysis on the downloaded applications using the SAST tools and generates report files. It requires a working directory where the APK files are stored. For each app in the directory, the SAST tools are launched for analysis, and detailed reports are generated in JSON format.
 
 **Compile Script**:This script sets up the Android development environment, installs the necessary SDK platforms, and compiles the app with the SDK version choosen by the user
-
-### Workflow
-The initial step involves using the Download Script to download the entire dataset of apps on the local machine (Steps 1 and 2a in Figure). The Tools Script supports the download (Step 3) and the automatic deployment and configuration of a set of Android SAST tools (Step 4). The script facilitates the deployment of several state-of-the-art SAST tools, including MobSF, Sebastian, TrueeSeeing, and APKHunt. Finally, the Running Script initiates the security analysis of the configured SAST tools against the apps in the OWApp dataset (Step 6). This script also collects and stores the analysis results in a report folder for further review (Step 7).
-
-### Illustrative Example
-I used the OWApp Benchmarking Suite to perform security analyses on an Android app with a sample SAST tool, i.e., SEBASTiAn. I tested MASTG-TEST0001 to perform this test. After the security analysis execution, a report file is created in a dedicated folder named after the tool that performed the analysis. The following listing shows all the commands to use the Benchmarking Suite properly.
-```bash
-chmod +x ./* ; ./DownloadScript ; ./ToolScript
-# On a new terminal, reach the Desktop folder and run the following command:
-source venv/bin/activate
-./RunningScript $HOME/Desktop/OWApp-Benchmarking-Suite/OWApp/src/Storage/MASTG-TEST0001
-
-#Compile application with a specific SDK version
-./CompileScript <path to the src prokect> <minSDK> <targetSDK>
-```
