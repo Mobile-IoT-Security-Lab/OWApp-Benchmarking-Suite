@@ -80,7 +80,7 @@ In the next section, I am going to explain how I designed the apps and the struc
 
 vi) In addition thanks to the CompileScript the user can decide to compile the app with a selecte SDK version
 ```bash
-./CompileScript <path to the src prokect> <minSDK> <targetSDK>
+./CompileScript <path to the src project> <minSDK> <targetSDK>
 ```
 
 ## Dataset of Apps
