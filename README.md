@@ -10,6 +10,7 @@ All the tools are tested on an experimental setup of Ubuntu 24.04.1.
 The Download Script is the initial component of the benchmarking process. Its primary function is to facilitate the automated download of mobile security applications from the OWApp dataset.  
 This script starts by installing Curl[^1], a command line tool and library for transferring data with URLs, and using it to download the latest version of OWApp from GitHub[^2].  
 The downloaded applications are saved in the local environment, ready for further processing by the Tools Script and the Running Script.
+Moreover the DownloadScript offers the possibility of directly compile all the application with a SDK version defined by the user through the flag `-compileAll`
 
 ### Tools Script
 The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools are installed and properly configured on the user's workstation. This script serves as the bridge between the raw downloaded applications and the security analysis process.  
@@ -40,6 +41,10 @@ chmod +x ./*
 2. After giving permission to execute all the scripts, run the Download Script:
 ```bash
 ./DownloadScript
+```
+or
+```
+./DownloadScript -compileAll <minSDK> <targetSDK>
 ```
 
 The result of this script is the OWApp dataset downloaded in the same directory as the Benchmark Suite.
