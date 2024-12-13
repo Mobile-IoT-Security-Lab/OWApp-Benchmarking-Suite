@@ -208,7 +208,7 @@ This suite is built upon a structured workflow that includes three primary scrip
 **Compile Script**:This script sets up the Android development environment, installs the necessary SDK platforms, and compiles the app with the SDK version choosen by the user
 
 ## Team
-- ![Luca Ferrari](https://github.com/luca959) - Ph.D Student & Developer
+- [Luca Ferrari](https://github.com/luca959) - Ph.D Student & Developer
 - Francesco Pagano - Ph.D Candidate
 - Luca Verderame - Associated Professor
 - Andrea Romdhana - Ph.D Cybersecurity
