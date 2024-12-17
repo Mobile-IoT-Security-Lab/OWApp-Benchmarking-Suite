@@ -210,7 +210,7 @@ This suite is built upon a structured workflow that includes three primary scrip
 ## Team
 - [Luca Ferrari](https://github.com/luca959) - Ph.D Student & Developer
 - Francesco Pagano - Ph.D Candidate
-- Luca Verderame - Associated Professor
+- Luca Verderame - Associate Professor
 - Andrea Romdhana - Ph.D Cybersecurity
 - Davide Caputo - Ph.D Cybersecurity
 - Alessio Merlo - Full Professor
