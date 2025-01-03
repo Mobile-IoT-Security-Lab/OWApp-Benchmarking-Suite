@@ -34,7 +34,7 @@ public class WebViewActivity extends AppCompatActivity {
         webView.loadUrl("https://wwww.example.com");
         WebView webView2 = findViewById(R.id.webview2);
         webView2.setWebViewClient(new WebViewActivity.CustomWebViewClient());
-        webView2.loadUrl("https://www.malicious.com.com");
+        webView2.loadUrl("https://www.malicious.com");
     }
     private class CustomWebViewClient extends WebViewClient {
         @Override
