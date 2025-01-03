@@ -1,6 +1,11 @@
 # [MASTG-TEST-0016: Testing Random Number Generation](https://mas.owasp.org/MASTG/tests/android/MASVS-CRYPTO/MASTG-TEST-0016)
 ## Overview
 MASVS-CRYPTO-1 / MSTG-CRYPTO-6 / June 02, 2024
+
+## Implementation
+
+A registration/login app has been created. Credentials are saved and checked in a text file within the internal storage (credentials.txt). Upon login, a session token is generated using the Java.Util.Random function. This token is associated with the username and saved in SharedPreferences.
+
 ## Static Analysis
 Identify all the instances of random number generators and look for either custom or well-known insecure classes. For instance, java.util.Random produces an identical sequence of numbers for each given seed value; consequently, the sequence of numbers is predictable. Instead a well-vetted algorithm should be chosen that is currently considered to be strong by experts in the field, and a well-tested implementations with adequate length seeds should be used.
 
