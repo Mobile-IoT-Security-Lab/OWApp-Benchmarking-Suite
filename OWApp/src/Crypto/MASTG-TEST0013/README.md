@@ -3,11 +3,8 @@
 MASVS-CRYPTO-1 / MSTG-CRYPTO-1 / May 13, 2024
 ## Implementation
 
-A login system has been created where credentials (Admin, 1234) are stored in shared preferences. A password manager has been implemented to encrypt passwords using MD5. The implementation is vulnerable because, instead of using the default provider, a custom one is used, which could introduce security risks:
-```java  
-    // DEFAULT
-    MessageDigest md = MessageDigest.getInstance("MD5"); 
-```   
+Created an app that encrypts and decrypts text using AES and DES.
+It is evident that the encryption key is statically defined and initialized directly in the static byte array keyBytes.
 
 ## Static  Analysis
 Identify all the instances of symmetric key encryption in code and look for any mechanism which loads or provides a symmetric key. You can look for:
