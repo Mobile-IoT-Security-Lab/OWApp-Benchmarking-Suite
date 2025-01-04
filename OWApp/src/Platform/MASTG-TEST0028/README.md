@@ -1,5 +1,5 @@
 # [MASTG-TEST-0028: Testing Deep Links](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0028)
-## Overview
+## Overview
 Any existing deep links (including App Links) can potentially increase the app attack surface. This includes many risks ↗ such as link hijacking, sensitive functionality exposure, etc.
 
 - Before Android 12 (API level 31), if the app has any non-verifiable links , it can cause the system to not verify all Android App Links for that app.
@@ -15,7 +15,7 @@ MASVS-PLATFORM-1 / MSTG-PLATFORM-3 / May 13, 2024
 
 An app has been created with a minSdkVersion set to 26. This app includes a login (admin, 1234) that allows access to a WebView. The vulnerability in this app is that the login can be bypassed by generating an intent from the terminal, and the content displayed in the WebView can also be modified. The guide followed for this was https://z4ki.medium.com/android-deep-links-exploitation-4abade4d45b4.
 
-## Static Analysis
+## Static Analysis
 ## Check for ANdroid OS Version
 The Android version in which the app runs also influences the risk of using deep links. Inspect the Android Manifest to check if minSdkVersion is 31 or higher.
 
