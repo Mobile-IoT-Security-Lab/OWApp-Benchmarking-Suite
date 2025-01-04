@@ -1,5 +1,5 @@
 # [MASTG-TEST-0008: Checking for Sensitive Data Disclosure Through the User Interface](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0008)
-## Overview
+## Overview
 MASVS-PLATFORM-3 / MSTG-STORAGE-7 / May 08, 2023
 ## Implementation
 
