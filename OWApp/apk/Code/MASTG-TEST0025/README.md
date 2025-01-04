@@ -10,7 +10,7 @@ To test for injection flaws you need to first rely on other tests and check for 
 MASVS-CODE-4 / MSTG-PLATFORM-2 / April 27, 2024
 
 ## Implementation
-Inspired by the following GitHub guide 25 repository, an application was created with a
+Inspired by the following [GitHub guide](https://github.com/payatu/diva-android), an application was created with a
 login feature that checks credentials against an SQL database stored in internal storage.
 The application does not sanitize user input, making it susceptible to SQL injection attacks.
 For instance, using the input ’ or 1=1 -- - as the username allows an attacker to bypass
@@ -27,7 +27,7 @@ You can use ContentProviders to access database information, and you can probe s
   android:authorities="sg.vp.owasp_mobile.provider.College"/>
 
 The AndroidManifest.xml above defines a content provider that's exported and therefore available to all other apps. The query function in the OVH.TO.CODING.083.SQL_Injection_Content_Provider_Implementation.java class should be inspected.
-
+```
 @Override
 public Cursor query(Uri uri, String[] projection, String selection,String[] selectionArgs, String sortOrder) {
   SQLiQueryBuilder db = new SQLiQueryBuilder();
@@ -62,17 +62,17 @@ public Cursor query(Uri uri, String[] projection, String selection,String[] sele
   c.setNotificationUri(getContext().getContentResolver(), uri);
   return c;
 }
-
+```
 While the user is providing a STUDENT_ID at content://sg.vp.owasp_mobile.provider.College/students, the query statement is prone to SQL injection. Obviously, [prepared statements](#) must be used to avoid SQL injection, but input validation should also be applied so that only input that the app is expecting is processed.
 
 All app functions that process data coming in through the UI should implement input validation:
 
 - For user interface input, [Android Saripaar v2](#) can be used.
 - For input from IPC or URL schemes, a validation function should be created. For example, the following determines whether the string is alphanumeric:
-
+```
 public boolean isAlphaNumeric(String s){
   String pattern= "^[a-zA-Z0-9]*$";
   return s.matches(pattern);
 }
-
+```
 An alternative to validation functions is type conversion, with, for example, Integer.parseInt if only integers are expected. The [OWASP Input Validation Cheat Sheet](#) contains more information about this topic.
