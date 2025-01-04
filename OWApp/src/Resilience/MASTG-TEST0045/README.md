@@ -12,7 +12,7 @@ To bypass these checks, you can use several techniques, most of which were intro
 - Hooking low-level APIs by using kernel modules.
 - Patching the app to remove the checks.
 
-## Effectiveness Assessment
+## Effectiveness Assessment
 Check for root detection mechanisms, including the following criteria:
 
 - Multiple detection methods are scattered throughout the app (as opposed to putting everything into a single method).
