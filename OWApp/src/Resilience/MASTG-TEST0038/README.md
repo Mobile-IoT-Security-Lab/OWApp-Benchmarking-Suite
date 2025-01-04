@@ -1,5 +1,5 @@
-# [MASTG-TEST-0038: Making Sure that the App is Properly Signed](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0038)
-## Overview
+# [MASTG-TEST-0038: Making Sure that the App is Properly Signed](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0038)
+## Overview
 MASVS-RESILIENCE-2 / MSTG-CODE-1 / May 08, 2023
 ## Implementation
 
