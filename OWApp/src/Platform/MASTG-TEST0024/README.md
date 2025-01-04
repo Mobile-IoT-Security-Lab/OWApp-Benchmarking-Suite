@@ -1,5 +1,5 @@
 # [MASTG-TEST-0024: Testing for App Permissions](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0024)
-## Overview
+## Overview
 When testing app permissions the goal is to try and reduce the amount of permissions used by your app to the absolute minimum. While going through each permission, remember that it is best practice first to try and [evaluate whether your app needs to use this permission ↗](https://developer.android.com/privacy-and-security/minimize-permission-requests) because many functionalities such as taking a photo can be done without, limiting the amount of access to sensitive data. If permissions are required you will then make sure that the request/response to access the permission is handled handled correctly.
 
 MASVS-PLATFORM-1 / MSTG-PLATFORM-1 / September 29, 2023
