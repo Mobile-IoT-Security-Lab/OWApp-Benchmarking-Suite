@@ -1,5 +1,5 @@
 # [MASTG-TEST-0041: Testing for Debugging Code and Verbose Error Logging](https://mas.owasp.org/MASTG/tests/android/MASVS-RESILIENCE/MASTG-TEST-0041)
-## Overview
+## Overview
 MASVS-RESILIENCE-3 / MSTG-CODE-4 / May 08, 2023
 ## Implementation
 I created an application that allows a user to search for a URL and display it within a WebView, provided the URL returns a response code of 200. The application has Strict Mode enabled to ensure it functions correctly without crashing, even though performing network operations on the UI thread would normally cause issues.
