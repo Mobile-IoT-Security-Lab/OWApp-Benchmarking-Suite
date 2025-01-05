@@ -1,5 +1,5 @@
 # [MASTG-TEST-0033: Testing for Java Objects Exposed Through WebViews](https://mas.owasp.org/MASTG/tests/android/MASVS-PLATFORM/MASTG-TEST-0033)
-## Overview 
+## Overview 
 To test for Java objects exposed through WebViews check the app for WebViews having JavaScript enabled and determine whether the WebView is creating any JavaScript interfaces aka. "JavaScript Bridges". Finally, check whether an attacker could potentially inject malicious JavaScript code.
 
 MASVS-PLATFORM-2 / MSTG-PLATFORM-7 / May 08, 2023
