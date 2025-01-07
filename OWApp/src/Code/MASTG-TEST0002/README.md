@@ -3,6 +3,12 @@
 For any publicly accessible data storage, any process can override the data. This means that input validation needs to be applied the moment the data is read back again.
 
 Note: The same is true for private accessible data on a rooted device
+## Implementation
+In this example, we have a simple login system where the user's username is stored using SharedPreferences.
+
+After a successful login (Username: admin), the isLoggedIn flag is also stored to indicate whether the user is logged in or not. However, there is no input validation or integrity check when reading the data stored in SharedPreferences. This makes the application vulnerable to data tampering attacks, where an attacker could modify the stored username or the isLoggedIn flag to gain unauthorized access or manipulate the application's behavior.
+
+I exploited this vulnerability by modifying the values stored in SharedPreferences.
 
 ## Static analysis
 ## Using Shared Preferences
