@@ -5,7 +5,7 @@
 The Benchmarking Suite for Mobile Security Applications (OWApp) is a comprehensive framework designed to automate and enhance the benchmarking process for mobile applications, particularly within the context of security analysis. Figure 1 gives an overview of this framework, which is structured into three parts. This suite is built upon a structured workflow that includes three primary scripts, each serving a distinct role in the overall process: the **Download Script**, the **Tools Script**, and the **Running Script**.  
 All the tools are tested on an experimental setup of Ubuntu 24.04.1.
 ## Publication
-More details about OWApp can be found in the paper The [OWApp Benchmark: an OWASP-compliant Vulnerable Android App Dataset](https://www.techrxiv.org/users/877761/articles/1257209-the-owapp-benchmark-an-owasp-compliant-vulnerable-android-app-dataset?commit=895a76f5e5bcf78831b1aaf571b791834d990140)command:
+More details about OWApp can be found in the paper The [OWApp Benchmark: an OWASP-compliant Vulnerable Android App Dataset](https://www.techrxiv.org/users/877761/articles/1257209-the-owapp-benchmark-an-owasp-compliant-vulnerable-android-app-dataset?commit=895a76f5e5bcf78831b1aaf571b791834d990140)
 ```
 @article{Ferrari2025,
 author = "Luca Ferrari and Francesco Pagano and Luca Verderame and Andrea Romdhana and Davide Caputo and Alessio Merlo",
