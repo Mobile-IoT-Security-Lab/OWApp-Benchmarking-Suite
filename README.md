@@ -19,13 +19,13 @@ doi = "10.36227/techrxiv.173687667.70476692/v1"
 
 ### Download Script
 The Download Script is the initial component of the benchmarking process. Its primary function is to facilitate the automated download of mobile security applications from the OWApp dataset.  
-This script starts by installing Curl[^1], a command line tool and library for transferring data with URLs, and using it to download the latest version of OWApp from GitHub[^2].  
+This script starts by installing Curl, a command line tool and library for transferring data with URLs, and using it to download the latest version of OWApp from GitHub.  
 The downloaded applications are saved in the local environment, ready for further processing by the Tools Script and the Running Script.
 Moreover the DownloadScript offers the possibility of directly compile all the application with a SDK version defined by the user through the flag `-compileAll`
 
 ### Tools Script
 The Tools Script plays a crucial role in preparing the benchmarking environment by ensuring that the necessary SAST tools are installed and properly configured on the user's workstation **(MobSF,SEBASTiAN,Trueseeing,APKHunt)**. This script serves as the bridge between the raw downloaded applications and the security analysis process.  
-The Tools Script creates a secure environment where all the tools are installed and are ready to be used from the Running Script. It starts by updating the system and installing the necessary components required by the tools: GCC[^3], Python3-pip[^4], Python3.12-venv[^5], OpenJDK-11[^6], Go[^7], Jadx[^8], and Dex2Jar[^9]. Afterward, it proceeds with installing and configuring Pyenv, followed by creating a virtual environment folder. Next, it installs and sets up Docker[^10]. Once Docker is ready, the selected SAST tools are installed.
+The Tools Script creates a secure environment where all the tools are installed and are ready to be used from the Running Script. It starts by updating the system and installing the necessary components required by the tools: GCC, Python3-pip, Python3.12-venv, OpenJDK-11, Go, Jadx, and Dex2Jar. Afterward, it proceeds with installing and configuring Pyenv, followed by creating a virtual environment folder. Next, it installs and sets up Docker. Once Docker is ready, the selected SAST tools are installed.
 
 ### Running Script
 The Running Script is designed to conduct security analysis and generate report files on the downloaded applications using Static Application Security Testing (SAST) tools.  
