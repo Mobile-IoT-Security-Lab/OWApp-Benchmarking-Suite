@@ -1,0 +1,540 @@
+.class public final Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1;
+.super Ljava/lang/Object;
+.source "SafeCollector.common.kt"
+
+# interfaces
+.implements Lkotlinx/coroutines/flow/Flow;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlinx/coroutines/flow/FlowKt__TransformKt;->mapNotNull(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)Lkotlinx/coroutines/flow/Flow;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lkotlinx/coroutines/flow/Flow<",
+        "TR;>;"
+    }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nSafeCollector.common.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SafeCollector.common.kt\nkotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1\n+ 2 Emitters.kt\nkotlinx/coroutines/flow/FlowKt__EmittersKt\n*L\n1#1,112:1\n51#2,5:113\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0019\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003*\u0001\u0000\u0008\n\u0018\u00002\u0008\u0012\u0004\u0012\u00028\u00000\u0001J\u001f\u0010\u0002\u001a\u00020\u00032\u000c\u0010\u0004\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0005H\u0096@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010\u0006\u0082\u0002\u0004\n\u0002\u0008\u0019\u00a8\u0006\u0007\u00b8\u0006\u0008"
+    }
+    d2 = {
+        "kotlinx/coroutines/flow/internal/SafeCollector_commonKt$unsafeFlow$1",
+        "Lkotlinx/coroutines/flow/Flow;",
+        "collect",
+        "",
+        "collector",
+        "Lkotlinx/coroutines/flow/FlowCollector;",
+        "(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;",
+        "kotlinx-coroutines-core",
+        "kotlinx/coroutines/flow/FlowKt__EmittersKt$unsafeTransform$$inlined$unsafeFlow$1"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x6,
+        0x0
+    }
+    xi = 0xb0
+.end annotation
+
+
+# instance fields
+.field final synthetic $this_unsafeTransform$inlined:Lkotlinx/coroutines/flow/Flow;
+
+.field final synthetic $transform$inlined$1:Lkotlin/jvm/functions/Function2;
+
+
+# direct methods
+.method public constructor <init>(Lkotlinx/coroutines/flow/Flow;Lkotlin/jvm/functions/Function2;)V
+    .locals 0
+
+	goto/32 :l_YJxHoXDTEhuzHzkK_0
+
+	nop
+
+	:l_SLtwIkfhSwyavcjX_4
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_rbUrUkZJcVmLyHrF_5
+
+	nop
+
+	:l_cNjbxbSMFeTRMOAa_3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+	goto/32 :l_SLtwIkfhSwyavcjX_4
+
+	nop
+
+	:l_YJxHoXDTEhuzHzkK_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_jKHsDXtEBqHjXljj_1
+
+	nop
+
+	:l_wCkoeuxwaMFUKDQN_2
+    iput-object p2, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1;->$transform$inlined$1:Lkotlin/jvm/functions/Function2;
+
+    .line 106
+	goto/32 :l_cNjbxbSMFeTRMOAa_3
+
+	nop
+
+	:l_rbUrUkZJcVmLyHrF_5
+	goto/32 :before_first_instruction
+
+	:l_jKHsDXtEBqHjXljj_1
+    iput-object p1, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1;->$this_unsafeTransform$inlined:Lkotlinx/coroutines/flow/Flow;
+
+	goto/32 :l_wCkoeuxwaMFUKDQN_2
+
+	nop
+
+.end method
+
+
+# virtual methods
+.method public collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 6
+
+	goto/32 :l_KABKqTDvfDFKzgDV_0
+
+	nop
+
+	:l_NugKOvoQhytkItyO_3
+	rem-int v0, v0, v1
+	goto/32 :l_ZtyAfOnruBCUQaYY_4
+
+	nop
+
+	:l_ucydWQoyUxdVTbug_2
+	add-int v0, v0, v1
+	goto/32 :l_NugKOvoQhytkItyO_3
+
+	nop
+
+	:l_dgCSdpOLiNJuBVQt_20
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_WennnIsrDplhBqUb_21
+
+	nop
+
+	:l_GwShAeuSDxGTISOY_22
+	goto/32 :mRIlbSzPxOpsNLjd
+	:l_xGEgyuEBIxDCNGCD_5
+	goto/32 :BdAqiftjLxEwLWax
+	:UGuGasSrKVMSLRnt
+	:mRIlbSzPxOpsNLjd
+
+	goto/32 :l_jGExcqOzgIQqKVAI_6
+
+	nop
+
+	:l_VkXAVsdVrzuHmFJA_13
+    invoke-direct {v4, v0, v5}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1$2;-><init>(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/jvm/functions/Function2;)V
+
+	goto/32 :l_qBPVXSQOrbWvPPvv_14
+
+	nop
+
+	:l_PqrCTwnEpTmIFVnY_16
+    invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
+
+    move-result-object v4
+
+	goto/32 :l_hXFfdYaNFjNfdvli_17
+
+	nop
+
+	:l_zSPJepALOaGWHtxC_9
+    const/4 v2, 0x0
+
+    .line 113
+    .local v2, "$i$a$-unsafeFlow-FlowKt__EmittersKt$unsafeTransform$1":I
+	goto/32 :l_feRUkfghHyGxBnqz_10
+
+	nop
+
+	:l_NaxTEZnxjVeZEqDy_12
+    iget-object v5, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1;->$transform$inlined$1:Lkotlin/jvm/functions/Function2;
+
+	goto/32 :l_VkXAVsdVrzuHmFJA_13
+
+	nop
+
+	:l_bZBwzrGnoaHKcZen_19
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    .line 109
+	goto/32 :l_dgCSdpOLiNJuBVQt_20
+
+	nop
+
+	:l_jhswsAShAVQwckjY_15
+    invoke-interface {v3, v4, p2}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v3
+
+	goto/32 :l_PqrCTwnEpTmIFVnY_16
+
+	nop
+
+	:l_tnGFcjWJZldPcKNd_11
+    new-instance v4, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1$2;
+
+	goto/32 :l_NaxTEZnxjVeZEqDy_12
+
+	nop
+
+	:l_jGExcqOzgIQqKVAI_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "collector"    # Lkotlinx/coroutines/flow/FlowCollector;
+    .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
+
+    .line 108
+	goto/32 :l_kfnbvBJcyJZvChWA_7
+
+	nop
+
+	:l_yvJrjTVjonrqRhTr_8
+    move-object v1, p2
+
+    .local v1, "$completion":Lkotlin/coroutines/Continuation;
+	goto/32 :l_zSPJepALOaGWHtxC_9
+
+	nop
+
+	:l_ZtyAfOnruBCUQaYY_4
+	if-lez v0, :gl_rbPdiEKXpHcbvEsj
+
+	goto/32 :UGuGasSrKVMSLRnt
+
+	:gl_rbPdiEKXpHcbvEsj	goto/32 :l_xGEgyuEBIxDCNGCD_5
+
+	nop
+
+	:l_qBPVXSQOrbWvPPvv_14
+    check-cast v4, Lkotlinx/coroutines/flow/FlowCollector;
+
+	goto/32 :l_jhswsAShAVQwckjY_15
+
+	nop
+
+	:l_AJZGpcdZlXCPoOsQ_18
+    return-object v3
+
+    .line 117
+    :cond_0
+    nop
+
+    .end local v0    # "$this$unsafeTransform_u24lambda_u2d0":Lkotlinx/coroutines/flow/FlowCollector;
+    .end local v1    # "$completion":Lkotlin/coroutines/Continuation;
+    .end local v2    # "$i$a$-unsafeFlow-FlowKt__EmittersKt$unsafeTransform$1":I
+	goto/32 :l_bZBwzrGnoaHKcZen_19
+
+	nop
+
+	:l_WennnIsrDplhBqUb_21
+	goto/32 :before_first_instruction
+
+	:BdAqiftjLxEwLWax
+	goto/32 :l_GwShAeuSDxGTISOY_22
+
+	nop
+
+	:l_YYCECPuJbtnsnkcj_1
+	const v1, 26
+	goto/32 :l_ucydWQoyUxdVTbug_2
+
+	nop
+
+	:l_hXFfdYaNFjNfdvli_17
+	if-eq v3, v4, :gl_GKOjskyMotcPoYFu
+
+	goto/32 :cond_0
+
+	:gl_GKOjskyMotcPoYFu
+	goto/32 :l_AJZGpcdZlXCPoOsQ_18
+
+	nop
+
+	:l_kfnbvBJcyJZvChWA_7
+    move-object v0, p1
+
+    .local v0, "$this$unsafeTransform_u24lambda_u2d0":Lkotlinx/coroutines/flow/FlowCollector;
+	goto/32 :l_yvJrjTVjonrqRhTr_8
+
+	nop
+
+	:l_KABKqTDvfDFKzgDV_0
+	const v0, 31
+	goto/32 :l_YYCECPuJbtnsnkcj_1
+
+	nop
+
+	:l_feRUkfghHyGxBnqz_10
+    iget-object v3, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1;->$this_unsafeTransform$inlined:Lkotlinx/coroutines/flow/Flow;
+
+	goto/32 :l_tnGFcjWJZldPcKNd_11
+
+	nop
+
+.end method
+
+.method public collect$$forInline(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 6
+
+	goto/32 :l_fozFufkPCYWpkOIx_0
+
+	nop
+
+	:l_zSQsSTFtLRIsULrQ_23
+    invoke-interface {v3, v4, p2}, Lkotlinx/coroutines/flow/Flow;->collect(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+	goto/32 :l_lVQAvkHUsLtIvLTf_24
+
+	nop
+
+	:l_wakUOHoaRrKleUOR_17
+    new-instance v4, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1$2;
+
+	goto/32 :l_hUzqBdZDzkdXDzUO_18
+
+	nop
+
+	:l_YImfgOVPPLJKyPeW_14
+    move-object v1, p2
+
+    .local v1, "$completion":Lkotlin/coroutines/Continuation;
+	goto/32 :l_cRMPkQVzpvlcgxiq_15
+
+	nop
+
+	:l_ucXfiuPGaqwlNytA_1
+	const v1, 16
+	goto/32 :l_HGctHawzvPjjcDbK_2
+
+	nop
+
+	:l_SBkageJMrNptaulK_21
+    const/4 v5, 0x0
+
+	goto/32 :l_TyzAJeDLEWVKeIVe_22
+
+	nop
+
+	:l_LAygidlykJVhomkK_20
+    check-cast v4, Lkotlinx/coroutines/flow/FlowCollector;
+
+	goto/32 :l_SBkageJMrNptaulK_21
+
+	nop
+
+	:l_reQByUlaYStHbqtJ_19
+    invoke-direct {v4, v0, v5}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1$2;-><init>(Lkotlinx/coroutines/flow/FlowCollector;Lkotlin/jvm/functions/Function2;)V
+
+	goto/32 :l_LAygidlykJVhomkK_20
+
+	nop
+
+	:l_kCNzYJGDrbjdpshk_29
+	goto/32 :UeNVaquxXfaiPjri
+	:l_hUzqBdZDzkdXDzUO_18
+    iget-object v5, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1;->$transform$inlined$1:Lkotlin/jvm/functions/Function2;
+
+	goto/32 :l_reQByUlaYStHbqtJ_19
+
+	nop
+
+	:l_HGctHawzvPjjcDbK_2
+	add-int v0, v0, v1
+	goto/32 :l_JVvhBYFmSecNkDaw_3
+
+	nop
+
+	:l_cRMPkQVzpvlcgxiq_15
+    const/4 v2, 0x0
+
+    .line 113
+    .local v2, "$i$a$-unsafeFlow-FlowKt__EmittersKt$unsafeTransform$1":I
+	goto/32 :l_dATpcNSWnVcRqeBd_16
+
+	nop
+
+	:l_ocypCqxMkNGqvWmc_9
+    new-instance v0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1$1;
+
+	goto/32 :l_GIRFAEBvKWCHAwlC_10
+
+	nop
+
+	:l_ZgdDwqdLpFrmchsv_26
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    .line 109
+	goto/32 :l_RVDzuRaxDsJVwFFL_27
+
+	nop
+
+	:l_fozFufkPCYWpkOIx_0
+	const v0, 28
+	goto/32 :l_ucXfiuPGaqwlNytA_1
+
+	nop
+
+	:l_rUSbtsOnWYOjripc_13
+    move-object v0, p1
+
+    .local v0, "$this$unsafeTransform_u24lambda_u2d0":Lkotlinx/coroutines/flow/FlowCollector;
+	goto/32 :l_YImfgOVPPLJKyPeW_14
+
+	nop
+
+	:l_TyzAJeDLEWVKeIVe_22
+    invoke-static {v5}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
+
+	goto/32 :l_zSQsSTFtLRIsULrQ_23
+
+	nop
+
+	:l_dATpcNSWnVcRqeBd_16
+    iget-object v3, p0, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1;->$this_unsafeTransform$inlined:Lkotlinx/coroutines/flow/Flow;
+
+	goto/32 :l_wakUOHoaRrKleUOR_17
+
+	nop
+
+	:l_lVQAvkHUsLtIvLTf_24
+    const/4 v3, 0x1
+
+	goto/32 :l_lfLQggiTWIVemqHg_25
+
+	nop
+
+	:l_vkpdPivbQzxMdnLK_5
+	goto/32 :fmZvJDNZMVFiTIBK
+	:yONRGlifIVXdflyE
+	:UeNVaquxXfaiPjri
+
+	goto/32 :l_EOfUoIVuYoINptAA_6
+
+	nop
+
+	:l_JVvhBYFmSecNkDaw_3
+	rem-int v0, v0, v1
+	goto/32 :l_MjnQukRBFKwWErpC_4
+
+	nop
+
+	:l_mVHxUIhttTpTHlqQ_11
+    const/4 v0, 0x5
+
+	goto/32 :l_PuiDYiszbYAeZhDX_12
+
+	nop
+
+	:l_MjnQukRBFKwWErpC_4
+	if-lez v0, :gl_shifxgFicxgUOWvo
+
+	goto/32 :yONRGlifIVXdflyE
+
+	:gl_shifxgFicxgUOWvo	goto/32 :l_vkpdPivbQzxMdnLK_5
+
+	nop
+
+	:l_PuiDYiszbYAeZhDX_12
+    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
+
+    .line 108
+	goto/32 :l_rUSbtsOnWYOjripc_13
+
+	nop
+
+	:l_RVDzuRaxDsJVwFFL_27
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_XFHhzNYOZlDEntCP_28
+
+	nop
+
+	:l_XFHhzNYOZlDEntCP_28
+	goto/32 :before_first_instruction
+
+	:fmZvJDNZMVFiTIBK
+	goto/32 :l_kCNzYJGDrbjdpshk_29
+
+	nop
+
+	:l_GIRFAEBvKWCHAwlC_10
+    invoke-direct {v0, p0, p2}, Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1$1;-><init>(Lkotlinx/coroutines/flow/FlowKt__TransformKt$mapNotNull$$inlined$unsafeTransform$1;Lkotlin/coroutines/Continuation;)V
+
+	goto/32 :l_mVHxUIhttTpTHlqQ_11
+
+	nop
+
+	:l_EOfUoIVuYoINptAA_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "collector"    # Lkotlinx/coroutines/flow/FlowCollector;
+    .param p2, "$completion"    # Lkotlin/coroutines/Continuation;
+
+	goto/32 :l_kpaIklgbFXEMMEks_7
+
+	nop
+
+	:l_lfLQggiTWIVemqHg_25
+    invoke-static {v3}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
+
+    .line 117
+    nop
+
+    .end local v0    # "$this$unsafeTransform_u24lambda_u2d0":Lkotlinx/coroutines/flow/FlowCollector;
+    .end local v1    # "$completion":Lkotlin/coroutines/Continuation;
+    .end local v2    # "$i$a$-unsafeFlow-FlowKt__EmittersKt$unsafeTransform$1":I
+	goto/32 :l_ZgdDwqdLpFrmchsv_26
+
+	nop
+
+	:l_kpaIklgbFXEMMEks_7
+    const/4 v0, 0x4
+
+	goto/32 :l_AOLbMcFpKEITrCLI_8
+
+	nop
+
+	:l_AOLbMcFpKEITrCLI_8
+    invoke-static {v0}, Lkotlin/jvm/internal/InlineMarker;->mark(I)V
+
+	goto/32 :l_ocypCqxMkNGqvWmc_9
+
+	nop
+
+.end method

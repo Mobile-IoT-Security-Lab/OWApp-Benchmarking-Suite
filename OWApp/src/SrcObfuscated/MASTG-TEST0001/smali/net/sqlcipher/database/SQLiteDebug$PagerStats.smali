@@ -1,0 +1,92 @@
+.class public Lnet/sqlcipher/database/SQLiteDebug$PagerStats;
+.super Ljava/lang/Object;
+.source "SQLiteDebug.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lnet/sqlcipher/database/SQLiteDebug;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "PagerStats"
+.end annotation
+
+
+# instance fields
+.field public databaseBytes:J
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public dbStats:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Lnet/sqlcipher/database/SQLiteDebug$DbStats;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public largestMemAlloc:I
+
+.field public memoryUsed:I
+
+.field public numPagers:I
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public pageCacheOverflo:I
+
+.field public referencedBytes:J
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+.field public totalBytes:J
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+	goto/32 :l_vtZERnRoumbrtNpc_0
+
+	nop
+
+	:l_iNcaxTuxhROmzNzL_1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+	goto/32 :l_cppmYnIBXstiOBjd_2
+
+	nop
+
+	:l_vtZERnRoumbrtNpc_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 72
+	goto/32 :l_iNcaxTuxhROmzNzL_1
+
+	nop
+
+	:l_cppmYnIBXstiOBjd_2
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_DWpAFKGrDwsMFoCC_3
+
+	nop
+
+	:l_DWpAFKGrDwsMFoCC_3
+	goto/32 :before_first_instruction
+
+.end method

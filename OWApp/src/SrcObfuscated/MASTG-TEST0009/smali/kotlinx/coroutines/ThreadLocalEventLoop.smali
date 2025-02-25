@@ -1,0 +1,524 @@
+.class public final Lkotlinx/coroutines/ThreadLocalEventLoop;
+.super Ljava/lang/Object;
+.source "EventLoop.common.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nEventLoop.common.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EventLoop.common.kt\nkotlinx/coroutines/ThreadLocalEventLoop\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,550:1\n1#2:551\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\u0002\n\u0002\u0008\u0004\u0008\u00c1\u0002\u0018\u00002\u00020\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002J\u000f\u0010\n\u001a\u0004\u0018\u00010\u0004H\u0000\u00a2\u0006\u0002\u0008\u000bJ\r\u0010\u000c\u001a\u00020\rH\u0000\u00a2\u0006\u0002\u0008\u000eJ\u0015\u0010\u000f\u001a\u00020\r2\u0006\u0010\u0003\u001a\u00020\u0004H\u0000\u00a2\u0006\u0002\u0008\u0010R\u0014\u0010\u0003\u001a\u00020\u00048@X\u0080\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0005\u0010\u0006R\"\u0010\u0007\u001a\u0016\u0012\u0006\u0012\u0004\u0018\u00010\u00040\u0008j\n\u0012\u0006\u0012\u0004\u0018\u00010\u0004`\tX\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0011"
+    }
+    d2 = {
+        "Lkotlinx/coroutines/ThreadLocalEventLoop;",
+        "",
+        "()V",
+        "eventLoop",
+        "Lkotlinx/coroutines/EventLoop;",
+        "getEventLoop$kotlinx_coroutines_core",
+        "()Lkotlinx/coroutines/EventLoop;",
+        "ref",
+        "Ljava/lang/ThreadLocal;",
+        "Lkotlinx/coroutines/internal/CommonThreadLocal;",
+        "currentOrNull",
+        "currentOrNull$kotlinx_coroutines_core",
+        "resetEventLoop",
+        "",
+        "resetEventLoop$kotlinx_coroutines_core",
+        "setEventLoop",
+        "setEventLoop$kotlinx_coroutines_core",
+        "kotlinx-coroutines-core"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x6,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# static fields
+.field public static final INSTANCE:Lkotlinx/coroutines/ThreadLocalEventLoop;
+
+.field private static final ref:Ljava/lang/ThreadLocal;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ThreadLocal<",
+            "Lkotlinx/coroutines/EventLoop;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+	goto/32 :l_yleKcUdKQTUCIajN_0
+
+	nop
+
+	:l_uAmmXbQHHXeDKJcB_8
+	goto/32 :before_first_instruction
+
+	:l_lHEAVcdltXnwkMEL_2
+    invoke-direct {v0}, Lkotlinx/coroutines/ThreadLocalEventLoop;-><init>()V
+
+	goto/32 :l_WhveAnnYafLvqGqB_3
+
+	nop
+
+	:l_WhveAnnYafLvqGqB_3
+    sput-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->INSTANCE:Lkotlinx/coroutines/ThreadLocalEventLoop;
+
+    .line 128
+	goto/32 :l_RdpHcmaICRUDpciO_4
+
+	nop
+
+	:l_KycDUwwguTgTmZIW_7
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_uAmmXbQHHXeDKJcB_8
+
+	nop
+
+	:l_hGHBQBXtCBSVsIxm_1
+    new-instance v0, Lkotlinx/coroutines/ThreadLocalEventLoop;
+
+	goto/32 :l_lHEAVcdltXnwkMEL_2
+
+	nop
+
+	:l_jHFZrLjYTcyzOQnr_5
+    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+
+	goto/32 :l_sDLdbGkIqmJBtRcO_6
+
+	nop
+
+	:l_yleKcUdKQTUCIajN_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_hGHBQBXtCBSVsIxm_1
+
+	nop
+
+	:l_RdpHcmaICRUDpciO_4
+    new-instance v0, Ljava/lang/ThreadLocal;
+
+	goto/32 :l_jHFZrLjYTcyzOQnr_5
+
+	nop
+
+	:l_sDLdbGkIqmJBtRcO_6
+    sput-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
+
+	goto/32 :l_KycDUwwguTgTmZIW_7
+
+	nop
+
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+	goto/32 :l_nbrWPInIUXBjoptK_0
+
+	nop
+
+	:l_rXWIDepBFuVFWesJ_1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+	goto/32 :l_GJDaOmnJUxLlyXzM_2
+
+	nop
+
+	:l_nbrWPInIUXBjoptK_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 126
+	goto/32 :l_rXWIDepBFuVFWesJ_1
+
+	nop
+
+	:l_ILDksmdRVsrGpvqF_3
+	goto/32 :before_first_instruction
+
+	:l_GJDaOmnJUxLlyXzM_2
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_ILDksmdRVsrGpvqF_3
+
+	nop
+
+.end method
+
+
+# virtual methods
+.method public final currentOrNull$kotlinx_coroutines_core()Lkotlinx/coroutines/EventLoop;
+    .locals 1
+
+	goto/32 :l_LiIPvjDJcPkXwfDp_0
+
+	nop
+
+	:l_SIrUvoVqGcZULpeZ_5
+	goto/32 :before_first_instruction
+
+	:l_LiIPvjDJcPkXwfDp_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 134
+	goto/32 :l_BjOVnXltUxaCjdqN_1
+
+	nop
+
+	:l_BjOVnXltUxaCjdqN_1
+    sget-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
+
+	goto/32 :l_pUOqUARBUtBfqopi_2
+
+	nop
+
+	:l_ailTiRyNMxOhilMS_3
+    check-cast v0, Lkotlinx/coroutines/EventLoop;
+
+	goto/32 :l_vQMfNXIUwbThJomB_4
+
+	nop
+
+	:l_vQMfNXIUwbThJomB_4
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_SIrUvoVqGcZULpeZ_5
+
+	nop
+
+	:l_pUOqUARBUtBfqopi_2
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+	goto/32 :l_ailTiRyNMxOhilMS_3
+
+	nop
+
+.end method
+
+.method public final getEventLoop$kotlinx_coroutines_core()Lkotlinx/coroutines/EventLoop;
+    .locals 4
+
+	goto/32 :l_StzynZaSBKtDRkdS_0
+
+	nop
+
+	:l_DFVZeoztDVIqYxnj_9
+    check-cast v1, Lkotlinx/coroutines/EventLoop;
+
+	goto/32 :l_dqLDaBXjwaRoeaNe_10
+
+	nop
+
+	:l_CAkfikpsfCnswwrr_2
+	add-int v0, v0, v1
+	goto/32 :l_mCriuSlEcGRrxsUr_3
+
+	nop
+
+	:l_StzynZaSBKtDRkdS_0
+	const v0, 31
+	goto/32 :l_rkImgGDFpAVsKQzm_1
+
+	nop
+
+	:l_oTrgOSigIqAvdlqc_5
+	goto/32 :InyRQnbvTxLFnjJU
+	:XwDDoINCTlzYQSDA
+	:BcwrTJNZvovRvQRv
+
+	goto/32 :l_VkweSgwTbZCcLvQr_6
+
+	nop
+
+	:l_VkweSgwTbZCcLvQr_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 131
+	goto/32 :l_ApyQTpzHPSedrGvy_7
+
+	nop
+
+	:l_rWuJnPYDQvecFWjW_17
+	goto/32 :BcwrTJNZvovRvQRv
+	:l_IlGXqnTjQGLCgNjV_15
+    return-object v1
+
+	:after_last_instruction
+
+	goto/32 :l_WkILPQHcvdSIadOU_16
+
+	nop
+
+	:l_XPgvFNDJopHDWnUM_11
+    invoke-static {}, Lkotlinx/coroutines/EventLoopKt;->createEventLoop()Lkotlinx/coroutines/EventLoop;
+
+    move-result-object v1
+
+	goto/32 :l_gKWCZLVwapImEChW_12
+
+	nop
+
+	:l_eeEGjrfjUoiyByxF_14
+    invoke-virtual {v0, v2}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+    .end local v2    # "it":Lkotlinx/coroutines/EventLoop;
+    .end local v3    # "$i$a$-also-ThreadLocalEventLoop$eventLoop$1":I
+    :cond_0
+	goto/32 :l_IlGXqnTjQGLCgNjV_15
+
+	nop
+
+	:l_FWaJZOfLqeCXrivY_4
+	if-lez v0, :gl_UbJHdwiUVIwkknLA
+
+	goto/32 :XwDDoINCTlzYQSDA
+
+	:gl_UbJHdwiUVIwkknLA	goto/32 :l_oTrgOSigIqAvdlqc_5
+
+	nop
+
+	:l_ApyQTpzHPSedrGvy_7
+    sget-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
+
+	goto/32 :l_mcuYYDaKnwPNZNrV_8
+
+	nop
+
+	:l_WkILPQHcvdSIadOU_16
+	goto/32 :before_first_instruction
+
+	:InyRQnbvTxLFnjJU
+	goto/32 :l_rWuJnPYDQvecFWjW_17
+
+	nop
+
+	:l_mcuYYDaKnwPNZNrV_8
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v1
+
+	goto/32 :l_DFVZeoztDVIqYxnj_9
+
+	nop
+
+	:l_rkImgGDFpAVsKQzm_1
+	const v1, 19
+	goto/32 :l_CAkfikpsfCnswwrr_2
+
+	nop
+
+	:l_hVqnKfmXHPpDgyzB_13
+    const/4 v3, 0x0
+
+    .line 131
+    .local v3, "$i$a$-also-ThreadLocalEventLoop$eventLoop$1":I
+	goto/32 :l_eeEGjrfjUoiyByxF_14
+
+	nop
+
+	:l_mCriuSlEcGRrxsUr_3
+	rem-int v0, v0, v1
+	goto/32 :l_FWaJZOfLqeCXrivY_4
+
+	nop
+
+	:l_dqLDaBXjwaRoeaNe_10
+	if-eqz v1, :gl_EnRpZyuLkLRwtuAY
+
+	goto/32 :cond_0
+
+	:gl_EnRpZyuLkLRwtuAY
+	goto/32 :l_XPgvFNDJopHDWnUM_11
+
+	nop
+
+	:l_gKWCZLVwapImEChW_12
+    move-object v2, v1
+
+    .line 551
+    .local v2, "it":Lkotlinx/coroutines/EventLoop;
+	goto/32 :l_hVqnKfmXHPpDgyzB_13
+
+	nop
+
+.end method
+
+.method public final resetEventLoop$kotlinx_coroutines_core()V
+    .locals 2
+
+	goto/32 :l_FKplJmSnaLmmgdqJ_0
+
+	nop
+
+	:l_xxqeDQPLucXXRRye_4
+	if-lez v0, :gl_FCycppbcCUsfHsEX
+
+	goto/32 :ucZDWBSLjbDIjHSc
+
+	:gl_FCycppbcCUsfHsEX	goto/32 :l_vrlnnYEcDgGlMXPd_5
+
+	nop
+
+	:l_bfKlrXRQMdEVIeLZ_3
+	rem-int v0, v0, v1
+	goto/32 :l_xxqeDQPLucXXRRye_4
+
+	nop
+
+	:l_atTfdDfOhrfgxDfx_10
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_swmTAHiQAnRlrrXm_11
+
+	nop
+
+	:l_swmTAHiQAnRlrrXm_11
+	goto/32 :before_first_instruction
+
+	:sTbVxSxYHIrmmYNg
+	goto/32 :l_ZYRqcYkmVqLMJeaa_12
+
+	nop
+
+	:l_AonGhHYCtvtmtgLh_8
+    const/4 v1, 0x0
+
+	goto/32 :l_XxIXAfbHskjaYmqH_9
+
+	nop
+
+	:l_koSKYIHDxcSdpgIA_2
+	add-int v0, v0, v1
+	goto/32 :l_bfKlrXRQMdEVIeLZ_3
+
+	nop
+
+	:l_JwPaXScwLlEwXham_7
+    sget-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
+
+	goto/32 :l_AonGhHYCtvtmtgLh_8
+
+	nop
+
+	:l_SoCOnIXqrQcxKuyq_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 137
+	goto/32 :l_JwPaXScwLlEwXham_7
+
+	nop
+
+	:l_XxIXAfbHskjaYmqH_9
+    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+    .line 138
+	goto/32 :l_atTfdDfOhrfgxDfx_10
+
+	nop
+
+	:l_QqVwkgwstdcyyohI_1
+	const v1, 32
+	goto/32 :l_koSKYIHDxcSdpgIA_2
+
+	nop
+
+	:l_FKplJmSnaLmmgdqJ_0
+	const v0, 26
+	goto/32 :l_QqVwkgwstdcyyohI_1
+
+	nop
+
+	:l_vrlnnYEcDgGlMXPd_5
+	goto/32 :sTbVxSxYHIrmmYNg
+	:ucZDWBSLjbDIjHSc
+	:FpBTgqyBgPgpqptt
+
+	goto/32 :l_SoCOnIXqrQcxKuyq_6
+
+	nop
+
+	:l_ZYRqcYkmVqLMJeaa_12
+	goto/32 :FpBTgqyBgPgpqptt
+.end method
+
+.method public final setEventLoop$kotlinx_coroutines_core(Lkotlinx/coroutines/EventLoop;)V
+    .locals 1
+
+	goto/32 :l_yjqKCyeqeQGCCjRH_0
+
+	nop
+
+	:l_sJDARhnyyKBVQRVu_1
+    sget-object v0, Lkotlinx/coroutines/ThreadLocalEventLoop;->ref:Ljava/lang/ThreadLocal;
+
+	goto/32 :l_eImZcfkEidRqTfue_2
+
+	nop
+
+	:l_vAgRBhEPFVXzfrxn_3
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_mAGnSDMwSBkJQAnr_4
+
+	nop
+
+	:l_mAGnSDMwSBkJQAnr_4
+	goto/32 :before_first_instruction
+
+	:l_eImZcfkEidRqTfue_2
+    invoke-virtual {v0, p1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+    .line 142
+	goto/32 :l_vAgRBhEPFVXzfrxn_3
+
+	nop
+
+	:l_yjqKCyeqeQGCCjRH_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "eventLoop"    # Lkotlinx/coroutines/EventLoop;
+
+    .line 141
+	goto/32 :l_sJDARhnyyKBVQRVu_1
+
+	nop
+
+.end method

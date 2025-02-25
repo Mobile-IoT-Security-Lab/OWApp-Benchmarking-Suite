@@ -1,0 +1,300 @@
+.class public final Lkotlin/jvm/internal/ArrayIteratorKt;
+.super Ljava/lang/Object;
+.source "ArrayIterator.kt"
+
+
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u0012\n\u0000\n\u0002\u0010(\n\u0002\u0008\u0002\n\u0002\u0010\u0011\n\u0002\u0008\u0002\u001a%\u0010\u0000\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\u0008\u0000\u0010\u00022\u000c\u0010\u0003\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0004\u00a2\u0006\u0002\u0010\u0005\u00a8\u0006\u0006"
+    }
+    d2 = {
+        "iterator",
+        "",
+        "T",
+        "array",
+        "",
+        "([Ljava/lang/Object;)Ljava/util/Iterator;",
+        "kotlin-stdlib"
+    }
+    k = 0x2
+    mv = {
+        0x1,
+        0x8,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# direct methods
+.method public static final iterator([Ljava/lang/Object;FLjava/lang/String;SI)V
+    .locals 0
+
+	goto/32 :l_zVJFmsravRUEutHy_0
+
+	nop
+
+	:l_xXFiKckMiaBwiFOf_6
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_JQaYVLltGByOisxv_7
+
+	nop
+
+	:l_zVJFmsravRUEutHy_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_EymIJjkIokNAZSiE_1
+
+	nop
+
+	:l_JQaYVLltGByOisxv_7
+	goto/32 :before_first_instruction
+
+	:l_lXYfjCcMLvNpgIAN_2
+    const/16 p1, 0xd2
+
+	goto/32 :l_SKlMnfjwtqhvhnYF_3
+
+	nop
+
+	:l_JdspjopFlCotZwda_4
+    add-int p3, p2, p1
+
+	goto/32 :l_bDYhTSvtoJKYfYyU_5
+
+	nop
+
+	:l_SKlMnfjwtqhvhnYF_3
+    mul-int p2, p0, p1
+
+	goto/32 :l_JdspjopFlCotZwda_4
+
+	nop
+
+	:l_EymIJjkIokNAZSiE_1
+    const/16 p0, 0x2a
+
+	goto/32 :l_lXYfjCcMLvNpgIAN_2
+
+	nop
+
+	:l_bDYhTSvtoJKYfYyU_5
+    int-to-double p0, p3
+
+	goto/32 :l_xXFiKckMiaBwiFOf_6
+
+	nop
+
+.end method
+
+.method public static final iterator([Ljava/lang/Object;SFILjava/lang/String;)V
+    .locals 0
+
+	goto/32 :l_XmwFWrXFleePONda_0
+
+	nop
+
+	:l_BiBQUJkhtQAKLZIy_1
+    const/16 p0, 0x2a
+
+	goto/32 :l_QcjQMMLkGTEXMHBo_2
+
+	nop
+
+	:l_IhXawOWiFwWpVMML_3
+    mul-int p2, p0, p1
+
+	goto/32 :l_wkNUFvsshlVysqiw_4
+
+	nop
+
+	:l_wkNUFvsshlVysqiw_4
+    add-int p3, p2, p1
+
+	goto/32 :l_GUfsADirMUGLYzZx_5
+
+	nop
+
+	:l_XqKrhRVSUeDYDGZh_7
+	goto/32 :before_first_instruction
+
+	:l_GUfsADirMUGLYzZx_5
+    int-to-double p0, p3
+
+	goto/32 :l_KaNHvpcEvdVdJYwr_6
+
+	nop
+
+	:l_KaNHvpcEvdVdJYwr_6
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_XqKrhRVSUeDYDGZh_7
+
+	nop
+
+	:l_QcjQMMLkGTEXMHBo_2
+    const/16 p1, 0xd2
+
+	goto/32 :l_IhXawOWiFwWpVMML_3
+
+	nop
+
+	:l_XmwFWrXFleePONda_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_BiBQUJkhtQAKLZIy_1
+
+	nop
+
+.end method
+
+.method public static final iterator([Ljava/lang/Object;Ljava/lang/String;FIS)V
+    .locals 0
+
+	goto/32 :l_qjlELcHAcuwKMvvj_0
+
+	nop
+
+	:l_eITBqymCstAIBJHm_3
+    mul-int p2, p0, p1
+
+	goto/32 :l_SAdrzzShnSnzKTll_4
+
+	nop
+
+	:l_IcrcqpZahWNtxNaT_7
+	goto/32 :before_first_instruction
+
+	:l_mkPnhMMDWiWmuzfR_2
+    const/16 p1, 0xd2
+
+	goto/32 :l_eITBqymCstAIBJHm_3
+
+	nop
+
+	:l_SAdrzzShnSnzKTll_4
+    add-int p3, p2, p1
+
+	goto/32 :l_SFLWUHZxMfBAusZt_5
+
+	nop
+
+	:l_qjlELcHAcuwKMvvj_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_vriDNZQWjvvxwYvI_1
+
+	nop
+
+	:l_vriDNZQWjvvxwYvI_1
+    const/16 p0, 0x2a
+
+	goto/32 :l_mkPnhMMDWiWmuzfR_2
+
+	nop
+
+	:l_SFLWUHZxMfBAusZt_5
+    int-to-double p0, p3
+
+	goto/32 :l_MwfaBtSTdopTjhAi_6
+
+	nop
+
+	:l_MwfaBtSTdopTjhAi_6
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_IcrcqpZahWNtxNaT_7
+
+	nop
+
+.end method
+
+.method public static final iterator([Ljava/lang/Object;)Ljava/util/Iterator;
+    .locals 1
+
+	goto/32 :l_LEFerJRnmzfvwHCC_0
+
+	nop
+
+	:l_CkiznVIvobjioqGQ_2
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 14
+	goto/32 :l_iEpUuwQykWALcdzA_3
+
+	nop
+
+	:l_eVgnGjMkOZRVgPyb_1
+    const-string v0, "array"
+
+	goto/32 :l_CkiznVIvobjioqGQ_2
+
+	nop
+
+	:l_jdlgJZAEwavOiYae_6
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_euSMBzEWKVnCdqcf_7
+
+	nop
+
+	:l_wuLOauHoQiAAvIWQ_4
+    invoke-direct {v0, p0}, Lkotlin/jvm/internal/ArrayIterator;-><init>([Ljava/lang/Object;)V
+
+	goto/32 :l_yGjtnSzAXNVZjYav_5
+
+	nop
+
+	:l_LEFerJRnmzfvwHCC_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p0, "array"    # [Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">([TT;)",
+            "Ljava/util/Iterator<",
+            "TT;>;"
+        }
+    .end annotation
+
+	goto/32 :l_eVgnGjMkOZRVgPyb_1
+
+	nop
+
+	:l_yGjtnSzAXNVZjYav_5
+    check-cast v0, Ljava/util/Iterator;
+
+	goto/32 :l_jdlgJZAEwavOiYae_6
+
+	nop
+
+	:l_iEpUuwQykWALcdzA_3
+    new-instance v0, Lkotlin/jvm/internal/ArrayIterator;
+
+	goto/32 :l_wuLOauHoQiAAvIWQ_4
+
+	nop
+
+	:l_euSMBzEWKVnCdqcf_7
+	goto/32 :before_first_instruction
+
+.end method

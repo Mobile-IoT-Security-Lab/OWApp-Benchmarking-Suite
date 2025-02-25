@@ -1,0 +1,676 @@
+.class public abstract Lkotlin/random/AbstractPlatformRandom;
+.super Lkotlin/random/Random;
+.source "PlatformRandom.kt"
+
+
+# annotations
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nPlatformRandom.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlatformRandom.kt\nkotlin/random/AbstractPlatformRandom\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,93:1\n1#2:94\n*E\n"
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0012\n\u0002\u0008\u0002\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\u0007\n\u0002\u0008\u0003\n\u0002\u0010\t\n\u0000\u0008 \u0018\u00002\u00020\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002J\u0010\u0010\u0007\u001a\u00020\u00082\u0006\u0010\t\u001a\u00020\u0008H\u0016J\u0008\u0010\n\u001a\u00020\u000bH\u0016J\u0010\u0010\u000c\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\rH\u0016J\u0008\u0010\u000f\u001a\u00020\u0010H\u0016J\u0008\u0010\u0011\u001a\u00020\u0012H\u0016J\u0008\u0010\u0013\u001a\u00020\u0008H\u0016J\u0010\u0010\u0013\u001a\u00020\u00082\u0006\u0010\u0014\u001a\u00020\u0008H\u0016J\u0008\u0010\u0015\u001a\u00020\u0016H\u0016R\u0012\u0010\u0003\u001a\u00020\u0004X\u00a6\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0005\u0010\u0006\u00a8\u0006\u0017"
+    }
+    d2 = {
+        "Lkotlin/random/AbstractPlatformRandom;",
+        "Lkotlin/random/Random;",
+        "()V",
+        "impl",
+        "Ljava/util/Random;",
+        "getImpl",
+        "()Ljava/util/Random;",
+        "nextBits",
+        "",
+        "bitCount",
+        "nextBoolean",
+        "",
+        "nextBytes",
+        "",
+        "array",
+        "nextDouble",
+        "",
+        "nextFloat",
+        "",
+        "nextInt",
+        "until",
+        "nextLong",
+        "",
+        "kotlin-stdlib"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x8,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+	goto/32 :l_LJARyIYGIUKnHJKD_0
+
+	nop
+
+	:l_zdNywwOukmBBlZXw_3
+	goto/32 :before_first_instruction
+
+	:l_eqMubwcgmgyMTwia_1
+    invoke-direct {p0}, Lkotlin/random/Random;-><init>()V
+
+	goto/32 :l_syJeWEdwPMhaRpNq_2
+
+	nop
+
+	:l_syJeWEdwPMhaRpNq_2
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_zdNywwOukmBBlZXw_3
+
+	nop
+
+	:l_LJARyIYGIUKnHJKD_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 35
+	goto/32 :l_eqMubwcgmgyMTwia_1
+
+	nop
+
+.end method
+
+
+# virtual methods
+.method public abstract getImpl()Ljava/util/Random;
+.end method
+
+.method public nextBits(I)I
+    .locals 1
+
+	goto/32 :l_emgoonlERphDYXwL_0
+
+	nop
+
+	:l_dTIgYSsAxrqIxywR_4
+    return v0
+
+	:after_last_instruction
+
+	goto/32 :l_FvJLZxZTGRLKiyzL_5
+
+	nop
+
+	:l_emgoonlERphDYXwL_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "bitCount"    # I
+
+    .line 39
+	goto/32 :l_dQBxJRquXWMfVZah_1
+
+	nop
+
+	:l_PTEAjPCOzqMSPByN_2
+    invoke-virtual {v0}, Ljava/util/Random;->nextInt()I
+
+    move-result v0
+
+	goto/32 :l_fnChzNMMSlXaxgFF_3
+
+	nop
+
+	:l_FvJLZxZTGRLKiyzL_5
+	goto/32 :before_first_instruction
+
+	:l_fnChzNMMSlXaxgFF_3
+    invoke-static {v0, p1}, Lkotlin/random/RandomKt;->takeUpperBits(II)I
+
+    move-result v0
+
+	goto/32 :l_dTIgYSsAxrqIxywR_4
+
+	nop
+
+	:l_dQBxJRquXWMfVZah_1
+    invoke-virtual {p0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v0
+
+	goto/32 :l_PTEAjPCOzqMSPByN_2
+
+	nop
+
+.end method
+
+.method public nextBoolean()Z
+    .locals 1
+
+	goto/32 :l_OeeKFyAAvwYSwQrE_0
+
+	nop
+
+	:l_jAtXddjlniiiaTKS_4
+	goto/32 :before_first_instruction
+
+	:l_zSptlqpaNapPdhxY_2
+    invoke-virtual {v0}, Ljava/util/Random;->nextBoolean()Z
+
+    move-result v0
+
+	goto/32 :l_DUycOlWlmuPphKMv_3
+
+	nop
+
+	:l_MOWVkGYwlbmecSiw_1
+    invoke-virtual {p0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v0
+
+	goto/32 :l_zSptlqpaNapPdhxY_2
+
+	nop
+
+	:l_DUycOlWlmuPphKMv_3
+    return v0
+
+	:after_last_instruction
+
+	goto/32 :l_jAtXddjlniiiaTKS_4
+
+	nop
+
+	:l_OeeKFyAAvwYSwQrE_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 44
+	goto/32 :l_MOWVkGYwlbmecSiw_1
+
+	nop
+
+.end method
+
+.method public nextBytes([B)[B
+    .locals 3
+
+	goto/32 :l_xLMLeLboAwMJQuIV_0
+
+	nop
+
+	:l_ZGBqZZlztZsgKeIK_3
+	rem-int v0, v0, v1
+	goto/32 :l_rSBvgEuaWtwDfaLu_4
+
+	nop
+
+	:l_FlkwwIoUtMocbuuB_13
+    return-object p1
+
+	:after_last_instruction
+
+	goto/32 :l_JQjDmRRxXNdiEIZy_14
+
+	nop
+
+	:l_rSBvgEuaWtwDfaLu_4
+	if-lez v0, :gl_KukwKiLwnCdvGNme
+
+	goto/32 :FSvCqyQIvNKoKOif
+
+	:gl_KukwKiLwnCdvGNme	goto/32 :l_ChpBwiAwVQvhgcOu_5
+
+	nop
+
+	:l_NSjJLmoYogjzrUFQ_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "array"    # [B
+
+	goto/32 :l_otxgQLJIcIaMrErT_7
+
+	nop
+
+	:l_xLMLeLboAwMJQuIV_0
+	const v0, 8
+	goto/32 :l_wyxSKUVujywoDOdQ_1
+
+	nop
+
+	:l_LujbyFSJiWolcZpd_12
+    invoke-virtual {v2, v0}, Ljava/util/Random;->nextBytes([B)V
+
+    .end local v0    # "it":[B
+    .end local v1    # "$i$a$-also-AbstractPlatformRandom$nextBytes$1":I
+	goto/32 :l_FlkwwIoUtMocbuuB_13
+
+	nop
+
+	:l_lscSvsqdCCXaBOHB_8
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 47
+	goto/32 :l_cVLNGqepsWPqJwFm_9
+
+	nop
+
+	:l_otxgQLJIcIaMrErT_7
+    const-string v0, "array"
+
+	goto/32 :l_lscSvsqdCCXaBOHB_8
+
+	nop
+
+	:l_nfKeyhQnTIDWFmer_2
+	add-int v0, v0, v1
+	goto/32 :l_ZGBqZZlztZsgKeIK_3
+
+	nop
+
+	:l_ChpBwiAwVQvhgcOu_5
+	goto/32 :kMhPUnwXMAMZVdIf
+	:FSvCqyQIvNKoKOif
+	:BLeQBjnYmGtYfujt
+
+	goto/32 :l_NSjJLmoYogjzrUFQ_6
+
+	nop
+
+	:l_wyxSKUVujywoDOdQ_1
+	const v1, 23
+	goto/32 :l_nfKeyhQnTIDWFmer_2
+
+	nop
+
+	:l_vIUoswvVwrqsTftg_11
+    invoke-virtual {p0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v2
+
+	goto/32 :l_LujbyFSJiWolcZpd_12
+
+	nop
+
+	:l_GCUaXiENtsUxjXdT_15
+	goto/32 :BLeQBjnYmGtYfujt
+	:l_FQmJPWOhiXEauZTk_10
+    const/4 v1, 0x0
+
+    .line 47
+    .local v1, "$i$a$-also-AbstractPlatformRandom$nextBytes$1":I
+	goto/32 :l_vIUoswvVwrqsTftg_11
+
+	nop
+
+	:l_JQjDmRRxXNdiEIZy_14
+	goto/32 :before_first_instruction
+
+	:kMhPUnwXMAMZVdIf
+	goto/32 :l_GCUaXiENtsUxjXdT_15
+
+	nop
+
+	:l_cVLNGqepsWPqJwFm_9
+    move-object v0, p1
+
+    .line 94
+    .local v0, "it":[B
+	goto/32 :l_FQmJPWOhiXEauZTk_10
+
+	nop
+
+.end method
+
+.method public nextDouble()D
+    .locals 2
+
+	goto/32 :l_MphGupTVpHEGwszK_0
+
+	nop
+
+	:l_MphGupTVpHEGwszK_0
+	const v0, 30
+	goto/32 :l_elgAAeQCMryWiVME_1
+
+	nop
+
+	:l_lEoVPxLdQzItewdT_4
+	if-lez v0, :gl_EhwvzKnzyRwNWwCb
+
+	goto/32 :zRVVWdZNxYMbRySQ
+
+	:gl_EhwvzKnzyRwNWwCb	goto/32 :l_QUqMbuGrUWsEPXHq_5
+
+	nop
+
+	:l_CPxAaBmzEdRnrzzM_3
+	rem-int v0, v0, v1
+	goto/32 :l_lEoVPxLdQzItewdT_4
+
+	nop
+
+	:l_QUqMbuGrUWsEPXHq_5
+	goto/32 :TWbZemzczvtyEbvx
+	:zRVVWdZNxYMbRySQ
+	:LRBSUxUqCJXKkwZX
+
+	goto/32 :l_AptUwsEZCTslarVl_6
+
+	nop
+
+	:l_IMMycswbQSiijdzI_7
+    invoke-virtual {p0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v0
+
+	goto/32 :l_vYblDlMFEHLvlYzu_8
+
+	nop
+
+	:l_AptUwsEZCTslarVl_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 45
+	goto/32 :l_IMMycswbQSiijdzI_7
+
+	nop
+
+	:l_LIAscPSIumoGvRZJ_11
+	goto/32 :LRBSUxUqCJXKkwZX
+	:l_tDanfvFNdCNgHzyz_10
+	goto/32 :before_first_instruction
+
+	:TWbZemzczvtyEbvx
+	goto/32 :l_LIAscPSIumoGvRZJ_11
+
+	nop
+
+	:l_nvtUrIfkNpGdMEVw_2
+	add-int v0, v0, v1
+	goto/32 :l_CPxAaBmzEdRnrzzM_3
+
+	nop
+
+	:l_XPWbnzumGPEAgJBZ_9
+    return-wide v0
+
+	:after_last_instruction
+
+	goto/32 :l_tDanfvFNdCNgHzyz_10
+
+	nop
+
+	:l_vYblDlMFEHLvlYzu_8
+    invoke-virtual {v0}, Ljava/util/Random;->nextDouble()D
+
+    move-result-wide v0
+
+	goto/32 :l_XPWbnzumGPEAgJBZ_9
+
+	nop
+
+	:l_elgAAeQCMryWiVME_1
+	const v1, 23
+	goto/32 :l_nvtUrIfkNpGdMEVw_2
+
+	nop
+
+.end method
+
+.method public nextFloat()F
+    .locals 1
+
+	goto/32 :l_IdkaAOpYQzdMyhyf_0
+
+	nop
+
+	:l_VIkuYzLfXWZtiifU_2
+    invoke-virtual {v0}, Ljava/util/Random;->nextFloat()F
+
+    move-result v0
+
+	goto/32 :l_uOxZOvHzsIvLDdoP_3
+
+	nop
+
+	:l_astdtOJsveNQcCVC_1
+    invoke-virtual {p0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v0
+
+	goto/32 :l_VIkuYzLfXWZtiifU_2
+
+	nop
+
+	:l_uOxZOvHzsIvLDdoP_3
+    return v0
+
+	:after_last_instruction
+
+	goto/32 :l_LpggZZosWexhyMNJ_4
+
+	nop
+
+	:l_IdkaAOpYQzdMyhyf_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 46
+	goto/32 :l_astdtOJsveNQcCVC_1
+
+	nop
+
+	:l_LpggZZosWexhyMNJ_4
+	goto/32 :before_first_instruction
+
+.end method
+
+.method public nextInt()I
+    .locals 1
+
+	goto/32 :l_ibBPYnriFkIxhTqU_0
+
+	nop
+
+	:l_FVQsVPQRQGPVzHsH_3
+    return v0
+
+	:after_last_instruction
+
+	goto/32 :l_VLZohVQJrgJYrkCb_4
+
+	nop
+
+	:l_VLZohVQJrgJYrkCb_4
+	goto/32 :before_first_instruction
+
+	:l_zqPwhhGIsZajOxnO_1
+    invoke-virtual {p0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v0
+
+	goto/32 :l_ELjeCgENGefXGEOX_2
+
+	nop
+
+	:l_ELjeCgENGefXGEOX_2
+    invoke-virtual {v0}, Ljava/util/Random;->nextInt()I
+
+    move-result v0
+
+	goto/32 :l_FVQsVPQRQGPVzHsH_3
+
+	nop
+
+	:l_ibBPYnriFkIxhTqU_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 41
+	goto/32 :l_zqPwhhGIsZajOxnO_1
+
+	nop
+
+.end method
+
+.method public nextInt(I)I
+    .locals 1
+
+	goto/32 :l_zMYAsnlUxNNxdPAd_0
+
+	nop
+
+	:l_ICubmTDrUDppknop_2
+    invoke-virtual {v0, p1}, Ljava/util/Random;->nextInt(I)I
+
+    move-result v0
+
+	goto/32 :l_mlpikyGDlmhKrZCV_3
+
+	nop
+
+	:l_qmMHxAMapKqqWSGT_1
+    invoke-virtual {p0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v0
+
+	goto/32 :l_ICubmTDrUDppknop_2
+
+	nop
+
+	:l_mlpikyGDlmhKrZCV_3
+    return v0
+
+	:after_last_instruction
+
+	goto/32 :l_pETUwbdCDnCfcvFo_4
+
+	nop
+
+	:l_pETUwbdCDnCfcvFo_4
+	goto/32 :before_first_instruction
+
+	:l_zMYAsnlUxNNxdPAd_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "until"    # I
+
+    .line 42
+	goto/32 :l_qmMHxAMapKqqWSGT_1
+
+	nop
+
+.end method
+
+.method public nextLong()J
+    .locals 2
+
+	goto/32 :l_nMVTawLKFqySGFqL_0
+
+	nop
+
+	:l_AdxGxkNauONIjrye_3
+	rem-int v0, v0, v1
+	goto/32 :l_bhYkotAviBSOOzjx_4
+
+	nop
+
+	:l_nUakmCqdoTuWuKFY_7
+    invoke-virtual {p0}, Lkotlin/random/AbstractPlatformRandom;->getImpl()Ljava/util/Random;
+
+    move-result-object v0
+
+	goto/32 :l_FoRZfpDULAhXkIQf_8
+
+	nop
+
+	:l_kSvfezOfhhDAVVfA_1
+	const v1, 25
+	goto/32 :l_XGkXzAnsoLPDNHeP_2
+
+	nop
+
+	:l_RoXZLOxfdIbnVNdA_10
+	goto/32 :before_first_instruction
+
+	:gZVlGsGvnkKWaBxK
+	goto/32 :l_KZjQngDvzzbTmDar_11
+
+	nop
+
+	:l_KZjQngDvzzbTmDar_11
+	goto/32 :tkXpwfSzZvSctYvz
+	:l_GFmfIOghouseSmEA_9
+    return-wide v0
+
+	:after_last_instruction
+
+	goto/32 :l_RoXZLOxfdIbnVNdA_10
+
+	nop
+
+	:l_XGkXzAnsoLPDNHeP_2
+	add-int v0, v0, v1
+	goto/32 :l_AdxGxkNauONIjrye_3
+
+	nop
+
+	:l_PUrJgxjpZeRmyDux_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 43
+	goto/32 :l_nUakmCqdoTuWuKFY_7
+
+	nop
+
+	:l_bhYkotAviBSOOzjx_4
+	if-lez v0, :gl_xGglXulWpFXdtBGV
+
+	goto/32 :ORcwLpyMGOOVciEU
+
+	:gl_xGglXulWpFXdtBGV	goto/32 :l_WqAphudPBqqedxrH_5
+
+	nop
+
+	:l_nMVTawLKFqySGFqL_0
+	const v0, 2
+	goto/32 :l_kSvfezOfhhDAVVfA_1
+
+	nop
+
+	:l_WqAphudPBqqedxrH_5
+	goto/32 :gZVlGsGvnkKWaBxK
+	:ORcwLpyMGOOVciEU
+	:tkXpwfSzZvSctYvz
+
+	goto/32 :l_PUrJgxjpZeRmyDux_6
+
+	nop
+
+	:l_FoRZfpDULAhXkIQf_8
+    invoke-virtual {v0}, Ljava/util/Random;->nextLong()J
+
+    move-result-wide v0
+
+	goto/32 :l_GFmfIOghouseSmEA_9
+
+	nop
+
+.end method

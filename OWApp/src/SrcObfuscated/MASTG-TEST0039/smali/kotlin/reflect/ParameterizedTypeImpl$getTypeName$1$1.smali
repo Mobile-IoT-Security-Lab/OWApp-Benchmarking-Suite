@@ -1,0 +1,334 @@
+.class final synthetic Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;
+.super Lkotlin/jvm/internal/FunctionReferenceImpl;
+.source "TypesJVM.kt"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function1;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/reflect/ParameterizedTypeImpl;->getTypeName()Ljava/lang/String;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1000
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lkotlin/jvm/internal/FunctionReferenceImpl;",
+        "Lkotlin/jvm/functions/Function1<",
+        "Ljava/lang/reflect/Type;",
+        "Ljava/lang/String;",
+        ">;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    k = 0x3
+    mv = {
+        0x1,
+        0x8,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# static fields
+.field public static final INSTANCE:Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+	goto/32 :l_MTrKXIPSGZDiDrds_0
+
+	nop
+
+	:l_VzReRsJMUYCIcKeY_3
+    sput-object v0, Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;->INSTANCE:Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;
+
+	goto/32 :l_HQNNYCmaAGUkuKQa_4
+
+	nop
+
+	:l_HQNNYCmaAGUkuKQa_4
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_WXHCBGEmgvvcLNFe_5
+
+	nop
+
+	:l_HfzOmbbWWNQLnuFG_1
+    new-instance v0, Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;
+
+	goto/32 :l_ERqSZBPpgCQroIoN_2
+
+	nop
+
+	:l_WXHCBGEmgvvcLNFe_5
+	goto/32 :before_first_instruction
+
+	:l_MTrKXIPSGZDiDrds_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_HfzOmbbWWNQLnuFG_1
+
+	nop
+
+	:l_ERqSZBPpgCQroIoN_2
+    invoke-direct {v0}, Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;-><init>()V
+
+	goto/32 :l_VzReRsJMUYCIcKeY_3
+
+	nop
+
+.end method
+
+.method constructor <init>()V
+    .locals 6
+
+	goto/32 :l_nezyijoReBklbmYd_0
+
+	nop
+
+	:l_ylglqCvrorgoBKkC_3
+	rem-int v0, v0, v1
+	goto/32 :l_HPHcStILymNYhGoj_4
+
+	nop
+
+	:l_nezyijoReBklbmYd_0
+	const v0, 29
+	goto/32 :l_maNDxnGvhncwXYlh_1
+
+	nop
+
+	:l_VkCWkzCGvUlvxBal_13
+    invoke-direct/range {v0 .. v5}, Lkotlin/jvm/internal/FunctionReferenceImpl;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+	goto/32 :l_eEiTXLAxQPMFpZZD_14
+
+	nop
+
+	:l_nEfGxTVUClIleEgB_12
+    move-object v0, p0
+
+	goto/32 :l_VkCWkzCGvUlvxBal_13
+
+	nop
+
+	:l_qUFbgcwDkKwAkCnz_15
+	goto/32 :before_first_instruction
+
+	:rfVXdnEipHKeOMgD
+	goto/32 :l_fdWJzdqdgKzgFdzG_16
+
+	nop
+
+	:l_eEiTXLAxQPMFpZZD_14
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_qUFbgcwDkKwAkCnz_15
+
+	nop
+
+	:l_uYnJdkxUGnpMVmad_10
+    const-string/jumbo v4, "typeToString(Ljava/lang/reflect/Type;)Ljava/lang/String;"
+
+	goto/32 :l_EWuQBGitTnDISilo_11
+
+	nop
+
+	:l_LoppPbSKstJlWlyA_8
+    const-class v2, Lkotlin/reflect/TypesJVMKt;
+
+	goto/32 :l_PhGnYTJpGwgOpSJZ_9
+
+	nop
+
+	:l_HPHcStILymNYhGoj_4
+	if-lez v0, :gl_OuMaJpOLGfWJMjii
+
+	goto/32 :jartljOLbGbYojVa
+
+	:gl_OuMaJpOLGfWJMjii	goto/32 :l_nXHWXHTSJUozqGUh_5
+
+	nop
+
+	:l_QWiqRnDZFawsgpVT_7
+    const/4 v1, 0x1
+
+	goto/32 :l_LoppPbSKstJlWlyA_8
+
+	nop
+
+	:l_EWuQBGitTnDISilo_11
+    const/4 v5, 0x1
+
+	goto/32 :l_nEfGxTVUClIleEgB_12
+
+	nop
+
+	:l_jQILjwyLaoZapPVh_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_QWiqRnDZFawsgpVT_7
+
+	nop
+
+	:l_EysLATzdjtwXGCgA_2
+	add-int v0, v0, v1
+	goto/32 :l_ylglqCvrorgoBKkC_3
+
+	nop
+
+	:l_PhGnYTJpGwgOpSJZ_9
+    const-string/jumbo v3, "typeToString"
+
+	goto/32 :l_uYnJdkxUGnpMVmad_10
+
+	nop
+
+	:l_fdWJzdqdgKzgFdzG_16
+	goto/32 :cCUZGKlMLghgSQCK
+	:l_maNDxnGvhncwXYlh_1
+	const v1, 1
+	goto/32 :l_EysLATzdjtwXGCgA_2
+
+	nop
+
+	:l_nXHWXHTSJUozqGUh_5
+	goto/32 :rfVXdnEipHKeOMgD
+	:jartljOLbGbYojVa
+	:cCUZGKlMLghgSQCK
+
+	goto/32 :l_jQILjwyLaoZapPVh_6
+
+	nop
+
+.end method
+
+
+# virtual methods
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+	goto/32 :l_QOrCXODpxUvEVCfA_0
+
+	nop
+
+	:l_KTMNYpPcqwTaVKva_3
+    invoke-virtual {p0, v0}, Lkotlin/reflect/ParameterizedTypeImpl$getTypeName$1$1;->invoke(Ljava/lang/reflect/Type;)Ljava/lang/String;
+
+    move-result-object v0
+
+	goto/32 :l_nHoKiXpfKxeXSbfG_4
+
+	nop
+
+	:l_nHoKiXpfKxeXSbfG_4
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_VaJnAXqORrYIqOqJ_5
+
+	nop
+
+	:l_QOrCXODpxUvEVCfA_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "p1"    # Ljava/lang/Object;
+
+    .line 208
+	goto/32 :l_EvespDEjkMRXZlgO_1
+
+	nop
+
+	:l_EvespDEjkMRXZlgO_1
+    move-object v0, p1
+
+	goto/32 :l_ZVKxbQoCTSQBDTUP_2
+
+	nop
+
+	:l_ZVKxbQoCTSQBDTUP_2
+    check-cast v0, Ljava/lang/reflect/Type;
+
+	goto/32 :l_KTMNYpPcqwTaVKva_3
+
+	nop
+
+	:l_VaJnAXqORrYIqOqJ_5
+	goto/32 :before_first_instruction
+
+.end method
+
+.method public final invoke(Ljava/lang/reflect/Type;)Ljava/lang/String;
+    .locals 1
+
+	goto/32 :l_KIMrYjozrEfZxECp_0
+
+	nop
+
+	:l_IfBTcBiGwCxUxpTz_5
+	goto/32 :before_first_instruction
+
+	:l_WCJCtxpyfGpNYZEk_2
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 208
+	goto/32 :l_kqNEtSSSxanSRzXX_3
+
+	nop
+
+	:l_GYHmAXfIcTNGtjMN_4
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_IfBTcBiGwCxUxpTz_5
+
+	nop
+
+	:l_KIMrYjozrEfZxECp_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "p0"    # Ljava/lang/reflect/Type;
+
+	goto/32 :l_CZRWypLMdcpMQHjE_1
+
+	nop
+
+	:l_kqNEtSSSxanSRzXX_3
+    invoke-static {p1}, Lkotlin/reflect/TypesJVMKt;->access$typeToString(Ljava/lang/reflect/Type;)Ljava/lang/String;
+
+    move-result-object v0
+
+	goto/32 :l_GYHmAXfIcTNGtjMN_4
+
+	nop
+
+	:l_CZRWypLMdcpMQHjE_1
+    const-string v0, "p0"
+
+	goto/32 :l_WCJCtxpyfGpNYZEk_2
+
+	nop
+
+.end method

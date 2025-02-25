@@ -1,0 +1,447 @@
+.class final Lkotlinx/coroutines/sync/CancelSemaphoreAcquisitionHandler;
+.super Lkotlinx/coroutines/CancelHandler;
+.source "Semaphore.kt"
+
+
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\n\u0002\u0010\u000e\n\u0000\u0008\u0002\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\u0013\u0010\u0007\u001a\u00020\u00082\u0008\u0010\t\u001a\u0004\u0018\u00010\nH\u0096\u0002J\u0008\u0010\u000b\u001a\u00020\u000cH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\r"
+    }
+    d2 = {
+        "Lkotlinx/coroutines/sync/CancelSemaphoreAcquisitionHandler;",
+        "Lkotlinx/coroutines/CancelHandler;",
+        "segment",
+        "Lkotlinx/coroutines/sync/SemaphoreSegment;",
+        "index",
+        "",
+        "(Lkotlinx/coroutines/sync/SemaphoreSegment;I)V",
+        "invoke",
+        "",
+        "cause",
+        "",
+        "toString",
+        "",
+        "kotlinx-coroutines-core"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x6,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# instance fields
+.field private final index:I
+
+.field private final segment:Lkotlinx/coroutines/sync/SemaphoreSegment;
+
+
+# direct methods
+.method public constructor <init>(Lkotlinx/coroutines/sync/SemaphoreSegment;I)V
+    .locals 0
+
+	goto/32 :l_mPPBiVyknQfVhYMa_0
+
+	nop
+
+	:l_mPPBiVyknQfVhYMa_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "segment"    # Lkotlinx/coroutines/sync/SemaphoreSegment;
+    .param p2, "index"    # I
+
+    .line 253
+	goto/32 :l_WpzDXdlpodZHpkNv_1
+
+	nop
+
+	:l_IfXBjfCRpnapEoGl_5
+	goto/32 :before_first_instruction
+
+	:l_RpIMmoKyKtdDyotr_3
+    iput p2, p0, Lkotlinx/coroutines/sync/CancelSemaphoreAcquisitionHandler;->index:I
+
+    .line 250
+	goto/32 :l_EeLzlEjJwoNbCVId_4
+
+	nop
+
+	:l_WpzDXdlpodZHpkNv_1
+    invoke-direct {p0}, Lkotlinx/coroutines/CancelHandler;-><init>()V
+
+    .line 251
+	goto/32 :l_DmyaMNraJmlbZaZv_2
+
+	nop
+
+	:l_DmyaMNraJmlbZaZv_2
+    iput-object p1, p0, Lkotlinx/coroutines/sync/CancelSemaphoreAcquisitionHandler;->segment:Lkotlinx/coroutines/sync/SemaphoreSegment;
+
+    .line 252
+	goto/32 :l_RpIMmoKyKtdDyotr_3
+
+	nop
+
+	:l_EeLzlEjJwoNbCVId_4
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_IfXBjfCRpnapEoGl_5
+
+	nop
+
+.end method
+
+
+# virtual methods
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+	goto/32 :l_ZmrgFLzDJecdfwvR_0
+
+	nop
+
+	:l_DzjlnkJbdtJUeFyQ_2
+    check-cast v0, Ljava/lang/Throwable;
+
+	goto/32 :l_iTDfOazHyKfmnRVK_3
+
+	nop
+
+	:l_FTgskXqfFtEpDryQ_1
+    move-object v0, p1
+
+	goto/32 :l_DzjlnkJbdtJUeFyQ_2
+
+	nop
+
+	:l_iTDfOazHyKfmnRVK_3
+    invoke-virtual {p0, v0}, Lkotlinx/coroutines/sync/CancelSemaphoreAcquisitionHandler;->invoke(Ljava/lang/Throwable;)V
+
+	goto/32 :l_tMHjZuKvQCPjvsSC_4
+
+	nop
+
+	:l_ZmrgFLzDJecdfwvR_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "p1"    # Ljava/lang/Object;
+
+    .line 250
+	goto/32 :l_FTgskXqfFtEpDryQ_1
+
+	nop
+
+	:l_nhxYWKFlArYsgTsU_5
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_JpNDsSjuSsVILCNr_6
+
+	nop
+
+	:l_tMHjZuKvQCPjvsSC_4
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+	goto/32 :l_nhxYWKFlArYsgTsU_5
+
+	nop
+
+	:l_JpNDsSjuSsVILCNr_6
+	goto/32 :before_first_instruction
+
+.end method
+
+.method public invoke(Ljava/lang/Throwable;)V
+    .locals 2
+
+	goto/32 :l_BdHIGkbNrXzAuaQi_0
+
+	nop
+
+	:l_oxfmEJszufrfNjmZ_8
+    iget v1, p0, Lkotlinx/coroutines/sync/CancelSemaphoreAcquisitionHandler;->index:I
+
+	goto/32 :l_lMHkuDDZOpJehgxU_9
+
+	nop
+
+	:l_ZExTdhIJaBAeHozG_3
+	rem-int v0, v0, v1
+	goto/32 :l_ONhXaOqYJEGWSgwI_4
+
+	nop
+
+	:l_sgzMlpJrWlKuGLTG_11
+	goto/32 :before_first_instruction
+
+	:PRqEhJBQLcRiZTBa
+	goto/32 :l_ktpQILnwJawAAQFy_12
+
+	nop
+
+	:l_GyXSxQhxyTJPOIHC_2
+	add-int v0, v0, v1
+	goto/32 :l_ZExTdhIJaBAeHozG_3
+
+	nop
+
+	:l_rmkXUlBgDpVVZpJG_7
+    iget-object v0, p0, Lkotlinx/coroutines/sync/CancelSemaphoreAcquisitionHandler;->segment:Lkotlinx/coroutines/sync/SemaphoreSegment;
+
+	goto/32 :l_oxfmEJszufrfNjmZ_8
+
+	nop
+
+	:l_ONhXaOqYJEGWSgwI_4
+	if-lez v0, :gl_xHMdvpwRWGmcCYVD
+
+	goto/32 :GifKkMugWbQMHOEb
+
+	:gl_xHMdvpwRWGmcCYVD	goto/32 :l_ewDDFkuNdterWgDg_5
+
+	nop
+
+	:l_FjcyfcfsRoceELay_1
+	const v1, 14
+	goto/32 :l_GyXSxQhxyTJPOIHC_2
+
+	nop
+
+	:l_lMHkuDDZOpJehgxU_9
+    invoke-virtual {v0, v1}, Lkotlinx/coroutines/sync/SemaphoreSegment;->cancel(I)V
+
+    .line 256
+	goto/32 :l_lhCasBqWSBgOVMun_10
+
+	nop
+
+	:l_JDCERSHYftzjWxHN_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "cause"    # Ljava/lang/Throwable;
+
+    .line 255
+	goto/32 :l_rmkXUlBgDpVVZpJG_7
+
+	nop
+
+	:l_BdHIGkbNrXzAuaQi_0
+	const v0, 2
+	goto/32 :l_FjcyfcfsRoceELay_1
+
+	nop
+
+	:l_lhCasBqWSBgOVMun_10
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_sgzMlpJrWlKuGLTG_11
+
+	nop
+
+	:l_ewDDFkuNdterWgDg_5
+	goto/32 :PRqEhJBQLcRiZTBa
+	:GifKkMugWbQMHOEb
+	:MXUfzWZLwBRsGPIt
+
+	goto/32 :l_JDCERSHYftzjWxHN_6
+
+	nop
+
+	:l_ktpQILnwJawAAQFy_12
+	goto/32 :MXUfzWZLwBRsGPIt
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+	goto/32 :l_AzXvtdycPuEJojos_0
+
+	nop
+
+	:l_slVqxAQmbckHVAep_3
+	rem-int v0, v0, v1
+	goto/32 :l_WrCnZLFVHStpyIBt_4
+
+	nop
+
+	:l_cZUsGBHprghXsFHo_15
+    iget v1, p0, Lkotlinx/coroutines/sync/CancelSemaphoreAcquisitionHandler;->index:I
+
+	goto/32 :l_uvPUvYumlHcGqCie_16
+
+	nop
+
+	:l_yJKdhnDKdqPRkUcx_17
+    const/16 v1, 0x5d
+
+	goto/32 :l_lmypkbjiHMteGwXY_18
+
+	nop
+
+	:l_lmypkbjiHMteGwXY_18
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+	goto/32 :l_ziwEEpNyrJOnCIgI_19
+
+	nop
+
+	:l_CmlnDGUNLWNxjOgx_11
+    iget-object v1, p0, Lkotlinx/coroutines/sync/CancelSemaphoreAcquisitionHandler;->segment:Lkotlinx/coroutines/sync/SemaphoreSegment;
+
+	goto/32 :l_PCNeXLDeNFxDCpAD_12
+
+	nop
+
+	:l_NzBIOPPEHJVkymmb_2
+	add-int v0, v0, v1
+	goto/32 :l_slVqxAQmbckHVAep_3
+
+	nop
+
+	:l_uvPUvYumlHcGqCie_16
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+	goto/32 :l_yJKdhnDKdqPRkUcx_17
+
+	nop
+
+	:l_fyUYNhZoklPUFZew_22
+	goto/32 :ZxMstINUObRmjpym
+	:l_OwsGRMcKYJOnlgMk_5
+	goto/32 :tsjXySiaXJgyKPCl
+	:HryKRrkrFfdcZCXv
+	:ZxMstINUObRmjpym
+
+	goto/32 :l_JESmqtFzaDyTSyMd_6
+
+	nop
+
+	:l_WrCnZLFVHStpyIBt_4
+	if-lez v0, :gl_nwWvpFDZNmNvoJkw
+
+	goto/32 :HryKRrkrFfdcZCXv
+
+	:gl_nwWvpFDZNmNvoJkw	goto/32 :l_OwsGRMcKYJOnlgMk_5
+
+	nop
+
+	:l_ixAKNKqctpmXdMoB_8
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+	goto/32 :l_XRDNXCboRqVvUAxv_9
+
+	nop
+
+	:l_YDpfKcqxJWTDbZFI_1
+	const v1, 32
+	goto/32 :l_NzBIOPPEHJVkymmb_2
+
+	nop
+
+	:l_ziwEEpNyrJOnCIgI_19
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+	goto/32 :l_iceIuzugAWxEwuZz_20
+
+	nop
+
+	:l_ORDYTlkoeaMSnqJC_21
+	goto/32 :before_first_instruction
+
+	:tsjXySiaXJgyKPCl
+	goto/32 :l_fyUYNhZoklPUFZew_22
+
+	nop
+
+	:l_koNrfMGficHBWNsb_7
+    new-instance v0, Ljava/lang/StringBuilder;
+
+	goto/32 :l_ixAKNKqctpmXdMoB_8
+
+	nop
+
+	:l_AzXvtdycPuEJojos_0
+	const v0, 16
+	goto/32 :l_YDpfKcqxJWTDbZFI_1
+
+	nop
+
+	:l_iDXVFvryNZsgeRBk_13
+    const-string v1, ", "
+
+	goto/32 :l_gyypZvJwiTUKBwrN_14
+
+	nop
+
+	:l_PCNeXLDeNFxDCpAD_12
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+	goto/32 :l_iDXVFvryNZsgeRBk_13
+
+	nop
+
+	:l_JESmqtFzaDyTSyMd_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 258
+	goto/32 :l_koNrfMGficHBWNsb_7
+
+	nop
+
+	:l_gyypZvJwiTUKBwrN_14
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+	goto/32 :l_cZUsGBHprghXsFHo_15
+
+	nop
+
+	:l_iceIuzugAWxEwuZz_20
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_ORDYTlkoeaMSnqJC_21
+
+	nop
+
+	:l_WzjUGMZMGNSythGA_10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+	goto/32 :l_CmlnDGUNLWNxjOgx_11
+
+	nop
+
+	:l_XRDNXCboRqVvUAxv_9
+    const-string v1, "CancelSemaphoreAcquisitionHandler["
+
+	goto/32 :l_WzjUGMZMGNSythGA_10
+
+	nop
+
+.end method

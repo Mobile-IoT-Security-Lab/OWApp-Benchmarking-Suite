@@ -1,0 +1,343 @@
+.class final Lkotlinx/coroutines/DisposeOnCancel;
+.super Lkotlinx/coroutines/CancelHandler;
+.source "CancellableContinuation.kt"
+
+
+# annotations
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0003\n\u0000\n\u0002\u0010\u000e\n\u0000\u0008\u0002\u0018\u00002\u00020\u0001B\r\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0004J\u0013\u0010\u0005\u001a\u00020\u00062\u0008\u0010\u0007\u001a\u0004\u0018\u00010\u0008H\u0096\u0002J\u0008\u0010\t\u001a\u00020\nH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u000b"
+    }
+    d2 = {
+        "Lkotlinx/coroutines/DisposeOnCancel;",
+        "Lkotlinx/coroutines/CancelHandler;",
+        "handle",
+        "Lkotlinx/coroutines/DisposableHandle;",
+        "(Lkotlinx/coroutines/DisposableHandle;)V",
+        "invoke",
+        "",
+        "cause",
+        "",
+        "toString",
+        "",
+        "kotlinx-coroutines-core"
+    }
+    k = 0x1
+    mv = {
+        0x1,
+        0x6,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# instance fields
+.field private final handle:Lkotlinx/coroutines/DisposableHandle;
+
+
+# direct methods
+.method public constructor <init>(Lkotlinx/coroutines/DisposableHandle;)V
+    .locals 0
+
+	goto/32 :l_jnxedCbRFqKBSRLD_0
+
+	nop
+
+	:l_lmaRTUKZufzMZJFo_1
+    invoke-direct {p0}, Lkotlinx/coroutines/CancelHandler;-><init>()V
+
+	goto/32 :l_rqvoAFAmpjAgDJCz_2
+
+	nop
+
+	:l_CRZrXJhiuIhQaQXQ_4
+	goto/32 :before_first_instruction
+
+	:l_KDnqqGySXZBYjQIe_3
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_CRZrXJhiuIhQaQXQ_4
+
+	nop
+
+	:l_rqvoAFAmpjAgDJCz_2
+    iput-object p1, p0, Lkotlinx/coroutines/DisposeOnCancel;->handle:Lkotlinx/coroutines/DisposableHandle;
+
+	goto/32 :l_KDnqqGySXZBYjQIe_3
+
+	nop
+
+	:l_jnxedCbRFqKBSRLD_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "handle"    # Lkotlinx/coroutines/DisposableHandle;
+
+    .line 389
+	goto/32 :l_lmaRTUKZufzMZJFo_1
+
+	nop
+
+.end method
+
+
+# virtual methods
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+	goto/32 :l_fCIBYDseiMjvqroQ_0
+
+	nop
+
+	:l_xFGWFsiUsyyRRzcz_2
+    check-cast v0, Ljava/lang/Throwable;
+
+	goto/32 :l_OzOjirDfRtkWkoFY_3
+
+	nop
+
+	:l_eDZJLYHOBTcKOiIE_5
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_YccSommNPAJRDTww_6
+
+	nop
+
+	:l_YccSommNPAJRDTww_6
+	goto/32 :before_first_instruction
+
+	:l_ZnbOkwdjqpRDTZJm_4
+    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+	goto/32 :l_eDZJLYHOBTcKOiIE_5
+
+	nop
+
+	:l_OzOjirDfRtkWkoFY_3
+    invoke-virtual {p0, v0}, Lkotlinx/coroutines/DisposeOnCancel;->invoke(Ljava/lang/Throwable;)V
+
+	goto/32 :l_ZnbOkwdjqpRDTZJm_4
+
+	nop
+
+	:l_BLSfVfieCjiBapsZ_1
+    move-object v0, p1
+
+	goto/32 :l_xFGWFsiUsyyRRzcz_2
+
+	nop
+
+	:l_fCIBYDseiMjvqroQ_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "p1"    # Ljava/lang/Object;
+
+    .line 389
+	goto/32 :l_BLSfVfieCjiBapsZ_1
+
+	nop
+
+.end method
+
+.method public invoke(Ljava/lang/Throwable;)V
+    .locals 1
+
+	goto/32 :l_tfYmQmkLBgbKKOAT_0
+
+	nop
+
+	:l_tfYmQmkLBgbKKOAT_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .param p1, "cause"    # Ljava/lang/Throwable;
+
+    .line 390
+	goto/32 :l_yruppiiZiHjeiuBH_1
+
+	nop
+
+	:l_yruppiiZiHjeiuBH_1
+    iget-object v0, p0, Lkotlinx/coroutines/DisposeOnCancel;->handle:Lkotlinx/coroutines/DisposableHandle;
+
+	goto/32 :l_dIwrjYHORQTwagkI_2
+
+	nop
+
+	:l_MunTxEPODGszozeK_3
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_kCwhcsfqIAvwezIK_4
+
+	nop
+
+	:l_kCwhcsfqIAvwezIK_4
+	goto/32 :before_first_instruction
+
+	:l_dIwrjYHORQTwagkI_2
+    invoke-interface {v0}, Lkotlinx/coroutines/DisposableHandle;->dispose()V
+
+	goto/32 :l_MunTxEPODGszozeK_3
+
+	nop
+
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+	goto/32 :l_gSBYdTmDWIFHAEzu_0
+
+	nop
+
+	:l_fYNIxAEwbrzUjohQ_9
+    const-string v1, "DisposeOnCancel["
+
+	goto/32 :l_ayakdfrBYVwLsEqj_10
+
+	nop
+
+	:l_hueRqUSgEviplmao_12
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+	goto/32 :l_osULqUhxKNwQCMxQ_13
+
+	nop
+
+	:l_LBElUUWWnObJHmDG_1
+	const v1, 10
+	goto/32 :l_TTHdXNXlwuhnBJyo_2
+
+	nop
+
+	:l_KpjIXIgWmwztthfO_3
+	rem-int v0, v0, v1
+	goto/32 :l_WfPWAyCVADgbkoxz_4
+
+	nop
+
+	:l_VhGTcBuqfjtCqehH_11
+    iget-object v1, p0, Lkotlinx/coroutines/DisposeOnCancel;->handle:Lkotlinx/coroutines/DisposableHandle;
+
+	goto/32 :l_hueRqUSgEviplmao_12
+
+	nop
+
+	:l_osULqUhxKNwQCMxQ_13
+    const/16 v1, 0x5d
+
+	goto/32 :l_txDxcRmvwEEoNlrB_14
+
+	nop
+
+	:l_gSBYdTmDWIFHAEzu_0
+	const v0, 9
+	goto/32 :l_LBElUUWWnObJHmDG_1
+
+	nop
+
+	:l_ebBbpZKWCXWmlnsW_16
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_fXEmwzAtBfchTuct_17
+
+	nop
+
+	:l_miGpUsWOyboofCeg_18
+	goto/32 :SLaBaeoozJXwvEOI
+	:l_ayakdfrBYVwLsEqj_10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+	goto/32 :l_VhGTcBuqfjtCqehH_11
+
+	nop
+
+	:l_WfPWAyCVADgbkoxz_4
+	if-lez v0, :gl_jUVMdmTvGrnwJMDU
+
+	goto/32 :CmKbXNmsyrqmBlGp
+
+	:gl_jUVMdmTvGrnwJMDU	goto/32 :l_gkLoQqUBWEhVOhXN_5
+
+	nop
+
+	:l_HvygLZEpihOXrTlq_6
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 391
+	goto/32 :l_FzbbXBnNpJFxPQMl_7
+
+	nop
+
+	:l_FzbbXBnNpJFxPQMl_7
+    new-instance v0, Ljava/lang/StringBuilder;
+
+	goto/32 :l_UrMAEjsQwxoxtCWA_8
+
+	nop
+
+	:l_TTHdXNXlwuhnBJyo_2
+	add-int v0, v0, v1
+	goto/32 :l_KpjIXIgWmwztthfO_3
+
+	nop
+
+	:l_fQHZZSOpxqpzSlnq_15
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+	goto/32 :l_ebBbpZKWCXWmlnsW_16
+
+	nop
+
+	:l_fXEmwzAtBfchTuct_17
+	goto/32 :before_first_instruction
+
+	:EkQVMzdUnruZuSGS
+	goto/32 :l_miGpUsWOyboofCeg_18
+
+	nop
+
+	:l_UrMAEjsQwxoxtCWA_8
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+	goto/32 :l_fYNIxAEwbrzUjohQ_9
+
+	nop
+
+	:l_gkLoQqUBWEhVOhXN_5
+	goto/32 :EkQVMzdUnruZuSGS
+	:CmKbXNmsyrqmBlGp
+	:SLaBaeoozJXwvEOI
+
+	goto/32 :l_HvygLZEpihOXrTlq_6
+
+	nop
+
+	:l_txDxcRmvwEEoNlrB_14
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+	goto/32 :l_fQHZZSOpxqpzSlnq_15
+
+	nop
+
+.end method

@@ -1,0 +1,286 @@
+.class final Lkotlin/collections/ArraysKt___ArraysKt$withIndex$5;
+.super Lkotlin/jvm/internal/Lambda;
+.source "_Arrays.kt"
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function0;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lkotlin/collections/ArraysKt___ArraysKt;->withIndex([J)Ljava/lang/Iterable;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x18
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function0<",
+        "Ljava/util/Iterator<",
+        "+",
+        "Ljava/lang/Long;",
+        ">;>;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u000c\n\u0000\n\u0002\u0010(\n\u0002\u0010\t\n\u0000\u0010\u0000\u001a\u0008\u0012\u0004\u0012\u00020\u00020\u0001H\n\u00a2\u0006\u0002\u0008\u0003"
+    }
+    d2 = {
+        "<anonymous>",
+        "",
+        "",
+        "invoke"
+    }
+    k = 0x3
+    mv = {
+        0x1,
+        0x8,
+        0x0
+    }
+    xi = 0x30
+.end annotation
+
+
+# instance fields
+.field final synthetic $this_withIndex:[J
+
+
+# direct methods
+.method public static WnjoFZnQrFdJwnVE(Lkotlin/collections/ArraysKt___ArraysKt$withIndex$5;)Ljava/util/Iterator;
+    .locals 1
+
+	goto/32 :l_UzRezQLECdhoMSVS_0
+
+	nop
+
+	:l_WCndfYqfEPrVMhGy_3
+	goto/32 :before_first_instruction
+
+	:l_ffkVyQxRnkfNGXwd_1
+    invoke-virtual {p0}, Lkotlin/collections/ArraysKt___ArraysKt$withIndex$5;->invoke()Ljava/util/Iterator;
+
+    move-result-object v0
+
+	goto/32 :l_KXrhybSeGEDdeUOR_2
+
+	nop
+
+	:l_UzRezQLECdhoMSVS_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_ffkVyQxRnkfNGXwd_1
+
+	nop
+
+	:l_KXrhybSeGEDdeUOR_2
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_WCndfYqfEPrVMhGy_3
+
+	nop
+
+.end method
+
+.method public static FYtylUlBeVOnRqvf([J)Lkotlin/collections/LongIterator;
+    .locals 1
+
+	goto/32 :l_VgZnTeNjyVcaaUWd_0
+
+	nop
+
+	:l_xjpUbdzmROZDBaeY_3
+	goto/32 :before_first_instruction
+
+	:l_yNKYZJSjQURrlcHS_1
+    invoke-static {p0}, Lkotlin/jvm/internal/ArrayIteratorsKt;->iterator([J)Lkotlin/collections/LongIterator;
+
+    move-result-object v0
+
+	goto/32 :l_yaonjuelorAXmvRm_2
+
+	nop
+
+	:l_VgZnTeNjyVcaaUWd_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_yNKYZJSjQURrlcHS_1
+
+	nop
+
+	:l_yaonjuelorAXmvRm_2
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_xjpUbdzmROZDBaeY_3
+
+	nop
+
+.end method
+
+.method constructor <init>([J)V
+    .locals 1
+
+	goto/32 :l_kIXcpuSjlhfkdwUb_0
+
+	nop
+
+	:l_qbaGZibEgQnzGRCp_1
+    iput-object p1, p0, Lkotlin/collections/ArraysKt___ArraysKt$withIndex$5;->$this_withIndex:[J
+
+	goto/32 :l_ToAOCqHPqLCFsAfY_2
+
+	nop
+
+	:l_MoMfySkODJDgCyVO_3
+    invoke-direct {p0, v0}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+
+	goto/32 :l_oODgmjeIumHnmSdM_4
+
+	nop
+
+	:l_vFWsYhuWDYcUofgC_5
+	goto/32 :before_first_instruction
+
+	:l_kIXcpuSjlhfkdwUb_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+	goto/32 :l_qbaGZibEgQnzGRCp_1
+
+	nop
+
+	:l_oODgmjeIumHnmSdM_4
+    return-void
+
+	:after_last_instruction
+
+	goto/32 :l_vFWsYhuWDYcUofgC_5
+
+	nop
+
+	:l_ToAOCqHPqLCFsAfY_2
+    const/4 v0, 0x0
+
+	goto/32 :l_MoMfySkODJDgCyVO_3
+
+	nop
+
+.end method
+
+
+# virtual methods
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 1
+
+	goto/32 :l_SEwVEucTbHCWehjD_0
+
+	nop
+
+	:l_SEwVEucTbHCWehjD_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+
+    .line 11792
+	goto/32 :l_sZfdRxePYenEPMRO_1
+
+	nop
+
+	:l_mhuwicanKamDNRVb_3
+	goto/32 :before_first_instruction
+
+	:l_sZfdRxePYenEPMRO_1
+	invoke-static {p0}, Lkotlin/collections/ArraysKt___ArraysKt$withIndex$5;->WnjoFZnQrFdJwnVE(Lkotlin/collections/ArraysKt___ArraysKt$withIndex$5;)Ljava/util/Iterator;
+
+    move-result-object v0
+
+	goto/32 :l_WkPRtCwWIojlGfcB_2
+
+	nop
+
+	:l_WkPRtCwWIojlGfcB_2
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_mhuwicanKamDNRVb_3
+
+	nop
+
+.end method
+
+.method public final invoke()Ljava/util/Iterator;
+    .locals 1
+
+	goto/32 :l_cxGMydapynisSvAs_0
+
+	nop
+
+	:l_WRINjEXHeOShUkVJ_4
+    return-object v0
+
+	:after_last_instruction
+
+	goto/32 :l_yGFeobkFkbrHUzfp_5
+
+	nop
+
+	:l_uJZMajwqAZwpNYsR_2
+	invoke-static {v0}, Lkotlin/collections/ArraysKt___ArraysKt$withIndex$5;->FYtylUlBeVOnRqvf([J)Lkotlin/collections/LongIterator;
+
+    move-result-object v0
+
+	goto/32 :l_FdNruvAmJHCsFVcm_3
+
+	nop
+
+	:l_cxGMydapynisSvAs_0
+	goto/32 :after_last_instruction
+
+	:before_first_instruction
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Iterator<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+
+    .line 11792
+	goto/32 :l_jpaEQhtcQwdHiCkP_1
+
+	nop
+
+	:l_yGFeobkFkbrHUzfp_5
+	goto/32 :before_first_instruction
+
+	:l_jpaEQhtcQwdHiCkP_1
+    iget-object v0, p0, Lkotlin/collections/ArraysKt___ArraysKt$withIndex$5;->$this_withIndex:[J
+
+	goto/32 :l_uJZMajwqAZwpNYsR_2
+
+	nop
+
+	:l_FdNruvAmJHCsFVcm_3
+    check-cast v0, Ljava/util/Iterator;
+
+	goto/32 :l_WRINjEXHeOShUkVJ_4
+
+	nop
+
+.end method
