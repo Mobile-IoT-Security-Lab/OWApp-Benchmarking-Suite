@@ -4,18 +4,6 @@
 
 The Benchmarking Suite for Mobile Security Applications (OWApp) is a comprehensive framework designed to automate and enhance the benchmarking process for mobile applications, particularly within the context of security analysis. Figure 1 gives an overview of this framework, which is structured into three parts. This suite is built upon a structured workflow that includes three primary scripts, each serving a distinct role in the overall process: the **Download Script**, the **Tools Script**, and the **Running Script**.  
 All the tools are tested on an experimental setup of Ubuntu 24.04.1.
-## Publication
-More details about OWApp can be found in the paper The [OWApp Benchmark: an OWASP-compliant Vulnerable Android App Dataset](https://www.techrxiv.org/users/877761/articles/1257209-the-owapp-benchmark-an-owasp-compliant-vulnerable-android-app-dataset?commit=895a76f5e5bcf78831b1aaf571b791834d990140)
-```
-@article{Ferrari2025,
-author = "Luca Ferrari and Francesco Pagano and Luca Verderame and Andrea Romdhana and Davide Caputo and Alessio Merlo",
-title = "{The OWApp Benchmark: an OWASP-compliant Vulnerable Android App Dataset}",
-year = "2025",
-month = "1",
-url = "https://www.techrxiv.org/users/877761/articles/1257209-the-owapp-benchmark-an-owasp-compliant-vulnerable-android-app-dataset",
-doi = "10.36227/techrxiv.173687667.70476692/v1"
-}
-```
 
 ### Download Script
 The Download Script is the initial component of the benchmarking process. Its primary function is to facilitate the automated download of mobile security applications from the OWApp dataset.  
@@ -219,10 +207,4 @@ This suite is built upon a structured workflow that includes three primary scrip
 
 **Compile Script**:This script sets up the Android development environment, installs the necessary SDK platforms, and compiles the app with the SDK version choosen by the user
 
-## Team
-- [Luca Ferrari](https://github.com/luca959) - Ph.D Student & Developer
-- Francesco Pagano - Ph.D Candidate
-- Luca Verderame - Associate Professor
-- Andrea Romdhana - Ph.D Cybersecurity
-- Davide Caputo - Ph.D Cybersecurity
-- Alessio Merlo - Full Professor
+
